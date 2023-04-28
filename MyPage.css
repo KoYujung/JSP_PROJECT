@@ -104,6 +104,8 @@ div.right {
 
 .Sell {
     margin: auto;
+    font-size: 120%;
+    padding-top: 20px;
 }
 
 #regButton {
