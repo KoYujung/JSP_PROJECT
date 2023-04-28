@@ -1,0 +1,162 @@
+@font-face {
+    font-family: 'TheJamsil5Bold';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2302_01@1.0/TheJamsil5Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+}
+
+* {
+    font-family: TheJamsil5Bold;
+}
+
+a {
+    text-decoration-line: none;
+}
+
+textarea {
+    width: 300px;
+    height: 50px;
+}
+
+main {
+    background-color: #EEEEEE;
+    height: 600px;
+    border-radius: 10px;
+    margin-left: 10%;
+    margin-right: 10%;
+    text-align: center;
+}
+
+#mark {
+    z-index: 2;
+    text-align: left;
+    position: fixed;
+    margin-left: 10%
+}
+
+#login {
+    text-align: end;
+    z-index: 1;
+    height: 30px;
+    margin: 1%;
+}
+
+#logo {
+    text-align: center;
+    margin: 1%;
+}
+
+#login > a {
+    margin: 1%;
+    color: rgb(115, 115, 115);
+}
+
+#login > a:hover {
+    color: rgb(243, 156, 18) ;
+    transform: scale(2);
+    transition-duration: 0.5s;
+    font-size: 110%;
+}
+
+#navbar > ul {
+    padding: 0;
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #3A98B9;
+    height: 50px;
+    border-radius: 10px;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+#navbar > ul > li {
+    border-left: 3px solid white;
+    padding: 0% 10% 0% 10%;
+}
+
+#navbar > ul > li:first-child {
+    border-left: none; 
+}
+
+#navbar > ul > li > a {
+    color: white;
+    font-size: 120%;
+}
+
+#navbar > ul > li > a:hover{
+    color: black;
+    transform: scale(2);
+    transition-duration: 0.5s;
+    font-size: 140%;
+}
+
+div.left {
+    width: 50%;
+    float: left;
+}
+
+div.right {
+    width: 50%;
+    float: right;
+}
+
+.Sell {
+    margin: auto;
+}
+
+#regButton {
+    width: 200px;
+    height: 40px;
+    background-color: white;
+    border: 0;
+    font-size: 120%;
+    border-radius: 20px;
+    margin-top: 3%;
+}
+
+#regButton:hover{
+    background-color: rgb(243, 156, 18);
+    color: white;
+    transform: scale(1.1);
+    transition-duration: 0.5s;
+}
+
+#myProHead {
+    background-color: #ffffff ;
+    height: 100px;
+    width: 70%;
+    border-radius: 10px;
+    margin: auto;
+    margin-bottom: 5%;
+    font-size: 20px;
+}
+
+#myProBody > button > a {
+    color: black;
+}
+
+#myProBody > button > a:hover {
+    color: white;
+    transform: scale(2);
+    transition-duration: 0.5s;
+    font-size: 120%;
+}
+
+#myProBody > button:hover {
+    background-color: #E8D5C4;
+    transform: scale(1.1);
+    transition-duration: 0.5s;
+}
+
+#myProBody > button {
+    width: 70%;
+    height: 100px;
+    background-color: white;
+    border: 0;
+    font-size: 120%;
+    border-radius: 20px;
+    margin-top: 3%;
+    margin: 10px;
+}

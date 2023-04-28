@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>판매글 작성</title>
+    <link rel="stylesheet" href="MyPage.css">
+</head>
+<body>
+    <header>
+      <nav>
+        <a href="#" id="mark"><img src="mark.png" width="50"></a>
+        <div id="login">
+            <a href="#">로그인</a>
+            <a href="#">회원가입</a>
+          </div>
+          <div id="logo">
+            <a href="#"><img src="logo.png" width="180"></a>
+          </div>
+        <div id="navbar">
+          <ul>
+            <li><a href="#">홈</a></li>
+            <li><a href="Sell.html">책 판매</a></li>
+            <li><a href="Buy.html">책 요청</a></li>
+            <li><a href="MyPage.html">마이페이지</a></li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <main>
+        <div>
+        <form action="#" method="post">
+            <div class="left">
+            <table class="Sell" cellpadding="7">
+                <tr>
+                    <td>카테고리</td>
+                    <td>
+                        <div>
+                        <select>
+                            <option>인문학</option>
+                            <option>자연과학</option>
+                            <option>예체능</option>
+                        </select>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label>책 이름</label></td>
+                    <td><input type="text" id="sName" name="sName" placeholder="책 이름"></td>
+                </tr>
+                <tr>
+                    <td><label>저자</label></td>
+                    <td><input type="text" id="sAuth" name="sAuth" placeholder="저자"></td>
+                </tr>
+                <tr>
+                    <td><label>출판사</label></td>
+                    <td><input type="text" id="sPub" name="sPub" placeholder="출판사"></td>
+                </tr>
+                <tr>
+                    <td><label>정가</label></td>
+                    <td><input type="number" id="sCost" name="sCost" placeholder="정가"></td>
+                </tr>
+                <tr>
+                    <td><label>판매가</label></td>
+                    <td><input type="number" id="sHope" name="sHope" placeholder="판매가"></td>
+                </tr>
+                <!-- <tr>
+                    <td colspan="2"><hr></td>
+                </tr> -->
+            </table>
+            </div>
+
+            <div class="right">
+            <table class="Sell" cellpadding="7">
+                <tr>
+                    <td>겉표지 훼손</td>
+                    <td>
+                        <input type="radio" name="sCover">없음
+                        <input type="radio" name="sCover">있음
+                    </td>
+                </tr>
+                <tr>
+                    <td>이름 기입</td>
+                    <td>
+                        <input type="radio" name="sCover">없음
+                        <input type="radio" name="sCover">있음
+                    </td>
+                </tr>
+                <tr>
+                    <td>필기</td>
+                    <td>
+                        <input type="checkbox">형광펜
+                        <input type="checkbox">연필/샤프
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2"><hr></td>
+                </tr>
+            </table>
+            <textarea placeholder="코멘트를 입력해주세요"></textarea>
+            </div>
+            </div>
+            <input type="submit" value="등록" id="regButton">
+        </form>
+    </main>
+    <footer>
+      
+    </footer>
+  </body>
+</html>
+<!--(책 종류)카테고리 -> select 
+책 이름, 저자, 출판사, 정가, 희망가 -> textarea
+겉 표지, 이름기입 -> radio, 연필/샤프, 형광펜/볼펜 -> checkbox
+사진 등록 -> <input type="file">
+코멘트 -> textarea
+등록 버튼-->
