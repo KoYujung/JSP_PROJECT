@@ -71,3 +71,17 @@
         color: white;
         font-size: 120%;
     }
+
+    #login > a:hover {
+        color: rgb(243, 156, 18) ;
+        transform: scale(2);
+        transition-duration: 0.5s;
+        font-size: 110%;
+    }
+    
+    #navbar > ul > li > a:hover{
+        color: black;
+        transform: scale(2);
+        transition-duration: 0.5s;
+        font-size: 140%;
+    }
