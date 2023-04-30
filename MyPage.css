@@ -71,10 +71,10 @@ main {
     margin-right: 10%;
 }
 
-#navbar > ul > li {
+/* #navbar > ul > li {
     border-left: 3px solid white;
     padding: 0% 10% 0% 10%;
-}
+} */
 
 #navbar > ul > li:first-child {
     border-left: none; 
@@ -87,9 +87,13 @@ main {
 
 #navbar > ul > li > a:hover{
     color: black;
-    transform: scale(2);
     transition-duration: 0.5s;
-    font-size: 140%;
+    /* transform: scale(2); */
+    /* font-size: 140%; */
+}
+
+#navbar > ul > li > a.current {
+    text-decoration: underline;
 }
 
 div.left {
@@ -110,7 +114,7 @@ div.right {
 
 #regButton {
     width: 200px;
-    height: 40px;
+    height: 50px;
     background-color: white;
     border: 0;
     font-size: 120%;
@@ -164,8 +168,44 @@ div.right {
     margin: 10px;
 }
 
-/* select, input {
-    width: 300px;
-    height: 35px;
+select, input {
+    width: 250;
+    height: 30px;
     font-size: 20px;
-} */
+}
+
+.dropbtn {
+    color: white;
+    font-size: 120%;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+  
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+  
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown > .dropbtn:hover {
+    color: black;
+    transition-duration: 0.5s;
+    /*font-size: 140%; */
+}
+  
+.dropdown-content a:hover {background-color: #ddd;}
+  
+.dropdown:hover .dropdown-content {display: block;}

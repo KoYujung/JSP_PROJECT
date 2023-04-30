@@ -8,26 +8,42 @@
     <link rel="stylesheet" href="MyPage.css">
 </head>
 <body>
-    <header>
-      <nav>
-        <a href="#" id="mark"><img src="mark.png" width="50"></a>
-        <div id="login">
-            <a href="#">로그인</a>
-            <a href="#">회원가입</a>
-          </div>
-          <div id="logo">
-            <a href="#"><img src="logo.png" width="180"></a>
-          </div>
-        <div id="navbar">
-          <ul>
-            <li><a href="#">홈</a></li>
-            <li><a href="Sell.html">책 판매</a></li>
-            <li><a href="Buy.html">책 요청</a></li>
-            <li><a href="MyPage.html">마이페이지</a></li>
-          </ul>
-        </div>
-      </nav>
-    </header>
+  <header>
+    <nav>
+      <a href="#" id="mark"><img src="mark.png" width="50"></a>
+      <div id="login">
+        <a href="#">로그인</a>
+        <a href="#">회원가입</a>
+      </div>
+      <div id="logo">
+        <a href="#"><img src="logo.png" width="180"></a>
+      </div>
+      <div id="navbar">
+        <ul>
+          <li><a href="#">홈</a></li>
+          <li>
+            <div class="dropdown">
+              <a class="dropbtn" class="current">책 판매</a>
+              <div class="dropdown-content">
+                <a href="Sell.html">글 작성</a>
+                <a href="#">책 목록</a>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="dropdown">
+              <p class="dropbtn">책 요청</p>
+              <div class="dropdown-content">
+                <a href="Buy.html">글 작성</a>
+                <a href="#">책 목록</a>
+              </div>
+            </div>
+          </li>
+          <li><a href="MyPage.html">마이페이지</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
     <main>
         <form action="#" method="post">
             <table class="Sell" cellpadding="20px" border="0" cellspacing="10px">
