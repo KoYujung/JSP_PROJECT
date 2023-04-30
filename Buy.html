@@ -30,21 +30,21 @@
     </header>
     <main>
         <form action="#" method="post">
-            <table class="Sell" cellpadding="15">
+            <table class="Sell" cellpadding="20px" border="0" cellspacing="10px">
                 <tr>
                     <td>카테고리</td>
                     <td>
-                        <div>
                         <select>
-                            <option>인문학</option>
-                            <option>자연과학</option>
-                            <option>예체능</option>
-                        </select>
-                        </div>
+                          <option>언어</option>
+                          <option>경제</option>
+                          <option>컴퓨터</option>
+                          <option>예술</option>
+                          <option>종교</option>
+                      </select>
                     </td>
                 </tr>
                 <tr>
-                    <td><label>책 이름</label></td>
+                    <td><label>도서 이름</label></td>
                     <td><input type="text" id="sName" name="sName" placeholder="책 이름"></td>
                 </tr>
                 <tr>
@@ -59,10 +59,8 @@
                     <td><label>희망가</label></td>
                     <td><input type="number" id="sHope" name="sHope" placeholder="희망가"></td>
                 </tr>
-                <tr>
-                    <td colspan="2"><hr></td>
-                </tr>
             </table>
+            <hr width="70%">
             <div><input type="submit" value="등록" id="regButton"></div>
         </form>
     </main>
