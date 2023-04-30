@@ -58,10 +58,10 @@
         margin-right: 10%;
     }
     
-    #navbar > ul > li {
+    /* #navbar > ul > li {
         border-left: 3px solid white;
         padding: 0% 10% 0% 10%;
-    }
+    } */
     
     #navbar > ul > li:first-child {
         border-left: none; 
@@ -81,10 +81,14 @@
     
     #navbar > ul > li > a:hover{
         color: black;
-        transform: scale(2);
+        /* transform: scale(2);
         transition-duration: 0.5s;
-        font-size: 140%;
+        font-size: 140%; */
     }
+
+    /* #navbar > ul > li > a.current {
+        color: black;
+    } */
 
     .dropbtn {
         color: white;
@@ -114,8 +118,8 @@
 
     .dropdown > .dropbtn:hover {
         color: black;
-        transition-duration: 0.5s;
-        font-size: 140%;
+        /* transition-duration: 0.5s;
+        font-size: 140%; */
     }
       
     .dropdown-content a:hover {background-color: #ddd;}
