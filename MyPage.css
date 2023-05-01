@@ -109,7 +109,7 @@ div.right {
 .Sell {
     margin: auto;
     font-size: 25px;
-    padding-top: 2%;
+    padding-top: 3%;
 }
 
 #regButton {
@@ -120,6 +120,12 @@ div.right {
     font-size: 120%;
     border-radius: 20px;
     margin-top: 1%;
+}
+
+#SText {
+    width: 400px;
+    height: 100px;
+    font-size: 20px;
 }
 
 #regButton:hover{
