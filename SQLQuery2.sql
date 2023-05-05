@@ -32,7 +32,8 @@ create table CATE(
 );
 create table CHAT(
 	CHAT_ID char(12),
-	ID_1
+	SEND_ID char(12),
+	GET_ID char(12),
 	primary key(CHAT_ID)
 );
 create table USER(
