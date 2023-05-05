@@ -112,7 +112,7 @@ div.right {
     padding-top: 3%;
 }
 
-#regButton {
+.regButton {
     width: 200px;
     height: 50px;
     background-color: white;
@@ -120,6 +120,7 @@ div.right {
     font-size: 120%;
     border-radius: 20px;
     margin-top: 1%;
+    cursor: pointer;
 }
 
 #SText {
@@ -128,7 +129,12 @@ div.right {
     font-size: 20px;
 }
 
-#regButton:hover{
+#SBottom {
+    float: left;
+    margin-top: 7%;
+}
+
+.regButton:hover{
     background-color: rgb(243, 156, 18);
     color: white;
     transform: scale(1.1);

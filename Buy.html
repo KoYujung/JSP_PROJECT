@@ -23,7 +23,7 @@
           <li><a href="#">홈</a></li>
           <li>
             <div class="dropdown">
-              <a class="dropbtn" class="current">책 판매</a>
+              <a class="dropbtn">책 판매</a>
               <div class="dropdown-content">
                 <a href="Sell.html">글 작성</a>
                 <a href="#">책 목록</a>
@@ -45,7 +45,7 @@
     </nav>
   </header>
     <main>
-        <form action="#" method="post">
+        <form action="#" method="post" enctype="multipart/form-data">
             <table class="Sell" cellpadding="20px" cellspacing="10px">
                 <tr>
                     <td>카테고리</td>
@@ -77,7 +77,7 @@
                 </tr>
             </table>
             <hr width="70%">
-            <div><input type="submit" value="등록" id="regButton"></div>
+            <div><input type="submit" value="등록" class="regButton"></div>
         </form>
     </main>
     <footer>
@@ -85,7 +85,3 @@
     </footer>
   </body>
 </html>
-<!--(책 종류)카테고리 -> select 
-책 이름, 저자, 출판사, 정가, 희망가 -> textarea
-코멘트 -> textarea
-등록 버튼-->
