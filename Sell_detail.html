@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>중고도서판매: 책판매 상세</title>
+    <link rel="stylesheet" href="Test.css">
+    <link rel="stylesheet" href="book.css">
+  </head>
+  <body>
+    <header>
+      <nav>
+        <a href="#" id="mark"><img src="mark.png" width="50"></a>
+        <div id="login">
+          <a href="#">로그인</a>
+          <a href="#">회원가입</a>
+        </div>
+        <div id="logo">
+          <a href="#"><img src="logo.png" width="180"></a>
+        </div>
+        <div id="navbar">
+          <ul>
+            <li><a href="#" class="current">홈</a></li>
+            <li>
+              <div class="dropdown">
+                <p class="dropbtn">책 판매</p>
+                <div class="dropdown-content">
+                  <a href="Sell.html">글 작성</a>
+                  <a href="#">책 목록</a>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div class="dropdown">
+                <p class="dropbtn">책 요청</p>
+                <div class="dropdown-content">
+                  <a href="Buy.html">글 작성</a>
+                  <a href="#">책 목록</a>
+                </div>
+              </div>
+            </li>
+            <li><a href="MyPage.html">마이페이지</a></li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <main>
+      <div class="container">
+        <div class="item">
+            <div class="slider">
+                <input type="radio" name="slide" id="slide1" checked>
+                <input type="radio" name="slide" id="slide2">
+                <input type="radio" name="slide" id="slide3">
+                <input type="radio" name="slide" id="slide4">
+                <ul id="imgholder" class="imgs">
+                    <li><img class="book_img" src=""></li>
+                    <li><img class="book_img" src=""></li>
+                    <li><img class="book_img" src=""></li>
+                    <li><img class="book_img" src=""></li>
+                </ul>
+                <div class="bullets">
+                    <label for="slide1">&nbsp;</label>
+                    <label for="slide2">&nbsp;</label>
+                    <label for="slide3">&nbsp;</label>
+                    <label for="slide4">&nbsp;</label>
+                </div>
+            </div>
+        </div>
+        <div class="item" >
+            <div class="info">
+                <p style="color: #ffd700; font-size: 24px;">팝니다</p>
+                <h1 style="font-size: 36px;">책 제목: </h1> 
+                <p> 저자:&nbsp; <!-- 데이터베이스 연동으로 책 정보 가져오도록 --> &nbsp;
+                정가:&nbsp; </p> <!-- 데이터베이스 연동으로 책 정보 가져오도록 -->
+                <p> 출판사:&nbsp; <!-- 데이터베이스 연동으로 책 정보 가져오도록 --> &nbsp;
+                판매가:&nbsp; </p> <!-- 데이터베이스 연동으로 책 정보 가져오도록 -->
+                <hr>
+                <p>겉표지 훼손: &nbsp; <!-- 데이터베이스 연동으로 책 정보 가져오도록 --> &nbsp;
+                  이름기입: &nbsp; </p>
+                <p>연필/ 샤프: &nbsp; <!-- 데이터베이스 연동으로 책 정보 가져오도록 --> &nbsp;
+                  형광펜/ 볼펜: &nbsp; </p>
+                <br>
+                <a href="chat.html" id="chat"><img src="chat.png", width="80%"></a>
+                <p></p>   
+                <div class="info_detail">
+                  <p style="text-align: center;"> 책 상세설명</p>
+                  <p style="text-align: center; margin: 15px 15px 15px 15px;">책 관련 설명이 들어갈 예정입니다~~~~
+                    오예에ㅔㅔㅔㅔ 할말이 더이상 없음요 복붙 시전! 책 관련 설명이 들어갈 예정입니다~~~~
+                    오예에ㅔㅔㅔㅔ 할말이 더이상 없음요 책 관련 설명이 들어갈 예정입니다~~~~
+                    오예에ㅔㅔㅔㅔ 할말이 더이상 없음요
+                  </p>
+                </div>
+            </div>  
+        </div>
+    </div>
+    
+    </main>
+    <footer>
+      
+    </footer>
+  </body>
+</html>
