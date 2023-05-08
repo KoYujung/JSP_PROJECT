@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>마이페이지</title>
+    <link rel="stylesheet" href="MyPage.css">
+  </head>
+  <body>
+    <header>
+      <nav>
+        <a href="#" id="mark"><img src="mark.png" width="50"></a>
+        <div id="login">
+          <a href="#">로그인</a>
+          <a href="#">회원가입</a>
+        </div>
+        <div id="logo">
+          <a href="#"><img src="logo.png" width="180"></a>
+        </div>
+      </nav>
+    </header>
+    <main>
+        <br><h1>개인정보 수정</h1>
+        <center>
+        <form action="#" method="post">
+            <table cellpadding="10px" cellspacing="10px">
+                <tr>
+                    <td>이름</td>
+                    <td><input type="text" name="UName"></td>
+                </tr>
+                <tr>
+                    <td>아이디</td>
+                    <td><input type="text" name="UID"></td>
+                </tr>
+                <tr>
+                    <td>비밀번호</td>
+                    <td><input type="text" name="UPW"></td>
+                </tr>
+                <tr>
+                    <td>이메일</td>
+                    <td><input type="text" name="UEMAIL"></td>
+                </tr>
+                <tr>
+                    <td>전화번호</td>
+                    <td><input type="text" name="UPhone"></td>
+                </tr>
+            </table>
+            <input type="submit" value="수정" class="regButton">&nbsp;&nbsp;&nbsp;
+            <input type="reset" value="취소" class="regButton">
+          </form>
+        </center>
+    </main>
+    <footer>
+    </footer>
+  </body>
+</html>
