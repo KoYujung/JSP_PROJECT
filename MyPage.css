@@ -71,11 +71,6 @@ main {
     margin-right: 10%;
 }
 
-/* #navbar > ul > li {
-    border-left: 3px solid white;
-    padding: 0% 10% 0% 10%;
-} */
-
 #navbar > ul > li:first-child {
     border-left: none; 
 }
@@ -99,11 +94,13 @@ main {
 div.left {
     width: 50%;
     float: left;
+    margin-bottom: 30px;
 }
 
 div.right {
     width: 50%;
     float: right;
+    margin-bottom: 30px;
 }
 
 .Sell {
@@ -113,7 +110,7 @@ div.right {
 }
 
 .regButton {
-    width: 200px;
+    width: 150px;
     height: 50px;
     background-color: white;
     border: 0;
@@ -132,6 +129,14 @@ div.right {
 #SBottom {
     float: left;
     margin-top: 7%;
+}
+
+td {
+    text-align: left;
+}
+
+select {
+    width: 275px;
 }
 
 .regButton:hover{
