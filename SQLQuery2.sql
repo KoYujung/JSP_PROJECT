@@ -1,18 +1,18 @@
 create table BOOK(
-	BK_CD char(12) not null auto_increment,
+	BK_CD int not null auto_increment,
 	TITLE char(50),
 	AUTH char(30),
 	PUBL char(30),
 	FIXED int,
 	SELL int,
 	DET varchar(300),
-	IMG file,
+	IMG char(200),
 	primary key(BK_CD),
 	foreign key(BKCN_CD) references BOOKCOND(BKCN_CD),
 	foreign key(CATE_ID) references CATE(CATE_ID)
 );
 create table BOOKCOND(
-	BKCN_CD char(12),
+	BKCN_CD int not null auto_increment,
 	COVER char(12),
 	HIGHPEN char(12),
 	PENCIL char(12),
@@ -22,7 +22,7 @@ create table BOOKCOND(
 	foreign key(BK_CD) references BOOK(BK_CD)
 );
 create table CATE(
-	CATE_ID char(12),
+	CATE_ID int not null auto_increment,
 	LANG char(12),
 	ECON char(12),
 	COMP char(12),
