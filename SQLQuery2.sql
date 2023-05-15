@@ -7,8 +7,8 @@ create table BOOK(
 	SELL int,
 	DET varchar(300),
 	IMG char(200),
+	CATE_ID int not null,
 	primary key(BK_CD),
-	foreign key(BKCN_CD) references BOOKCOND(BKCN_CD),
 	foreign key(CATE_ID) references CATE(CATE_ID)
 );
 create table BOOKCOND(
@@ -18,6 +18,7 @@ create table BOOKCOND(
 	PENCIL char(12),
 	WNAME char(12),
 	FPART char(12),
+	BK_CD int not null,
 	primary key(BKCN_CD),
 	foreign key(BK_CD) references BOOK(BK_CD)
 );
