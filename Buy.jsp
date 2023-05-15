@@ -1,0 +1,88 @@
+<%@ page language="java" contentType="text/html; charset=EUC-KR" pageEncoding="EUC-KR"%>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>요청글 작성</title>
+    <link rel="stylesheet" href="MyPage.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <a href="#" id="mark"><img src="mark.png" width="50"></a>
+      <div id="login">
+        <a href="#">로그인</a>
+        <a href="#">회원가입</a>
+      </div>
+      <div id="logo">
+        <a href="#"><img src="logo.png" width="180"></a>
+      </div>
+      <div id="navbar">
+        <ul>
+          <li><a href="Test.html">홈</a></li>
+          <li>
+            <div class="dropdown">
+              <a class="dropbtn">책 판매</a>
+              <div class="dropdown-content">
+                <a href="Sell.html">글 작성</a>
+                <a href="Sell_detail.html">책 목록</a>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="dropdown">
+              <p class="dropbtn">책 요청</p>
+              <div class="dropdown-content">
+                <a href="Buy.jsp">글 작성</a>
+                <a href="Buy_detail.html">책 목록</a>
+              </div>
+            </div>
+          </li>
+          <li><a href="MyPage.html">마이페이지</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+    <main>
+        <form action="#" method="post" enctype="multipart/form-data">
+            <table cellpadding="20px" cellspacing="10px">
+                <tr>
+                    <td>카테고리</td>
+                    <td>
+                        <select>
+                          <option value="lang">언어</option>
+                          <option value="econ">경제</option>
+                          <option value="comp">컴퓨터</option>
+                          <option value="art">예술</option>
+                          <option value="reli">종교</option>
+                      </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label>도서 이름</label></td>
+                    <td><input type="text" id="sName" name="sName" placeholder="책 이름"></td>
+                </tr>
+                <tr>
+                    <td><label>저자</label></td>
+                    <td><input type="text" id="sAuth" name="sAuth" placeholder="저자"></td>
+                </tr>
+                <tr>
+                    <td><label>출판사</label></td>
+                    <td><input type="text" id="sPub" name="sPub" placeholder="출판사"></td>
+                </tr>
+                <tr>
+                    <td><label>희망가</label></td>
+                    <td><input type="number" id="sHope" name="sHope" placeholder="희망가"></td>
+                </tr>
+            </table>
+            <hr width="70%">
+            <input type="reset" value="취소" class="regButton">&nbsp;&nbsp;&nbsp;
+            <input type="submit" value="등록" class="regButton">
+        </form>
+    </main>
+    <footer>
+    </footer>
+  </body>
+</html>
