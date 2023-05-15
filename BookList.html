@@ -12,7 +12,6 @@
           width: 100%;
         }
         #tb_item {
-          /* border: none; */
           background-color: #FFF1DC;
           width: 100%;
         }
@@ -25,6 +24,7 @@
           font-size: 56px;
         }
         #td_content {
+          width: 60%;
           text-align: start;
         }
         #td_bookmark {
@@ -61,7 +61,7 @@
                 <td style="width: 30%;">
                   <input id="search_bar" type="text" name="search" style="position: relative; top: -7px;">
                   <button id="search_button" type="submit" style="position: relative; top: 5px;">
-                    <img src="search.png">
+                    <img src="search_icon.png">
                   </button>
                 </td>
                 <td style="width: 10%;">&nbsp;</td>
@@ -100,7 +100,7 @@
                   직업과 영성
                 </td>
                 <td id="td_bookmark" rowspan="3">
-                  <img src="./mark_empty.jpg">
+                  <img src="./bookmark_empty.jpg">
                 </td>
               </tr>
               <tr>
@@ -108,7 +108,7 @@
                   저자
                 </td>
                 <td id="td_content">
-                  저자A, 저자B, 저자C, 저자D, 저자E, 저자F, 저자G
+                  장종현, 김대인, 김진하, 정회현, 최규명, 한만오
                 </td>
               </tr>
               <tr>
@@ -117,6 +117,39 @@
                 </td>
                 <td id="td_content">
                   뷰리
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <table id="tb_item">
+              <tr>
+                <td id="td_image" rowspan="3">
+                  <img src="./book.jpg">
+                </td>
+                <td id="td_title" colspan="2">
+                  꿩먹고 알먹는 러시아어 첫걸음
+                </td>
+                <td id="td_bookmark" rowspan="3">
+                  <img src="./bookmark_fill.jpg">
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  저자
+                </td>
+                <td id="td_content">
+                  전혜진
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  출판사
+                </td>
+                <td id="td_content">
+                  문예림
                 </td>
               </tr>
             </table>
