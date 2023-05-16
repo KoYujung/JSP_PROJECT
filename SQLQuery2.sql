@@ -12,20 +12,10 @@ create table BOOK(
    PENCIL char(12) null,
    WNAME char(12) null,
    FPART char(12) null,
-   CATE_ID int not null,
-   primary key(BK_CD),
-   foreign key(CATE_ID) references CATE(CATE_ID)
+   CATE char(12) not null,
+   primary key(BK_CD)
 );
 
-create table CATE(
-	CATE_ID int not null auto_increment,
-	LANG char(12),
-	ECON char(12),
-	COMP char(12),
-	ART char(12),
-	RELI char(12),
-	primary key(CATE_ID)
-);
 create table CHAT(
 	CHAT_ID char(12),
 	SEND_ID char(12),
