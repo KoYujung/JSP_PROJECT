@@ -45,5 +45,7 @@ create table USER(
 );
 create table BOOKMARK(
 	ID char(12),
-	BK_CD char(12)
+	BK_CD char(12),
+	foreign key(ID) references USER(ID),
+	foreign key(BK_CD) references BOOK(BK_CD)
 );
