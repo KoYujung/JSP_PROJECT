@@ -40,7 +40,7 @@
         pstmt.setString(10, request.getParameter("PENCIL"));
         pstmt.setString(11, request.getParameter("WNAME"));
         pstmt.setString(12, request.getParameter("FPART"));
-        pstmt.setString(13, request.getParameter("CATE_ID"));
+        pstmt.setString(13, request.getParameter("CATE"));
 
         int rowCount = pstmt.executeUpdate();        
         if (rowCount == 1) out.println("책 레코드 하나가 성공적으로 삽입 되었습니다.<hr>");
