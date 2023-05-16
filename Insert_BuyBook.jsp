@@ -49,7 +49,7 @@
         if(pstmt != null) pstmt.close();
         if(con != null) con.close();
     }
-	out.println("<meta http-equiv='Refresh' content='1;URL=list.jsp'>");
+	out.println("<meta http-equiv='Refresh' content='1;URL=BookList.html'>");
 %>
 
 <p><hr>
