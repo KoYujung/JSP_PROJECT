@@ -15,37 +15,37 @@
         </header>
         <div class="registerarea">
             <div class="regist-header">
-                <a href="Test.html" id="logo1"><img src="./images/logo1.png" alt=""></a>
+                <a href="Test.html" id="logo1"><img src="logo1.png" alt=""></a>
             </div>
             <div class="reg_form">
-                <form>
+                <form action="registerProcess.jsp" method="post">
                     <ul>
                         <li>
                             <label for="tel">아이디:</label>
-                            <input type="text" class="inp" id="tel">
+                            <input type="text" class="inp" id="Userid">
                         </li>
                         <li>
                             <label for="code">이름:</label>
-                            <input type="text" class="inp" id="code">
+                            <input type="text" class="inp" id="Username">
                         </li>
                         <li class="password">
                             <label for="psw">비밀번호:
                                 <img src="images/close.png" width="24px" alt="">
                             </label>
-                            <input type="password" class="inp" id="psw">
+                            <input type="Password" class="inp" id=UPassword">
                         </li>
                         </li>
                         <li class="repassword">
                             <label for="repsw" ><span>이메일:</span>
                                 <img src="images/close.png" width="24px" alt="">
                             </label>
-                            <input type="password" class="inp" id="repsw">
+                            <input type="text" class="inp" id="Email">
                         </li>
                         <li class="repassword">
                             <label for="repsw" ><span>전화번호:</span>
                                 <img src="images/close.png" width="24px" alt="">
                             </label>
-                            <input type="password" class="inp" id="repsw">
+                            <input type="text" class="inp" id="Phone">
                         </li>
                         <li class="agree">
                             <input type="checkbox">
@@ -53,9 +53,7 @@
                             <a href="#">《중고문고 등록약정과 프라이버시 정책》</a>
                         </li>
                         <div class="buttons">
-                            <button type="submit">
-                                <a href="./login.html">등록완료</a>
-                            </button>
+                            <button type="submit">등록완료</button>
                         </div>
                     </ul>
                 </form>

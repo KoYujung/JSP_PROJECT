@@ -3,25 +3,25 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Login Page</title>
-	<link rel="stylesheet" href="./CSS/login.css">
+	<link rel="stylesheet" href="./css/login.css">
 	<script src="script.js"></script>
 </head>
 <body>
 	<div class="container">
 		<header>
-			<a href="Test.html" id="logo1"><img src="./images/logo1.png" alt="Logo"></a>
+			<a href="Test.html" id="logo1"><img src="logo1.png" alt="Logo"></a>
 		</header>
-		<form>
+		<form action="loginProcess.jsp" method="post">
 			<div class="form-control">
 				<span class="login-icon" ></span>
-				<input type="text" id="Username" name="Username" placeholder="Username" required>
+				<input type="text" id="Userid" name="Userid" placeholder="Userid" required>
 			</div>
 			<div class="form-control">
 				<span class="login-icon" ></span>
-				<input type="Password" id="Password" name="Password" placeholder="Password" required>
+				<input type="Password" id="UPassword" name="UPassword" placeholder="Password" required>
 			</div>
 			<div class="buttons">
-				<button type="submit"><a href="./Test.html">로그인</a></button>
+				<button type="submit">로그인</a></button>
                 <button type="submit"><a href="./register.html">회원가입</a></button>
 			</div>
 		</form>
