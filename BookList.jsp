@@ -1,9 +1,7 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" language="java" %>
 <html>
     <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta charset="UTF-8">
         <title>등록된 (구매)책 목록</title>
         <link rel="stylesheet" href="Test.css">
         <!-- style 시작 -->
@@ -22,6 +20,9 @@
             #tb_item #td_title {
               height: 90px;
               font-size: 56px;
+            }
+            #td_title {
+                text-align: center;
             }
             #td_content {
               width: 60%;
@@ -45,7 +46,6 @@
 <body>
 
 <%@ page import="java.sql.*" %>
-<% request.setCharacterEncoding("euc-kr"); %>
 
 <%
     Connection con = null;
@@ -56,7 +56,7 @@
     int rowCount = 0;
 
     try {
-		Class.forName(driverName);
+      Class.forName(driverName);
         con = DriverManager.getConnection(dbURL, "root", "kbc0924");
         pstmt = con.prepareStatement(sql);
         ResultSet result = pstmt.executeQuery();
@@ -90,28 +90,12 @@
         </div>
         <div id="navbar">
             <ul>
-              <li><a href="Test.html">홈</a></li>
-              <li>
-                <div class="dropdown">
-                  <a class="dropbtn">책 판매</a>
-                  <div class="dropdown-content">
-                    <a href="Sell.html">글 작성</a>
-                    <a href="Sell_detail.html">책 목록</a>
-                  </div>
-                </div>
-              </li>
-              <li>
-                <div class="dropdown">
-                  <p class="dropbtn">책 요청</p>
-                  <div class="dropdown-content">
-                    <a href="Buy.html">글 작성</a>
-                    <a href="Buy_detail.html">책 목록</a>
-                  </div>
-                </div>
-              </li>
-              <li><a href="MyPage.html">마이페이지</a></li>
+            <li><a href="#">홈</a></li>
+            <li><a href="Sell.html">책 판매</a></li>
+            <li><a href="Buy.html">책 요청</a></li>
+            <li><a href="MyPage.html">마이페이지</a></li>
             </ul>
-          </div>
+        </div>
         </nav>
     </header>
     <main>
@@ -124,68 +108,60 @@
         </tr> -->
         <!-- 조회 목록 설정 끝 -->
         <!-- JSP For 문 묶음 시작 -->
-        <tr>
-            <td>
-            <table id="tb_item">
-                <tr>
-                <td id="td_image" rowspan="3">
-                    <img src="./book.jpg"> <!--IMG-->
-                </td>
-                <td id="td_title" colspan="2">
-                    직업과 영성 <!--TITLE-->
-                </td>
-                <td id="td_bookmark" rowspan="3">
-                    <img src="./bookmark_empty.jpg">
-                </td>
-                </tr>
-                <tr>
+        <%
+                while (result.next()) {
+        %>
+            <tr>
                 <td>
-                    저자
+                    <table id="tb_item">
+                        <tr>
+                            <td id="td_image" rowspan="3">
+                                <img src="./book.jpg"> <!--IMG-->
+                            </td>
+                            <td id="td_title" colspan="2">
+                                <%= result.getString(2) %> <!--TITLE-->
+                            </td>
+                            <td id="td_bookmark" rowspan="3">
+                                <img src="./bookmark_empty.jpg">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                저자
+                            </td>
+                            <td id="td_content">
+                                <%= result.getString(3) %> <!--AUTH-->
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                출판사
+                            </td>
+                            <td id="td_content">
+                                <%= result.getString(4) %> <!--PUBL-->
+                            </td>
+                        </tr>
+                    </table>
                 </td>
-                <td id="td_content">
-                    장종현, 김대인, 김진하, 정회현, 최규명, 한만오 <!--AUTH-->
-                </td>
-                </tr>
-                <tr>
-                <td>
-                    출판사 
-                </td>
-                <td id="td_content">
-                    뷰리 <!--PUBL-->
-                </td>
-                </tr>
-            </table>
-            </td>
-        </tr>
+            </tr>
+        <%
+                    rowCount++;
+                }
+                    result.close();        
+            }
+            catch(Exception e) {
+                out.println("MySql 데이터베이스의 BOOK 조회에 문제가 있습니다. <hr>");
+                out.println(e.toString());
+                e.printStackTrace();
+            }
+            finally {
+                if(pstmt != null) pstmt.close();
+                if(con != null) con.close();
+            }
+        %>
         <!-- JSP For 문 묶음 종료 -->
-<%
-    while (result.next()) {
-%>
-    <tr>
-    <!-- IMG,TITLE,AUTH,PUBL -->
-      <td align=center><a href=Buy_detail.html?pno=<%= result.getString("BK_CD") %>><%= result.getString("BK_CD") %></a></td>
-      <td align=center><%= result.getString(8) %></a></td> <!--책 사진-->
-      <td align=center><%= result.getString(2) %></td><!--책 이름-->
-      <td align=center><%= result.getString(3) %></td><!--저자-->
-      <td align=center><%= result.getString(4) %></td><!--출판사-->
-    </tr>
-<%
-    rowCount++;
-      }
-      result.close();        
-      }
-      catch(Exception e) {
-         out.println("MySql 데이터베이스의 BOOK 조회에 문제가 있습니다. <hr>");
-          out.println(e.toString());
-          e.printStackTrace();
-      }
-      finally {
-          if(pstmt != null) pstmt.close();
-          if(con != null) con.close();
-      }
-%>
-</table>
-</main>
+        </table>
+    </main>
 
 <p><hr><font color=blue>
 <%
@@ -195,5 +171,4 @@
     out.println("등록된 도서가 " + rowCount + "권 입니다.");    
 %>
 </font>  
-</body>
-</html>
+</b
