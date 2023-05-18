@@ -1,10 +1,10 @@
-<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" language="java" %>
+<%@ page contentType="text/html; charset=euc-kr" pageEncoding="euc-kr" language="java" %>
 <html>
     <head>
-	<meta charset="UTF-8">
-        <title>Îì±Î°ùÎêú (Íµ¨Îß§)Ï±Ö Î™©Î°ù</title>
+	<meta charset="euc-kr">
+        <title>µÓ∑œµ» (±∏∏≈)√• ∏Ò∑œ</title>
         <link rel="stylesheet" href="Test.css">
-        <!-- style ÏãúÏûë -->
+        <!-- style Ω√¿€ -->
         <style type="text/css">
             #tb_base {
               width: 100%;
@@ -41,7 +41,7 @@
               height: 56px;
             }
         </style>
-        <!-- style Ï¢ÖÎ£å -->
+        <!-- style ¡æ∑· -->
       </head>
 <body>
 
@@ -69,8 +69,8 @@
         <nav>
         <a href="#" id="mark"><img src="mark.png" width="50"></a>
         <div id="login">
-            <a href="login.html">Î°úÍ∑∏Ïù∏</a>
-            <a href="register.html">ÌöåÏõêÍ∞ÄÏûÖ</a>
+            <a href="login.html">∑Œ±◊¿Œ</a>
+            <a href="register.html">»∏ø¯∞°¿‘</a>
         </div>
         <div id="logo" >
             <form action="Search.html" method="get" style="text-align: center;">
@@ -93,40 +93,40 @@
         </div>
         <div id="navbar">
             <ul>
-              <li><a href="Test.html">Ìôà</a></li>
+              <li><a href="Test.html">»®</a></li>
               <li>
                 <div class="dropdown">
-                  <a class="dropbtn">Ï±Ö ÌåêÎß§</a>
+                  <a class="dropbtn">√• ∆«∏≈</a>
                   <div class="dropdown-content">
-                    <a href="Sell.html">Í∏Ä ÏûëÏÑ±</a>
-                    <a href="Sell_detail.html">Ï±Ö Î™©Î°ù</a>
+                    <a href="Sell.html">±€ ¿€º∫</a>
+                    <a href="Sell_detail.html">√• ∏Ò∑œ</a>
                   </div>
                 </div>
               </li>
               <li>
                 <div class="dropdown">
-                  <p class="dropbtn">Ï±Ö ÏöîÏ≤≠</p>
+                  <p class="dropbtn">√• ø‰√ª</p>
                   <div class="dropdown-content">
-                    <a href="Buy.html">Í∏Ä ÏûëÏÑ±</a>
-                    <a href="Buy_detail.html">Ï±Ö Î™©Î°ù</a>
+                    <a href="Buy.html">±€ ¿€º∫</a>
+                    <a href="Buy_detail.html">√• ∏Ò∑œ</a>
                   </div>
                 </div>
               </li>
-              <li><a href="MyPage.html">ÎßàÏù¥ÌéòÏù¥ÏßÄ</a></li>
+              <li><a href="MyPage.html">∏∂¿Ã∆‰¿Ã¡ˆ</a></li>
             </ul>
           </div>
         </nav>
     </header>
     <div style="height: 600px; margin-left: 10%; margin-right: 10%; overflow: auto;"> 
         <table id="tb_base">
-        <!-- Ï°∞Ìöå Î™©Î°ù ÏÑ§Ï†ï ÏãúÏûë -->
+        <!-- ¡∂»∏ ∏Ò∑œ º≥¡§ Ω√¿€ -->
         <!-- <tr>
             <td>
-            ÏÑ§Ï†ï Ï∞Ω
+            º≥¡§ √¢
             </td>
         </tr> -->
-        <!-- Ï°∞Ìöå Î™©Î°ù ÏÑ§Ï†ï ÎÅù -->
-        <!-- JSP For Î¨∏ Î¨∂Ïùå ÏãúÏûë -->
+        <!-- ¡∂»∏ ∏Ò∑œ º≥¡§ ≥° -->
+        <!-- JSP For πÆ π≠¿Ω Ω√¿€ -->
         <%
                 while (result.next()) {
                   sfile = result.getString("IMG");
@@ -153,7 +153,7 @@
                         </tr>
                         <tr>
                             <td>
-                                Ï†ÄÏûê
+                                ¿˙¿⁄
                             </td>
                             <td id="td_content">
                                 <%= result.getString(3) %> <!--AUTH-->
@@ -161,7 +161,7 @@
                         </tr>
                         <tr>
                             <td>
-                                Ï∂úÌåêÏÇ¨
+                                √‚∆«ªÁ
                             </td>
                             <td id="td_content">
                                 <%= result.getString(4) %> <!--PUBL-->
@@ -176,7 +176,7 @@
                     result.close();        
             }
             catch(Exception e) {
-                out.println("MySql Îç∞Ïù¥ÌÑ∞Î≤†Ïù¥Ïä§Ïùò BOOK Ï°∞ÌöåÏóê Î¨∏Ï†úÍ∞Ä ÏûàÏäµÎãàÎã§. <hr>");
+                out.println("MySql µ•¿Ã≈Õ∫£¿ÃΩ∫¿« BOOK ¡∂»∏ø° πÆ¡¶∞° ¿÷Ω¿¥œ¥Ÿ. <hr>");
                 out.println(e.toString());
                 e.printStackTrace();
             }
@@ -185,16 +185,16 @@
                 if(con != null) con.close();
             }
         %>
-        <!-- JSP For Î¨∏ Î¨∂Ïùå Ï¢ÖÎ£å -->
+        <!-- JSP For πÆ π≠¿Ω ¡æ∑· -->
         </table>
     </div>
     <footer>
        <font color=blue>
 <%
     if (rowCount == 0) 
-    out.println("Îì±Î°ùÎêú ÎèÑÏÑúÍ∞Ä ÏóÜÏäµÎãàÎã§.");
+    out.println("µÓ∑œµ» µµº≠∞° æ¯Ω¿¥œ¥Ÿ.");
     else 
-    out.println("Îì±Î°ùÎêú ÎèÑÏÑúÍ∞Ä " + rowCount + "Í∂å ÏûÖÎãàÎã§.");    
+    out.println("µÓ∑œµ» µµº≠∞° " + rowCount + "±« ¿‘¥œ¥Ÿ.");    
 %>
 </font>   
     </footer>
