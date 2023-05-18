@@ -17,11 +17,11 @@
     SQL.append("values (?, ?, ?, ?, ?)");
 
 	String driverName = "org.gjt.mm.mysql.Driver";
-    String dbURL = "jdbc:mysql://localhost:3306/jspi";
+    String dbURL = "jdbc:mysql://localhost:3306/mysql12";
 
     try {
 		Class.forName(driverName);
-        con = DriverManager.getConnection(dbURL, "jspi", "jspteami!1");
+        con = DriverManager.getConnection(dbURL, "root", "kbc0924");
  //       pstmt = con.prepareStatement(sql);
  //       pstmt.executeUpdate();
 
