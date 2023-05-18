@@ -1,10 +1,10 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR" pageEncoding="EUC-KR"%>
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" language="java" %>
 <html>
     <head>
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>등록된 책 목록</title>
+        <title>등록된 (구매)책 목록</title>
         <link rel="stylesheet" href="Test.css">
         <!-- style 시작 -->
         <style type="text/css">
@@ -52,6 +52,8 @@
     PreparedStatement pstmt = null;
     String driverName = "org.gjt.mm.mysql.Driver";
     String dbURL = "jdbc:mysql://localhost:3306/mysql12";
+    String sql = "select * from BOOK";
+    int rowCount = 0;
 
     try {
 		Class.forName(driverName);
@@ -88,12 +90,28 @@
         </div>
         <div id="navbar">
             <ul>
-            <li><a href="#">홈</a></li>
-            <li><a href="Sell.html">책 판매</a></li>
-            <li><a href="Buy.html">책 요청</a></li>
-            <li><a href="MyPage.html">마이페이지</a></li>
+              <li><a href="Test.html">홈</a></li>
+              <li>
+                <div class="dropdown">
+                  <a class="dropbtn">책 판매</a>
+                  <div class="dropdown-content">
+                    <a href="Sell.html">글 작성</a>
+                    <a href="Sell_detail.html">책 목록</a>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="dropdown">
+                  <p class="dropbtn">책 요청</p>
+                  <div class="dropdown-content">
+                    <a href="Buy.html">글 작성</a>
+                    <a href="Buy_detail.html">책 목록</a>
+                  </div>
+                </div>
+              </li>
+              <li><a href="MyPage.html">마이페이지</a></li>
             </ul>
-        </div>
+          </div>
         </nav>
     </header>
     <main>
@@ -111,7 +129,7 @@
             <table id="tb_item">
                 <tr>
                 <td id="td_image" rowspan="3">
-                    <img src="./book.jpg"> <!--책 사진-->
+                    <img src="./book.jpg"> <!--IMG-->
                 </td>
                 <td id="td_title" colspan="2">
                     직업과 영성 <!--TITLE-->
@@ -139,49 +157,17 @@
             </table>
             </td>
         </tr>
-        <tr>
-            <td>
-            <table id="tb_item">
-                <tr>
-                <td id="td_image" rowspan="3">
-                    <img src="./book.jpg">
-                </td>
-                <td id="td_title" colspan="2">
-                    꿩먹고 알먹는 러시아어 첫걸음
-                </td>
-                <td id="td_bookmark" rowspan="3">
-                    <img src="./bookmark_fill.jpg">
-                </td>
-                </tr>
-                <tr>
-                <td>
-                    저자
-                </td>
-                <td id="td_content">
-                    전혜진
-                </td>
-                </tr>
-                <tr>
-                <td>
-                    출판사
-                </td>
-                <td id="td_content">
-                    문예림
-                </td>
-                </tr>
-            </table>
-            </td>
-        </tr>
         <!-- JSP For 문 묶음 종료 -->
 <%
     while (result.next()) {
 %>
     <tr>
-      <td align=center><a href=detail.jsp?pno=<%= result.getString("tno") %>><%= result.getString("tno") %></a></td>
-      <td align=center><a href=detail.jsp?pno=<%= result.getString("tno") %>><%= result.getString(2) %></a></td>
-      <td align=center><%= result.getString(4) %></td>
-      <td align=center><%= result.getString(5) %></td>
-      <td align=center><%= result.getString(7) %></td>
+    <!-- IMG,TITLE,AUTH,PUBL -->
+      <td align=center><a href=Buy_detail.html?pno=<%= result.getString("BK_CD") %>><%= result.getString("BK_CD") %></a></td>
+      <td align=center><%= result.getString(8) %></a></td> <!--책 사진-->
+      <td align=center><%= result.getString(2) %></td><!--책 이름-->
+      <td align=center><%= result.getString(3) %></td><!--저자-->
+      <td align=center><%= result.getString(4) %></td><!--출판사-->
     </tr>
 <%
     rowCount++;
@@ -189,7 +175,7 @@
       result.close();        
       }
       catch(Exception e) {
-         out.println("MySql 데이터베이스 univdb의 student 조회에 문제가 있습니다. <hr>");
+         out.println("MySql 데이터베이스의 BOOK 조회에 문제가 있습니다. <hr>");
           out.println(e.toString());
           e.printStackTrace();
       }

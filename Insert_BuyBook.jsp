@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR" pageEncoding="EUC-KR"%>
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" language="java" %>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
@@ -41,7 +41,7 @@
 
     }
     catch(Exception e) {
-    	out.println("MySql 데이터베이스 jspi의 BOOK 조회에 문제가 있습니다. <hr>");
+    	out.println("MySql 데이터베이스의 BOOK 조회에 문제가 있습니다. <hr>");
         out.println(e.toString());
         e.printStackTrace();
     }
