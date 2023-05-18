@@ -1,7 +1,7 @@
-<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" language="java" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>책 정보 연동 페이지(판매)</title>
 </head>
 <body>
@@ -17,7 +17,7 @@
     SQL.append("values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
 
 	String driverName = "org.gjt.mm.mysql.Driver";
-    String dbURL = "jdbc:mysql://localhost:3306/mysql12";
+    String dbURL = "jdbc:mysql://localhost:3306/mysql12?useUnicode=true&characterEncoding=UTF-8";
 
     try {
 		Class.forName(driverName);
@@ -26,7 +26,9 @@
  //       pstmt.executeUpdate();
 
         pstmt = con.prepareStatement(SQL.toString());
-        pstmt.setString(1, request.getParameter("TITLE"));
+        String parameter = request.getParameter("TITLE");
+        String encodedParameter = new String(parameter.getBytes("ISO-8859-1"), "UTF-8");
+        pstmt.setString(1, encodedParameter);
         pstmt.setString(2, request.getParameter("AUTH"));
         pstmt.setString(3, request.getParameter("PUBL"));
         int fixed = Integer.parseInt(request.getParameter("FIXED"));
@@ -58,6 +60,7 @@
         if(pstmt != null) pstmt.close();
         if(con != null) con.close();
     }
+    out.println("<meta http-equiv='Refresh' content='1;URL=BookList.jsp'>");
 %>
 
 <p><hr>

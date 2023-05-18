@@ -178,15 +178,17 @@
         <!-- JSP For 문 묶음 종료 -->
         </table>
     </div>
+    <br>
     <footer>
-       <font color=blue>
+    <font color=blue style="margin-left: 10%;">
 <%
     if (rowCount == 0) 
     out.println("등록된 도서가 없습니다.");
     else 
-    out.println("등록된 도서가 " + rowCount + "권 입니다.");    
+    out.println("등록된 도서는 총 " + rowCount + "권 입니다.");    
 %>
-</font>   
+    </font>   
     </footer>
 
-</b
+</body>
+</html>
