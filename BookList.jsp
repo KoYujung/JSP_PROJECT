@@ -114,7 +114,7 @@
           </div>
         </nav>
     </header>
-    <main>
+    <div style="height: 600px; margin-left: 10%; margin-right: 10%;overflow: auto"> 
         <table id="tb_base">
         <!-- 조회 목록 설정 시작 -->
         <!-- <tr>
@@ -177,14 +177,16 @@
         %>
         <!-- JSP For 문 묶음 종료 -->
         </table>
-    </main>
-
-<p><hr><font color=blue>
+    </div>
+    <footer>
+       <font color=blue>
 <%
     if (rowCount == 0) 
     out.println("등록된 도서가 없습니다.");
     else 
     out.println("등록된 도서가 " + rowCount + "권 입니다.");    
 %>
-</font>  
+</font>   
+    </footer>
+
 </b
