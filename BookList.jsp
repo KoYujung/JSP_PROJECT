@@ -61,7 +61,6 @@
         pstmt = con.prepareStatement(sql);
         ResultSet result = pstmt.executeQuery();
 %>
-
     <header>
         <nav>
         <a href="#" id="mark"><img src="mark.png" width="50"></a>
@@ -135,7 +134,7 @@
                                 <img src="./book.jpg"> <!--IMG-->
                             </td>
                             <td id="td_title" colspan="2">
-                                <%= result.getString(2) %> <!--TITLE-->
+                              <a href=Sell_detail.jsp?pno=<%= result.getString("BK_CN") %>><%= result.getString(2) %> <!--TITLE-->
                             </td>
                             <td id="td_bookmark" rowspan="3">
                                 <img src="./bookmark_empty.jpg">
