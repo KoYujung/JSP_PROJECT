@@ -1,9 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR" pageEncoding="EUC-KR"%>
 <html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
-<title>데이터베이스 예제 : 테이블 student name으로 조회</title>
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title></title>
+        <link rel="stylesheet" href="Test.css">
+        <link rel="stylesheet" href="book.css">
+      </head>
 <body>
 
 <%@ page import="java.sql.*" %>
@@ -18,8 +22,8 @@
     Connection con = null;
     PreparedStatement pstmt = null;
     String driverName = "org.gjt.mm.mysql.Driver";
-    String dbURL = "jdbc:mysql://localhost:3306/mysql33";
-    String sql = "select * from student where tno = " + pno;
+    String dbURL = "jdbc:mysql://localhost:3306/mysql12";
+    String sql = "select * from BOOK where BK_CD = " + pno;
     int rowCount = 0;
 
     try {
@@ -74,16 +78,13 @@
 </table>
 <br>
 
-<a href="delete.jsp?pno=<%= result.getString("tno") %>">삭제</a>
-<a href="edit.jsp?pno=<%= result.getString("tno") %>">수정</a>
-
 <%
    rowCount++;
     }
     result.close();        
     }
     catch(Exception e) {
-       out.println("MySql 데이터베이스 univdb의 student 조회에 문제가 있습니다. <hr>");
+       out.println("MySql 데이터베이스의 BOOK 조회에 문제가 있습니다. <hr>");
         out.println(e.toString());
         e.printStackTrace();
     }
@@ -96,14 +97,11 @@
 
 <p><hr><font color=blue>
 <%
-   if (rowCount == 0) 
-      out.println("조회된 결과가 없습니다.");
-   else 
-      out.println("조회된 결과가 " + rowCount + "건 입니다.");    
+if (rowCount == 0) 
+    out.println("등록된 도서가 없습니다.");
+else 
+    out.println("등록된 도서가 " + rowCount + "권 입니다.");      
 %>
 </font>
-<br>
-<a href="list.jsp">목록보기</a>
-
 </body>
 </html>

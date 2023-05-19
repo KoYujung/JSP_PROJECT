@@ -2,11 +2,12 @@
     display: flex;
     flex-wrap: wrap;
     /* display: inline-flex */
- /*   justify-content: center; */
+   justify-content: center;
 }
 .item{
     flex-basis: 550px;
-    margin: 10px 10px 10px 10px;
+    /* margin: 10px 10px 10px 10px; */
+    padding-left: 30px;
 }
 .slider{
     width: 413px;

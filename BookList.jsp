@@ -144,7 +144,7 @@
                               <img src="./contents/<%= letfile%> "> <!--IMG-->
                             </td>
                             <td id="td_title" colspan="2">
-                              <a href=Sell_detail.jsp?pno=<%= result.getString("BK_CN") %>><%= result.getString(2) %> <!--TITLE-->
+                              <a href=Sell_detail.jsp?pno=<%= result.getString("BK_CD") %>><%= result.getString(2) %> <!--TITLE-->
                             </td>
                             <td id="td_bookmark" rowspan="3">
                                 <img src="./bookmark_empty.jpg">
@@ -198,4 +198,5 @@
 </font>   
     </footer>
 
-</b
+</body>
+</html>
