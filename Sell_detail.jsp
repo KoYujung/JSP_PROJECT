@@ -13,10 +13,6 @@
 <%@ page import="java.sql.*" %>
 <% request.setCharacterEncoding("euc-kr"); %>
 
-<h2>테이블 student 조회하는 프로그램 </h2>
-<hr><center>
-<h2>학생정보</h2>
-
 <%
     String sno = request.getParameter("pno");
     Connection con = null;
@@ -34,49 +30,93 @@
 
   while (result.next()) {
 %>
-  <table border=1 cellpadding=1>
-  <tr>
-    <th width=50>번호</th>
-    <td align=center><%= result.getString("tno") %></td>
-  </tr>
-  <tr>
-    <th width=50>ID</th>
-    <td align=center><%= result.getString(2) %></td>
-  </tr>
-  <tr>
-    <th width=50>Password</th>
-    <td align=center><%= result.getString(3) %></td>
-  </tr>
-  <tr>
-    <th width=50>이름</th>
-    <td align=center><%= result.getString(4) %></td>
-  </tr>
-  <tr>
-    <th width=50>입학년도</th>
-    <td align=center><%= result.getString(5) %></td>
-  </tr>
-  <tr>
-    <th width=50>학번</th>
-    <td align=center><%= result.getString(6) %></td>
-  </tr>
-  <tr>
-    <th width=50>학과</th>
-    <td align=center><%= result.getString(7) %></td>
-  </tr>
-  <tr>
-    <th width=50>휴대전화</th>
-    <td align=center><%= result.getString(8) %>-<%= result.getString(9) %></td>
-  </tr>
-  <tr>
-    <th width=50>주소</th>
-    <td align=center><%= result.getString(10) %></td>
-  </tr>
-  <tr>
-    <th width=50>이메일</th>
-    <td align=center><%= result.getString(11) %></td>
-  </tr>
-</table>
-<br>
+
+<header>
+    <nav>
+      <a href="#" id="mark"><img src="mark.png" width="50"></a>
+      <div id="login">
+        <a href="login.html">로그인</a>
+        <a href="register.html">회원가입</a>
+      </div>
+      <div id="logo">
+        <a href="#"><img src="logo.png" width="180"></a>
+      </div>
+      <div id="navbar">
+        <ul>
+          <li><a href="Test.html">홈</a></li>
+          <li>
+            <div class="dropdown">
+              <a class="dropbtn">책 판매</a>
+              <div class="dropdown-content">
+                <a href="Sell.html">글 작성</a>
+                <a href="BookList.html">책 목록</a>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="dropdown">
+              <p class="dropbtn">책 요청</p>
+              <div class="dropdown-content">
+                <a href="Buy.html">글 작성</a>
+                <a href="BookList.html">책 목록</a>
+              </div>
+            </div>
+          </li>
+          <li><a href="MyPage.html">마이페이지</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+  <main>
+    <div class="container">
+      <div class="item">
+        <div class="slider">
+          <input type="radio" name="slide" id="slide1" checked>
+          <input type="radio" name="slide" id="slide2">
+          <input type="radio" name="slide" id="slide3">
+          <input type="radio" name="slide" id="slide4">
+          <ul id="imgholder" class="imgs">
+              <li><img class="book_img" src=""></li>
+              <li><img class="book_img" src=""></li>
+              <li><img class="book_img" src=""></li>
+              <li><img class="book_img" src=""></li>
+          </ul>
+          <div class="bullets">
+              <label for="slide1">&nbsp;</label>
+              <label for="slide2">&nbsp;</label>
+              <label for="slide3">&nbsp;</label>
+              <label for="slide4">&nbsp;</label>
+          </div>
+        </div>
+      </div>
+      <div class="item">
+        <div class="info">
+          <p style="color: #ffd700; font-size: 24px;">팝니다 &nbsp;&nbsp;<span style="color: #ff6200; font-size: 24px;">카테고리</span></p></p>
+          <h1 style="font-size: 36px;">책 제목: &nbsp;<%= result.getString(2) %></h1> 
+          <p> 저자:&nbsp; <%= result.getString(3) %><!-- 데이터베이스 연동으로 책 정보 가져오도록 --> &nbsp;
+          정가:&nbsp; <%= result.getString(5) %<!-- 데이터베이스 연동으로 책 정보 가져오도록 -->></p> 
+          <p> 출판사:&nbsp; <%= result.getString(4) %><!-- 데이터베이스 연동으로 책 정보 가져오도록 --> &nbsp;
+          판매가:&nbsp; <%= result.getString(6) %><!-- 데이터베이스 연동으로 책 정보 가져오도록 --></p> 
+          <hr>
+          <p>겉표지 훼손: &nbsp; <%= result.getString(9) %> <!-- 데이터베이스 연동으로 책 정보 가져오도록 --> &nbsp;
+            이름기입: &nbsp; <%= result.getString(12) %></p>
+          <p>연필/ 샤프: &nbsp; <%= result.getString(11) %><!-- 데이터베이스 연동으로 책 정보 가져오도록 --> &nbsp;
+            형광펜/ 볼펜: &nbsp; <%= result.getString(10) %></p>
+          <br>
+          <a href="chat.html" id="chat"><img src="chat.png", width="80%"></a>
+          <p></p>   
+          <div class="info_detail">
+            <p style="text-align: center;"> 책 상세설명</p>
+            <!-- <p style="text-align: center; margin: 15px 15px 15px 15px;">책 관련 설명이 들어갈 예정입니다~~~~
+              오예에ㅔㅔㅔㅔ 할말이 더이상 없음요 복붙 시전! 책 관련 설명이 들어갈 예정입니다~~~~
+              오예에ㅔㅔㅔㅔ 할말이 더이상 없음요 책 관련 설명이 들어갈 예정입니다~~~~
+              오예에ㅔㅔㅔㅔ 할말이 더이상 없음요 --><%= result.getString(7) %>
+            </p>
+            </div>
+        </div>  
+      </div>
+    </div>
+  </main>
 
 <%
    rowCount++;
@@ -94,14 +134,5 @@
     }
 %>
 </center>
-
-<p><hr><font color=blue>
-<%
-if (rowCount == 0) 
-    out.println("등록된 도서가 없습니다.");
-else 
-    out.println("등록된 도서가 " + rowCount + "권 입니다.");      
-%>
-</font>
 </body>
 </html>
