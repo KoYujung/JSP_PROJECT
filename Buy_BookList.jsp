@@ -2,7 +2,7 @@
 <html>
   <head>
 	<meta charset="UTF-8">
-    <title>등록된 (구매)책 목록</title>
+    <title>책 요청 목록</title>
     <link rel="stylesheet" href="Test.css">
     <!-- style 시작 -->
     <style type="text/css">
@@ -11,27 +11,30 @@
         }
         #tb_item {
           background-color: #FFF1DC;
+          border-radius: 10px;
           width: 100%;
-        }
-        #td_image {
-          width: 100px;
-          height: 150px;
+          padding: 20px;
         }
         #tb_item #td_title {
-          height: 90px;
+          padding: 10px;
+          height: 50px;
           font-size: 56px;
         }
-        #td_title {
+        /* #td_title {
             text-align: center;
+        } */
+        #td_title > a {
+          color: black;
         }
         #td_content {
-          width: 60%;
+          width: 92%;
           text-align: start;
+          color: #3A98B9;
         }
-        #td_bookmark {
+        /* #td_bookmark {
           width: 100px;
           height: 150px;
-        }
+        } */
         #search_bar {
           width: 300px;
           height: 50px;
@@ -137,9 +140,9 @@
           <td id="td_title" colspan="2">
             <a href=Buy_detail.jsp?pno=<%= result.getString("BUY_ID") %>><%= result.getString(2) %> <!--TITLE-->
           </td>
-          <td id="td_bookmark" rowspan="3">
+          <!-- <td id="td_bookmark" rowspan="3">
               <img src="./bookmark_empty.jpg">
-          </td>
+          </td> -->
       </tr>
       <tr>
         <td>
