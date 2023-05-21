@@ -99,7 +99,7 @@
           <a class="dropbtn">책 판매</a>
           <div class="dropdown-content">
             <a href="Sell.html">글 작성</a>
-            <a href="Sell_detail.html">책 목록</a>
+            <a href="BookList.jsp">책 목록</a>
           </div>
         </div>
       </li>
@@ -108,7 +108,7 @@
           <p class="dropbtn">책 요청</p>
           <div class="dropdown-content">
             <a href="Buy.html">글 작성</a>
-            <a href="Buy_detail.html">책 목록</a>
+            <a href="BookList.jsp">책 목록</a>
           </div>
         </div>
       </li>
