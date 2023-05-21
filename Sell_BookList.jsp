@@ -1,7 +1,7 @@
-<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" language="java" %>
+﻿<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" language="java" %>
 <html>
   <head>
-	<meta charset="UTF-8">
+    <meta charset="UTF-8">
     <title>등록된 (구매)책 목록</title>
     <link rel="stylesheet" href="Test.css">
     <!-- style 시작 -->
@@ -53,7 +53,7 @@
     PreparedStatement pstmt = null;
     String driverName = "org.gjt.mm.mysql.Driver";
     String dbURL = "jdbc:mysql://localhost:3306/mysql12";
-    String sql = "select * from BOOK";
+    String sql = "select * from SELL_BOOK";
     String sfile = "";
     String letfile = "";
     int rowCount = 0;
@@ -145,7 +145,7 @@
             <img src="./contents/<%= letfile%> "> <!--IMG-->
           </td>
           <td id="td_title" colspan="2">
-            <a href=Sell_detail.jsp?pno=<%= result.getString("BK_CD") %>><%= result.getString(2) %> <!--TITLE-->
+            <a href=Sell_detail.jsp?pno=<%= result.getString("SELL_ID") %>><%= result.getString(2) %> <!--TITLE-->
           </td>
           <td id="td_bookmark" rowspan="3">
               <img src="./bookmark_empty.jpg">

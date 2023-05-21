@@ -1,7 +1,7 @@
-<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" language="java" %>
+﻿<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" language="java" %>
 <html>
     <head>
-        <meta charset="UTF-8">
+      <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title></title>
@@ -19,7 +19,7 @@
     PreparedStatement pstmt = null;
     String driverName = "org.gjt.mm.mysql.Driver";
     String dbURL = "jdbc:mysql://localhost:3306/mysql12";
-    String sql = "select * from BOOK where BK_CD = " + pno;
+    String sql = "select * from SELL_BOOK where SELL_ID = " + pno;
     int rowCount = 0;
 
     try {
@@ -49,7 +49,7 @@
               <a class="dropbtn">책 판매</a>
               <div class="dropdown-content">
                 <a href="Sell.html">글 작성</a>
-                <a href="BookList.html">책 목록</a>
+                <a href="Sell_BookList.jsp">책 목록</a>
               </div>
             </div>
           </li>
@@ -58,7 +58,7 @@
               <p class="dropbtn">책 요청</p>
               <div class="dropdown-content">
                 <a href="Buy.html">글 작성</a>
-                <a href="BookList.html">책 목록</a>
+                <a href="Buy_BookList.jsp">책 목록</a>
               </div>
             </div>
           </li>
@@ -100,8 +100,22 @@
           <hr>
           <p>겉표지 훼손: &nbsp; <%= result.getString(9) %>&nbsp;
             이름기입: &nbsp; <%= result.getString(12) %></p>
-          <p>연필/ 샤프: &nbsp; <%= result.getString(11) %>&nbsp;
-            형광펜/ 볼펜: &nbsp; <%= result.getString(10) %></p>
+          <p>연필/ 샤프: &nbsp; <%
+              String pencshar = result.getString(11);
+              if (pencshar == null || pencshar == "") {
+                out.println("없음");
+              } else {
+                out.println(pencshar);
+              }
+            %>&nbsp;
+            형광펜/ 볼펜: &nbsp; <%
+              String highball = result.getString(10);
+              if (highball == null || highball == "") {
+                out.println("없음");
+              } else {
+                out.println(highball);
+              }
+            %></p>
           <br>
           <a href="chat.html" id="chat"><img src="chat.png", width="80%"></a>
           <p></p>   
