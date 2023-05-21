@@ -1,5 +1,15 @@
-create table BOOK(
-   BK_CD int not null auto_increment,
+create table BUY_BOOK(
+   BUY_ID int not null auto_increment,
+   TITLE char(50),
+   AUTH char(30),
+   PUBL char(30),
+   HOPE char(30),
+   CATE char(12) not null,
+   primary key(BUY_ID)
+);
+
+create table SELL_BOOK(
+   SELL_ID int not null auto_increment,
    TITLE char(50),
    AUTH char(30),
    PUBL char(30),
@@ -13,7 +23,7 @@ create table BOOK(
    WNAME char(12) null,
    FPART char(12) null,
    CATE char(12) not null,
-   primary key(BK_CD)
+   primary key(SELL_ID)
 );
 
 create table CHAT(
