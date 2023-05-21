@@ -53,7 +53,7 @@
     PreparedStatement pstmt = null;
     String driverName = "org.gjt.mm.mysql.Driver";
     String dbURL = "jdbc:mysql://localhost:3306/mysql12";
-    String sql = "select * from BOOK";
+    String sql = "select * from BUY_BOOK";
     String sfile = "";
     String letfile = "";
     int rowCount = 0;
@@ -145,7 +145,7 @@
             <img src="./contents/<%= letfile%> "> <!--IMG-->
           </td>
           <td id="td_title" colspan="2">
-            <a href=Buy_detail.jsp?pno=<%= result.getString("BK_CD") %>><%= result.getString(2) %> <!--TITLE-->
+            <a href=Buy_detail.jsp?pno=<%= result.getString("BUY_ID") %>><%= result.getString(2) %> <!--TITLE-->
           </td>
           <td id="td_bookmark" rowspan="3">
               <img src="./bookmark_empty.jpg">
@@ -176,7 +176,7 @@
     result.close();        
     }
     catch(Exception e) {
-      out.println("MySql 데이터베이스의 BOOK 조회에 문제가 있습니다. <hr>");
+      out.println("MySql 데이터베이스의 BUY_BOOK 조회에 문제가 있습니다. <hr>");
         out.println(e.toString());
         e.printStackTrace();
     }

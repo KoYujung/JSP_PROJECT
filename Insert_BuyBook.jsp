@@ -13,7 +13,7 @@
     Connection con = null;
     PreparedStatement pstmt = null;
 	Statement stmt = null;
-    StringBuffer SQL = new StringBuffer("insert into BOOK(TITLE, AUTH, PUBL, SELL, CATE) "); 
+    StringBuffer SQL = new StringBuffer("insert into BUY_BOOK(TITLE, AUTH, PUBL, HOPE, CATE) "); 
     SQL.append("values (?, ?, ?, ?, ?)");
 
 	String driverName = "org.gjt.mm.mysql.Driver";
@@ -29,8 +29,8 @@
         pstmt.setString(1, request.getParameter("TITLE"));
         pstmt.setString(2, request.getParameter("AUTH"));
         pstmt.setString(3, request.getParameter("PUBL"));
-        int sell = Integer.parseInt(request.getParameter("SELL"));
-		pstmt.setInt(4, sell);
+        int hope = Integer.parseInt(request.getParameter("HOPE"));
+		pstmt.setInt(4, hope);
         pstmt.setString(5, request.getParameter("CATE"));
 
         int rowCount = pstmt.executeUpdate();        
@@ -41,7 +41,7 @@
 
     }
     catch(Exception e) {
-    	out.println("MySql 데이터베이스의 BOOK 조회에 문제가 있습니다. <hr>");
+    	out.println("MySql 데이터베이스의 BUY_BOOK 조회에 문제가 있습니다. <hr>");
         out.println(e.toString());
         e.printStackTrace();
     }
@@ -49,7 +49,7 @@
         if(pstmt != null) pstmt.close();
         if(con != null) con.close();
     }
-	out.println("<meta http-equiv='Refresh' content='1;URL=BookList.html'>");
+	out.println("<meta http-equiv='Refresh' content='1;URL=Buy_BookList.jsp'>");
 %>
 
 <p><hr>

@@ -19,7 +19,7 @@
     PreparedStatement pstmt = null;
     String driverName = "org.gjt.mm.mysql.Driver";
     String dbURL = "jdbc:mysql://localhost:3306/mysql12";
-    String sql = "select * from BOOK where BK_CD = " + pno;
+    String sql = "select * from BUY_BOOK where BOOK_ID = " + pno;
     int rowCount = 0;
 
     try {
@@ -49,7 +49,7 @@
               <a class="dropbtn">책 판매</a>
               <div class="dropdown-content">
                 <a href="Sell.html">글 작성</a>
-                <a href="BookList.jsp">책 목록</a>
+                <a href="Sell_BookList.jsp">책 목록</a>
               </div>
             </div>
           </li>
@@ -58,7 +58,7 @@
               <p class="dropbtn">책 요청</p>
               <div class="dropdown-content">
                 <a href="Buy.html">글 작성</a>
-                <a href="BookList.jsp">책 목록</a>
+                <a href="Buy_BookList.jsp">책 목록</a>
               </div>
             </div>
           </li>
@@ -91,10 +91,10 @@
       </div>
       <div class="item">
         <div class="info">
-          <p style="color: #ffd700; font-size: 24px;">삽니다 &nbsp;&nbsp;<span style="color: #ff6200; font-size: 24px;">카테고리 : &nbsp;<%= result.getString(14) %></span></p></p>
+          <p style="color: #ffd700; font-size: 24px;">삽니다 &nbsp;&nbsp;<span style="color: #ff6200; font-size: 24px;">카테고리 : &nbsp;<%= result.getString(6) %></span></p></p>
           <h1 style="font-size: 36px;">책 제목: &nbsp;<%= result.getString(2) %></h1> 
           <p> 저자:&nbsp; <%= result.getString(3) %></p> 
-          <p> 희망가:&nbsp; <%= result.getString(6) %></p>
+          <p> 희망가:&nbsp; <%= result.getString(5) %></p>
           <p> 출판사:&nbsp; <%= result.getString(4) %></p> 
           <hr>
           <br>
@@ -110,7 +110,7 @@
     result.close();        
     }
     catch(Exception e) {
-       out.println("MySql 데이터베이스의 BOOK 조회에 문제가 있습니다. <hr>");
+       out.println("MySql 데이터베이스의 BUY_BOOK 조회에 문제가 있습니다. <hr>");
         out.println(e.toString());
         e.printStackTrace();
     }
