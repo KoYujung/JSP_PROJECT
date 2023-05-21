@@ -4,7 +4,6 @@
 	<meta charset="UTF-8">
     <title>등록된 (구매)책 목록</title>
     <link rel="stylesheet" href="Test.css">
-    <!-- style 시작 -->
     <style type="text/css">
         #tb_base {
           width: 100%;
@@ -41,7 +40,6 @@
           height: 56px;
         }
     </style>
-    <!-- style 종료 -->
   </head>
 <body>
 
@@ -119,14 +117,6 @@
 </header>
 <div style="height: 600px; margin-left: 10%; margin-right: 10%; overflow: auto;"> 
   <table id="tb_base">
-  <!-- 조회 목록 설정 시작 -->
-  <!-- <tr>
-      <td>
-      설정 창
-      </td>
-  </tr> -->
-  <!-- 조회 목록 설정 끝 -->
-  <!-- JSP For 문 묶음 시작 -->
   <%
     while (result.next()) {
       sfile = result.getString("IMG");
@@ -142,10 +132,10 @@
         <tr>
           <td id="td_image" rowspan="3">
             <%= result.getString("IMG") %><br>
-            <img src="./contents/<%= letfile%> "> <!--IMG-->
+            <img src="./contents/<%= letfile%> ">
           </td>
           <td id="td_title" colspan="2">
-            <a href=Sell_detail.jsp?pno=<%= result.getString("BK_CD") %>><%= result.getString(2) %> <!--TITLE-->
+            <a href=Sell_detail.jsp?pno=<%= result.getString("BK_CD") %>><%= result.getString(2) %>
           </td>
           <td id="td_bookmark" rowspan="3">
               <img src="./bookmark_empty.jpg">
@@ -156,7 +146,7 @@
             저자
         </td>
         <td id="td_content">
-            <%= result.getString(3) %> <!--AUTH-->
+            <%= result.getString(3) %>
         </td>
       </tr>
       <tr>
@@ -164,7 +154,7 @@
             출판사
         </td>
         <td id="td_content">
-            <%= result.getString(4) %> <!--PUBL-->
+            <%= result.getString(4) %>
         </td>
         </tr>
       </table>
@@ -185,7 +175,6 @@
         if(con != null) con.close();
     }
 %>
-  <!-- JSP For 문 묶음 종료 -->
   </table>
 </div>
 <footer>

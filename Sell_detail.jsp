@@ -106,7 +106,7 @@
           <a href="chat.html" id="chat"><img src="chat.png", width="80%"></a>
           <p></p>   
           <div class="info_detail">
-            <p style="text-align: center;"> 책 상세설명</p>
+            <p style="text-align: center;">책 상세설명</p>
             <p style="text-align: center; margin: 15px 15px 15px 15px;"><%= result.getString(7) %></p>
           </div>
         </div>  
