@@ -129,21 +129,11 @@
   <!-- JSP For 문 묶음 시작 -->
   <%
     while (result.next()) {
-      sfile = result.getString("IMG");
-      if (sfile == null || sfile == "") {
-        letfile = "noimg.jpg";
-      } else {
-        letfile = java.net.URLEncoder.encode(sfile, "euc-kr");
-      }
   %>
   <tr>
     <td>
       <table id="tb_item">
         <tr>
-          <td id="td_image" rowspan="3">
-            <%= result.getString("IMG") %><br>
-            <img src="./contents/<%= letfile%> "> <!--IMG-->
-          </td>
           <td id="td_title" colspan="2">
             <a href=Buy_detail.jsp?pno=<%= result.getString("BUY_ID") %>><%= result.getString(2) %> <!--TITLE-->
           </td>
@@ -188,7 +178,7 @@
   <!-- JSP For 문 묶음 종료 -->
   </table>
 </div>
-<footer>
+<footer style="margin-left: 10%;">
 <font color=blue>
 <%
 if (rowCount == 0) 

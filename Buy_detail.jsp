@@ -19,7 +19,7 @@
     PreparedStatement pstmt = null;
     String driverName = "org.gjt.mm.mysql.Driver";
     String dbURL = "jdbc:mysql://localhost:3306/mysql12";
-    String sql = "select * from BUY_BOOK where BOOK_ID = " + pno;
+    String sql = "select * from BUY_BOOK where BUY_ID = " + pno;
     int rowCount = 0;
 
     try {
@@ -69,26 +69,6 @@
 </header>
   <main>
     <div class="container">
-      <div class="item">
-        <div class="slider">
-          <input type="radio" name="slide" id="slide1" checked>
-          <input type="radio" name="slide" id="slide2">
-          <input type="radio" name="slide" id="slide3">
-          <input type="radio" name="slide" id="slide4">
-          <ul id="imgholder" class="imgs">
-              <li><img class="book_img" src=""></li>
-              <li><img class="book_img" src=""></li>
-              <li><img class="book_img" src=""></li>
-              <li><img class="book_img" src=""></li>
-          </ul>
-          <div class="bullets">
-              <label for="slide1">&nbsp;</label>
-              <label for="slide2">&nbsp;</label>
-              <label for="slide3">&nbsp;</label>
-              <label for="slide4">&nbsp;</label>
-          </div>
-        </div>
-      </div>
       <div class="item">
         <div class="info">
           <p style="color: #ffd700; font-size: 24px;">삽니다 &nbsp;&nbsp;<span style="color: #ff6200; font-size: 24px;">카테고리 : &nbsp;<%= result.getString(6) %></span></p></p>
