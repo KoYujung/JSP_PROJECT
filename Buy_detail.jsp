@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR" pageEncoding="EUC-KR"%>
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" language="java" %>
 <html>
     <head>
         <meta charset="UTF-8">
@@ -14,7 +14,7 @@
 <% request.setCharacterEncoding("euc-kr"); %>
 
 <%
-    String sno = request.getParameter("pno");
+    String pno = request.getParameter("pno");
     Connection con = null;
     PreparedStatement pstmt = null;
     String driverName = "org.gjt.mm.mysql.Driver";
@@ -93,9 +93,9 @@
         <div class="info">
           <p style="color: #ffd700; font-size: 24px;">삽니다 &nbsp;&nbsp;<span style="color: #ff6200; font-size: 24px;">카테고리 : &nbsp;<%= result.getString(14) %></span></p></p>
           <h1 style="font-size: 36px;">책 제목: &nbsp;<%= result.getString(2) %></h1> 
-          <p> 저자:&nbsp; <%= result.getString(3) %><!-- 데이터베이스 연동으로 책 정보 가져오도록 --></p> 
-          <p> 희망가:&nbsp; <%= result.getString(6) %><!-- 데이터베이스 연동으로 책 정보 가져오도록 --></p>
-          <p> 출판사:&nbsp; <%= result.getString(4) %><!-- 데이터베이스 연동으로 책 정보 가져오도록 --></p> 
+          <p> 저자:&nbsp; <%= result.getString(3) %></p> 
+          <p> 희망가:&nbsp; <%= result.getString(6) %></p>
+          <p> 출판사:&nbsp; <%= result.getString(4) %></p> 
           <hr>
           <br>
           <a href="chat.html" id="chat"><img src="chat.png", width="550"></a>
