@@ -37,8 +37,9 @@
         } */
         #search_bar {
           width: 300px;
-          height: 50px;
-          font-size: x-large;
+          height: 40px;
+          /* font-size: x-large; */
+          font-size: 120%;
         }
         #search_button {
           height: 56px;
@@ -186,12 +187,12 @@
   </table>
 </div>
 <footer style="margin-left: 10%;">
-<font color=blue>
+<font color=black>
 <%
 if (rowCount == 0) 
-out.println("등록된 도서가 없습니다.");
+out.println("등록된 요청도서가 없습니다.");
 else 
-out.println("등록된 도서가 " + rowCount + "권 입니다.");    
+out.println("등록된 요청도서는 " + rowCount + "권 입니다.");    
 %>
 </font>   
 </footer>
