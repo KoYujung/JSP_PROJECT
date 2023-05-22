@@ -1,19 +1,19 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+﻿<%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="UTF-8">
 <title>책 정보 연동 페이지(판매)</title>
 </head>
 <body>
 
 <%@ page import="java.sql.*" %>
-<% request.setCharacterEncoding("euc-kr"); %>
+<% request.setCharacterEncoding("utf-8"); %>
 
 <%
     Connection con = null;
     PreparedStatement pstmt = null;
 	Statement stmt = null;
-    StringBuffer SQL = new StringBuffer("insert into BOOK(TITLE, AUTH, PUBL, FIXED, SELL, DET, IMG, COVER, HIGHPEN, PENCIL, WNAME, FPART, CATE) "); 
+    StringBuffer SQL = new StringBuffer("insert into SELL_BOOK(TITLE, AUTH, PUBL, FIXED, SELL, DET, IMG, COVER, HIGHPEN, PENCIL, WNAME, FPART, CATE) "); 
     SQL.append("values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
 
 	String driverName = "org.gjt.mm.mysql.Driver";
@@ -26,9 +26,13 @@
  //       pstmt.executeUpdate();
 
         pstmt = con.prepareStatement(SQL.toString());
-        String parameter = request.getParameter("TITLE");
-        String encodedParameter = new String(parameter.getBytes("ISO-8859-1"), "UTF-8");
-        pstmt.setString(1, encodedParameter);
+        // String parameter = request.getParameter("TITLE");
+        // String encodedParameter = new String(parameter.getBytes("ISO-8859-1"), "UTF-8");
+        // pstmt.setString(1, encodedParameter);
+        // out.println(request.getParameter("TITLE"));
+        // out.println(parameter);
+        // out.println(encodedParameter);
+        pstmt.setString(1, request.getParameter("TITLE"));
         pstmt.setString(2, request.getParameter("AUTH"));
         pstmt.setString(3, request.getParameter("PUBL"));
         int fixed = Integer.parseInt(request.getParameter("FIXED"));
@@ -60,7 +64,7 @@
         if(pstmt != null) pstmt.close();
         if(con != null) con.close();
     }
-    out.println("<meta http-equiv='Refresh' content='1;URL=BookList.jsp'>");
+    out.println("<meta http-equiv='Refresh' content='1;URL=Sell_BookList.jsp'>");
 %>
 
 <p><hr>
