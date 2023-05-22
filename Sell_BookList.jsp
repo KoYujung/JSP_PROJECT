@@ -11,34 +11,45 @@
         }
         #tb_item {
           background-color: #FFF1DC;
+          border-radius: 10px;
           width: 100%;
+          padding: 20px;
         }
         #td_image {
           width: 100px;
           height: 150px;
         }
         #tb_item #td_title {
-          height: 90px;
+          padding: 10px;
+          height: 50px;
           font-size: 56px;
         }
-        #td_title {
+        /* #td_title {
             text-align: center;
+        } */
+        #td_title > a {
+          color: black;
         }
         #td_content {
-          width: 60%;
+          width: 85%;
           text-align: start;
+          color: #3A98B9;
         }
-        #td_bookmark {
+        /* #td_bookmark {
           width: 100px;
           height: 150px;
-        }
+        } */
         #search_bar {
           width: 300px;
-          height: 50px;
-          font-size: x-large;
+          height: 40px;
+          /* font-size: x-large; */
+          font-size: 120%;
         }
         #search_button {
           height: 56px;
+          border: none;
+          background: url("search_icon.png") no-repeat;
+          cursor: pointer;
         }
     </style>
     <!-- style 종료 -->
@@ -81,9 +92,9 @@
             <a href="#"><img src="logo.png" width="180" style="text-align: center;"></a>
         </td>
         <td style="width: 30%;">
-            <input id="search_bar" type="text" name="search" style="position: relative; top: -7px;">
+            <input id="search_bar" type="text" name="search" placeholder="책 제목으로 검색해주세요" style="position: relative; top: -7px;">
             <button id="search_button" type="submit" style="position: relative; top: 5px;">
-            <img src="search_icon.png">
+            <img src="search_icon.png" width="30px">
             </button>
         </td>
         <td style="width: 10%;">&nbsp;</td>
@@ -187,14 +198,14 @@
 %>
   <!-- JSP For 문 묶음 종료 -->
   </table>
-</div>
-<footer>
-<font color=blue>
+</div><br>
+<footer style="margin-left: 10%;">
+<font color=black>
 <%
 if (rowCount == 0) 
-out.println("등록된 도서가 없습니다.");
+out.println("등록된 판매도서가  없습니다.");
 else 
-out.println("등록된 도서가 " + rowCount + "권 입니다.");    
+out.println("등록된 판매도서는 총 " + rowCount + "권 입니다.");    
 %>
 </font>   
 </footer>

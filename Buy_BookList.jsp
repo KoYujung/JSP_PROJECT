@@ -39,7 +39,7 @@
           width: 300px;
           height: 40px;
           /* font-size: x-large; */
-          font-size: 120%;
+          font-size: 110%;
         }
         #search_button {
           height: 56px;
@@ -88,7 +88,7 @@
             <a href="#"><img src="logo.png" width="180" style="text-align: center;"></a>
         </td>
         <td style="width: 30%;">
-            <input id="search_bar" type="text" name="search" placeholder="책 검색" style="position: relative; top: -7px;">
+            <input id="search_bar" type="text" name="search" placeholder="책 제목으로 검색해주세요" style="position: relative; top: -7px;">
             <button id="search_button" type="submit" style="position: relative; top: 5px;">
               <img src="search_icon.png" width="30px">
             </button>
@@ -185,14 +185,14 @@
 %>
   <!-- JSP For 문 묶음 종료 -->
   </table>
-</div>
+</div><br>
 <footer style="margin-left: 10%;">
 <font color=black>
 <%
 if (rowCount == 0) 
 out.println("등록된 요청도서가 없습니다.");
 else 
-out.println("등록된 요청도서는 " + rowCount + "권 입니다.");    
+out.println("등록된 요청도서는 총 " + rowCount + "권 입니다.");    
 %>
 </font>   
 </footer>
