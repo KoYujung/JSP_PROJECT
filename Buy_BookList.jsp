@@ -86,7 +86,7 @@
         <td style="width: 30%;">
             <input id="search_bar" type="text" name="search" style="position: relative; top: -7px;">
             <button id="search_button" type="submit" style="position: relative; top: 5px;">
-            <img src="search_icon.png">
+              <img src="search_icon.png" width="30px">
             </button>
         </td>
         <td style="width: 10%;">&nbsp;</td>
