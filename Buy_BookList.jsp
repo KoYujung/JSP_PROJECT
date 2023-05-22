@@ -42,6 +42,9 @@
         }
         #search_button {
           height: 56px;
+          border: none;
+          background: url("search_icon.png") no-repeat;
+          cursor: pointer;
         }
     </style>
     <!-- style 종료 -->
@@ -84,7 +87,7 @@
             <a href="#"><img src="logo.png" width="180" style="text-align: center;"></a>
         </td>
         <td style="width: 30%;">
-            <input id="search_bar" type="text" name="search" style="position: relative; top: -7px;">
+            <input id="search_bar" type="text" name="search" placeholder="책 검색" style="position: relative; top: -7px;">
             <button id="search_button" type="submit" style="position: relative; top: 5px;">
               <img src="search_icon.png" width="30px">
             </button>
