@@ -195,7 +195,7 @@
     result.close();        
     }
     catch(Exception e) {
-      out.println("MySql 데이터베이스의 BOOK 조회에 문제가 있습니다. <hr>");
+      out.println("MySql 데이터베이스의 SELL_BOOK 조회에 문제가 있습니다. <hr>");
         out.println(e.toString());
         e.printStackTrace();
     }

@@ -1,10 +1,11 @@
-<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" language="java" %>
+<%@ page contentType="text/html; charset=euc-kr" pageEncoding="euc-kr" language="java" %>
+<%@ page import="java.net.URLEncoder" %>
 <html>
   <head>
 	<meta charset="UTF-8">
-    <title>ì±… ìš”ì²­ ëª©ë¡</title>
+    <title>Ã¥ ¿äÃ» ¸ñ·Ï</title>
     <link rel="stylesheet" href="Test.css">
-    <!-- style ì‹œì‘ -->
+    <!-- style ½ÃÀÛ -->
     <style type="text/css">
         #tb_base {
           width: 100%;
@@ -48,7 +49,7 @@
           cursor: pointer;
         }
     </style>
-    <!-- style ì¢…ë£Œ -->
+    <!-- style Á¾·á -->
   </head>
 <body>
 <%@ page import="java.sql.*" %>
@@ -65,6 +66,7 @@
     if (tsearch == null || tsearch == "") {
       // Do Nothing
     } else {
+      tsearch = URLEncoder.encode(tsearch, "euc-kr");
       sql = sql + " where TITLE like '%" + tsearch + "%'";
     }
     
@@ -82,8 +84,8 @@
   <nav>
   <a href="#" id="mark"><img src="mark.png" width="50"></a>
   <div id="login">
-      <a href="login.html">ë¡œê·¸ì¸</a>
-      <a href="register.html">íšŒì›ê°€ì…</a>
+      <a href="login.html">·Î±×ÀÎ</a>
+      <a href="register.html">È¸¿ø°¡ÀÔ</a>
   </div>
   <div id="logo">
     <form action="Buy_BookList.jsp" method="get" style="text-align: center;">
@@ -94,7 +96,7 @@
             <a href="#"><img src="logo.png" width="180" style="text-align: center;"></a>
         </td>
         <td style="width: 30%;">
-            <input id="search_bar" type="text" name="search" placeholder="ì±… ì œëª©ìœ¼ë¡œ ê²€ìƒ‰í•´ì£¼ì„¸ìš”" style="position: relative; top: -7px;">
+            <input id="search_bar" type="text" name="search" placeholder="Ã¥ Á¦¸ñÀ¸·Î °Ë»öÇØÁÖ¼¼¿ä" style="position: relative; top: -7px;">
             <button id="search_button" type="submit" style="position: relative; top: 5px;">
               <img src="search_icon.png" width="30px">
             </button>
@@ -106,40 +108,40 @@
   </div>
   <div id="navbar">
     <ul>
-      <li><a href="Test.html">í™ˆ</a></li>
+      <li><a href="Test.html">È¨</a></li>
       <li>
         <div class="dropdown">
-          <a class="dropbtn">ì±… íŒë§¤</a>
+          <a class="dropbtn">Ã¥ ÆÇ¸Å</a>
           <div class="dropdown-content">
-            <a href="Sell.html">ê¸€ ì‘ì„±</a>
-            <a href="Sell_BookList.jsp">ì±… ëª©ë¡</a>
+            <a href="Sell.html">±Û ÀÛ¼º</a>
+            <a href="Sell_BookList.jsp">Ã¥ ¸ñ·Ï</a>
           </div>
         </div>
       </li>
       <li>
         <div class="dropdown">
-          <p class="dropbtn">ì±… ìš”ì²­</p>
+          <p class="dropbtn">Ã¥ ¿äÃ»</p>
           <div class="dropdown-content">
-            <a href="Buy.html">ê¸€ ì‘ì„±</a>
-            <a href="Buy_BookList.jsp">ì±… ëª©ë¡</a>
+            <a href="Buy.html">±Û ÀÛ¼º</a>
+            <a href="Buy_BookList.jsp">Ã¥ ¸ñ·Ï</a>
           </div>
         </div>
       </li>
-      <li><a href="MyPage.html">ë§ˆì´í˜ì´ì§€</a></li>
+      <li><a href="MyPage.html">¸¶ÀÌÆäÀÌÁö</a></li>
     </ul>
   </div>
   </nav>
 </header>
 <div style="height: 600px; margin-left: 10%; margin-right: 10%; overflow: auto;"> 
   <table id="tb_base">
-  <!-- ì¡°íšŒ ëª©ë¡ ì„¤ì • ì‹œì‘ -->
+  <!-- Á¶È¸ ¸ñ·Ï ¼³Á¤ ½ÃÀÛ -->
   <!-- <tr>
       <td>
-      ì„¤ì • ì°½
+      ¼³Á¤ Ã¢
       </td>
   </tr> -->
-  <!-- ì¡°íšŒ ëª©ë¡ ì„¤ì • ë -->
-  <!-- JSP For ë¬¸ ë¬¶ìŒ ì‹œì‘ -->
+  <!-- Á¶È¸ ¸ñ·Ï ¼³Á¤ ³¡ -->
+  <!-- JSP For ¹® ¹­À½ ½ÃÀÛ -->
   <%
     while (result.next()) {
   %>
@@ -156,7 +158,7 @@
       </tr>
       <tr>
         <td>
-            ì €ì
+            ÀúÀÚ
         </td>
         <td id="td_content">
             <%= result.getString(3) %> <!--AUTH-->
@@ -164,7 +166,7 @@
       </tr>
       <tr>
         <td>
-            ì¶œíŒì‚¬
+            ÃâÆÇ»ç
         </td>
         <td id="td_content">
             <%= result.getString(4) %> <!--PUBL-->
@@ -179,7 +181,7 @@
     result.close();        
     }
     catch(Exception e) {
-      out.println("MySql ë°ì´í„°ë² ì´ìŠ¤ì˜ BUY_BOOK ì¡°íšŒì— ë¬¸ì œê°€ ìˆìŠµë‹ˆë‹¤. <hr>");
+      out.println("MySql µ¥ÀÌÅÍº£ÀÌ½ºÀÇ BUY_BOOK Á¶È¸¿¡ ¹®Á¦°¡ ÀÖ½À´Ï´Ù. <hr>");
         out.println(e.toString());
         e.printStackTrace();
     }
@@ -188,16 +190,16 @@
         if(con != null) con.close();
     }
 %>
-  <!-- JSP For ë¬¸ ë¬¶ìŒ ì¢…ë£Œ -->
+  <!-- JSP For ¹® ¹­À½ Á¾·á -->
   </table>
 </div><br>
 <footer style="margin-left: 10%;">
 <font color=black>
 <%
 if (rowCount == 0) 
-out.println("ë“±ë¡ëœ ìš”ì²­ë„ì„œê°€ ì—†ìŠµë‹ˆë‹¤.");
+out.println("µî·ÏµÈ ¿äÃ»µµ¼­°¡ ¾ø½À´Ï´Ù.");
 else 
-out.println("ë“±ë¡ëœ ìš”ì²­ë„ì„œëŠ” ì´ " + rowCount + "ê¶Œ ì…ë‹ˆë‹¤.");    
+out.println("µî·ÏµÈ ¿äÃ»µµ¼­´Â ÃÑ " + rowCount + "±Ç ÀÔ´Ï´Ù.");    
 %>
 </font>   
 </footer>
