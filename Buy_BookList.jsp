@@ -59,6 +59,14 @@
     String driverName = "org.gjt.mm.mysql.Driver";
     String dbURL = "jdbc:mysql://localhost:3306/mysql12";
     String sql = "select * from BUY_BOOK";
+
+    String tsearch = request.getParameter("search");
+    if(tsearch == null || tsearch == "") {
+
+    } else {
+      sql = sql + "where TITLE like '%" + tsearch + "%'";
+    }
+    
     String sfile = "";
     String letfile = "";
     int rowCount = 0;
