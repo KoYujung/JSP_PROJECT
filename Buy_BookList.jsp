@@ -51,10 +51,8 @@
     <!-- style 종료 -->
   </head>
 <body>
-
 <%@ page import="java.sql.*" %>
 <% request.setCharacterEncoding("euc-kr"); %>
-
 <%
     Connection con = null;
     PreparedStatement pstmt = null;
@@ -64,14 +62,12 @@
     String sfile = "";
     String letfile = "";
     int rowCount = 0;
-
     try {
       Class.forName(driverName);
         con = DriverManager.getConnection(dbURL, "root", "kbc0924");
         pstmt = con.prepareStatement(sql);
         ResultSet result = pstmt.executeQuery();
 %>
-
 <header>
   <nav>
   <a href="#" id="mark"><img src="mark.png" width="50"></a>
