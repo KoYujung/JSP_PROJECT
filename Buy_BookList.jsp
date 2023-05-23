@@ -53,6 +53,7 @@
 <body>
 <%@ page import="java.sql.*" %>
 <% request.setCharacterEncoding("euc-kr"); %>
+
 <%
     Connection con = null;
     PreparedStatement pstmt = null;
@@ -61,15 +62,16 @@
     String sql = "select * from BUY_BOOK";
 
     String tsearch = request.getParameter("search");
-    if(tsearch == null || tsearch == "") {
-
+    if (tsearch == null || tsearch == "") {
+      // Do Nothing
     } else {
-      sql = sql + "where TITLE like '%" + tsearch + "%'";
+      sql = sql + " where TITLE like '%" + tsearch + "%'";
     }
     
     String sfile = "";
     String letfile = "";
     int rowCount = 0;
+
     try {
       Class.forName(driverName);
         con = DriverManager.getConnection(dbURL, "root", "kbc0924");
