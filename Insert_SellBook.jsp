@@ -8,6 +8,8 @@
 
 <%@ page import="java.sql.*" %>
 <% request.setCharacterEncoding("utf-8"); %>
+<%@ page import="com.oreilly.servlet.MultipartRequest" %>
+<%@ page import="com.oreilly.servlet.multipart.DefaultFileRenamePolicy" %>
 
 <%
     Connection con = null;
@@ -40,7 +42,18 @@
         int sell = Integer.parseInt(request.getParameter("SELL"));
 		pstmt.setInt(5, sell);
         pstmt.setString(6, request.getParameter("DET"));
-        pstmt.setString(7, request.getParameter("IMG"));
+
+        String encoding "euc-kr";
+        int sizeLimit 10 * 1024 * 1024;
+        String relativeDirectory = "contents/book_imgs";
+        ServletContext context getServletContext();
+        String realDirectory = context.getRealPath(relativeDirectory);
+        MultipartRequest multi = new MultipartRequest(request,realDirectory, sizeLimit, encoding);
+
+        String img = multi.getOriginalFileName("IMG");
+        pstmt.setString(7,img)
+
+        <!-- pstmt.setString(7, request.getParameter("IMG")); -->
         pstmt.setString(8, request.getParameter("COVER"));
         pstmt.setString(9, request.getParameter("HIGHPEN"));
         pstmt.setString(10, request.getParameter("PENCIL"));

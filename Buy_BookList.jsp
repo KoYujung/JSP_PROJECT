@@ -80,7 +80,7 @@
       <a href="register.html">회원가입</a>
   </div>
   <div id="logo">
-    <form action="Search.html" method="get" style="text-align: center;">
+    <form action="Buy_BookList.jsp" method="get" style="text-align: center;">
     <table style="border: none; width: 100%; text-align: center;">
         <tr>
         <td style="width: 40%;">&nbsp;</td>
