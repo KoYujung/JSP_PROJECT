@@ -1,4 +1,4 @@
-﻿<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" language="java" %>
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" language="java" %>
 <html>
   <head>
     <meta charset="UTF-8">
@@ -65,6 +65,14 @@
     String driverName = "org.gjt.mm.mysql.Driver";
     String dbURL = "jdbc:mysql://localhost:3306/mysql12";
     String sql = "select * from SELL_BOOK";
+
+    String tsearch = request.getParameter("search");
+    if (tsearch == null || tsearch == "") {
+      // Do Nothing
+    } else {
+      sql = sql + " where TITLE like '%" + tsearch + "%'";
+    }
+    
     String sfile = "";
     String letfile = "";
     int rowCount = 0;
@@ -85,10 +93,10 @@
   </div>
   <div id="logo">
     <form action="Sell_BookList.jsp" method="get" style="text-align: center;">
-    <table style="border: none; width: 100%; text-align: center;">
+      <table style="border: none; width: 100%; text-align: center;">
         <tr>
-        <td style="width: 40%;">&nbsp;</td>
-        <td style="width: 20%;">
+          <td style="width: 40%;">&nbsp;</td>
+          <td style="width: 20%;">
             <a href="#"><img src="logo.png" width="180" style="text-align: center;"></a>
         </td>
         <td style="width: 30%;">
@@ -153,7 +161,7 @@
         <tr>
           <td id="td_image" rowspan="3">
             <%= result.getString("IMG") %><br>
-            <img src="./contents/<%= letfile%> "> <!--IMG-->
+            <img src="./contents/<%= letfile %> "> <!--IMG-->
           </td>
           <td id="td_title" colspan="2">
             <a href=Sell_detail.jsp?pno=<%= result.getString("SELL_ID") %>><%= result.getString(2) %> <!--TITLE-->
