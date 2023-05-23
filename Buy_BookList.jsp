@@ -124,7 +124,6 @@
   </div>
   </nav>
 </header>
-<center><h2>책 요청 목록</h2></center>
 <div style="height: 600px; margin-left: 10%; margin-right: 10%; overflow: auto;"> 
   <table id="tb_base">
   <!-- 조회 목록 설정 시작 -->

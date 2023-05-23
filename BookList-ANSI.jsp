@@ -2,9 +2,9 @@
 <html>
     <head>
 	<meta charset="euc-kr">
-        <title>등록된 (구매)책 목록</title>
+        <title>???? (????)? ???</title>
         <link rel="stylesheet" href="Test.css">
-        <!-- style 시작 -->
+        <!-- style ???? -->
         <style type="text/css">
             #tb_base {
               width: 100%;
@@ -41,7 +41,7 @@
               height: 56px;
             }
         </style>
-        <!-- style 종료 -->
+        <!-- style ???? -->
       </head>
 <body>
 
@@ -53,7 +53,7 @@
     PreparedStatement pstmt = null;
     String driverName = "org.gjt.mm.mysql.Driver";
     String dbURL = "jdbc:mysql://localhost:3306/mysql12";
-    String sql = "select * from BOOK";
+    String sql = "select * from SELL_BOOK";
     String sfile = "";
     String letfile = "";
     int rowCount = 0;
@@ -69,8 +69,8 @@
         <nav>
         <a href="#" id="mark"><img src="mark.png" width="50"></a>
         <div id="login">
-            <a href="login.html">로그인</a>
-            <a href="register.html">회원가입</a>
+            <a href="login.html">?α???</a>
+            <a href="register.html">???????</a>
         </div>
         <div id="logo" >
             <form action="Search.html" method="get" style="text-align: center;">
@@ -93,40 +93,40 @@
         </div>
         <div id="navbar">
             <ul>
-              <li><a href="Test.html">홈</a></li>
+              <li><a href="Test.html">?</a></li>
               <li>
                 <div class="dropdown">
-                  <a class="dropbtn">책 판매</a>
+                  <a class="dropbtn">? ???</a>
                   <div class="dropdown-content">
-                    <a href="Sell.html">글 작성</a>
-                    <a href="Sell_detail.html">책 목록</a>
+                    <a href="Sell.html">?? ???</a>
+                    <a href="Sell_detail.html">? ???</a>
                   </div>
                 </div>
               </li>
               <li>
                 <div class="dropdown">
-                  <p class="dropbtn">책 요청</p>
+                  <p class="dropbtn">? ???</p>
                   <div class="dropdown-content">
-                    <a href="Buy.html">글 작성</a>
-                    <a href="Buy_detail.html">책 목록</a>
+                    <a href="Buy.html">?? ???</a>
+                    <a href="Buy_detail.html">? ???</a>
                   </div>
                 </div>
               </li>
-              <li><a href="MyPage.html">마이페이지</a></li>
+              <li><a href="MyPage.html">??????????</a></li>
             </ul>
           </div>
         </nav>
     </header>
     <div style="height: 600px; margin-left: 10%; margin-right: 10%; overflow: auto;"> 
         <table id="tb_base">
-        <!-- 조회 목록 설정 시작 -->
+        <!-- ??? ??? ???? ???? -->
         <!-- <tr>
             <td>
-            설정 창
+            ???? ?
             </td>
         </tr> -->
-        <!-- 조회 목록 설정 끝 -->
-        <!-- JSP For 문 묶음 시작 -->
+        <!-- ??? ??? ???? ?? -->
+        <!-- JSP For ?? ???? ???? -->
         <%
                 while (result.next()) {
                   sfile = result.getString("IMG");
@@ -153,7 +153,7 @@
                         </tr>
                         <tr>
                             <td>
-                                저자
+                                ????
                             </td>
                             <td id="td_content">
                                 <%= result.getString(3) %> <!--AUTH-->
@@ -161,7 +161,7 @@
                         </tr>
                         <tr>
                             <td>
-                                출판사
+                                ?????
                             </td>
                             <td id="td_content">
                                 <%= result.getString(4) %> <!--PUBL-->
@@ -176,7 +176,7 @@
                     result.close();        
             }
             catch(Exception e) {
-                out.println("MySql 데이터베이스의 BOOK 조회에 문제가 있습니다. <hr>");
+                out.println("MySql ???????????? BOOK ????? ?????? ??????. <hr>");
                 out.println(e.toString());
                 e.printStackTrace();
             }
@@ -185,16 +185,16 @@
                 if(con != null) con.close();
             }
         %>
-        <!-- JSP For 문 묶음 종료 -->
+        <!-- JSP For ?? ???? ???? -->
         </table>
     </div>
     <footer>
        <font color=blue>
 <%
     if (rowCount == 0) 
-    out.println("등록된 도서가 없습니다.");
+    out.println("???? ?????? ???????.");
     else 
-    out.println("등록된 도서가 " + rowCount + "권 입니다.");    
+    out.println("???? ?????? " + rowCount + "?? ????.");    
 %>
 </font>   
     </footer>

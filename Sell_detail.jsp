@@ -70,7 +70,8 @@
   <main>
     <div class="container">
       <div class="item">
-        <div class="slider">
+        <img class="book_img" src="Book_Img.jpg">
+        <!-- <div class="slider">
           <input type="radio" name="slide" id="slide1" checked>
           <input type="radio" name="slide" id="slide2">
           <input type="radio" name="slide" id="slide3">
@@ -87,7 +88,7 @@
               <label for="slide3">&nbsp;</label>
               <label for="slide4">&nbsp;</label>
           </div>
-        </div>
+        </div> -->
       </div>
       <div class="item">
         <div class="info">
