@@ -2,7 +2,7 @@
 <%@ page import="java.net.URLEncoder" %>
 <html>
   <head>
-	<meta charset="UTF-8">
+	<meta charset="euc-kr">
     <title>책 요청 목록</title>
     <link rel="stylesheet" href="Test.css">
     <!-- style 시작 -->
