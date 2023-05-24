@@ -66,7 +66,7 @@
     if (tsearch == null || tsearch == "") {
       // Do Nothing
     } else {
-      tsearch = URLEncoder.encode(tsearch, "euc-kr");
+      // tsearch = URLEncoder.encode(tsearch, "euc-kr");
       sql = sql + " where TITLE like '%" + tsearch + "%'";
     }
     
@@ -88,7 +88,7 @@
       <a href="register.html">회원가입</a>
   </div>
   <div id="logo">
-    <form action="Buy_BookList.jsp" method="get" style="text-align: center;">
+    <form accept-charset="euc-kr" action="Buy_BookList.jsp" method="get" style="text-align: center;">
     <table style="border: none; width: 100%; text-align: center;">
         <tr>
         <td style="width: 40%;">&nbsp;</td>
