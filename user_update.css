@@ -1,0 +1,29 @@
+.buttons{
+    width: 320px;
+	padding: 15px;
+	background-color: #5fa8d3;
+	border: none;
+	color: #333;
+	border-radius: 5px;
+}
+
+li{
+    margin: 20px 0px;
+    text-align: center;
+}
+li::marker{
+    content: none;
+}
+.inp{
+    width: 238px;
+    height: 34px;
+    border: 1px solid #ccc;
+    margin-left: 10px;
+}
+label {
+    display: inline-block;
+    width: 100px;
+    height: 30px;
+    line-height: 30px;
+    text-align: right;
+}
