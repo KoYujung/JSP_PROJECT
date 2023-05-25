@@ -1,47 +1,70 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
-<%@ page import="java.sql.*" %>
-//<% request.setCharacterEncoding("UTF-8"); %>
-<%
-    // 데이터베이스 연결 정보 설정
-    String dbURL = "jdbc:mysql://localhost:3306/jsp12";
+<html>
+<head>
+<meta charset="UTF-8">
+<title>회원정보 수정 페이지</title>
+</head>
+<body>
 
-    // 데이터베이스 연결
-    Connection conn = null;
-    PreparedStatement pstmt = null;
-    try {
-        Class.forName("com.mysql.jdbc.Driver");
-        conn = DriverManager.getConnection(dbURL, "root", "kbc0924");
 
-        // 회원 정보를 데이터베이스에 저장하는 쿼리 실행
-        StringBuffer SQL = new StringBuffer("insert into Users(Userid, Username, UPassword, Email, Phone) "); 
-
+    <%@ page import="java.sql.*" %>
+    <%
+        request.setCharacterEncoding("UTF-8"); // 요청 데이터의 인코딩 설정
+    
+        // 폼에서 전달된 회원가입 정보 가져오기
+        String userID = request.getParameter("ID");
+        String name = request.getParameter("UNAME");
+        String password = request.getParameter("UPASS");
+        String email = request.getParameter("UEMAIL");
+        String phoneNumber = request.getParameter("UTELL");
+    
+        Connection conn = null;
+        PreparedStatement pstmt = null;
+        Statement stmt = null;
+    
+        String driverName = "org.gjt.mm.mysql.Driver";
+        String dbURL = "jdbc:mysql://localhost:3306/mysql12";
+    
         try {
-            String Username    = request.getParameter("Username");
-
+            // 데이터베이스 연결
             Class.forName(driverName);
-            con = DriverManager.getConnection(dbURL, dbID, dbPW);
-
-            pstmt = con.prepareStatement(SQL.toString());
-            //삽입할 레코드 데이터 입력
-            pstmt.setString(1, request.getParameter("Userid"));
-            pstmt.setString(2, request.getParameter("Username"));
-            pstmt.setString(3, request.getParameter("UPassword"));
-            pstmt.setString(4, request.getParameter("Email"));
-            pstmt.setString(5, request.getParameter("Phone"));
-
-            int rowCount = pstmt.executeUpdate();        
-            //if (rowCount == 1) out.println("회원정보가 수정 되었습니다.");
-
-            //다시 학생 조회
-            stmt = con.createStatement();
-            //else out.println("레코드 삽입에 문제가 있습니다.");
-            
+            conn = DriverManager.getConnection(dbURL, "root", "kbc0924");
+    
+            // 회원 등록을 위한 쿼리 실행
+            String query = "UPDATE USER SET UPASS=?, UEMAIL=?, UTELL=? where ID = ?, UNAME = ? ";
+            pstmt = conn.prepareStatement(query);
+            pstmt.setString(1, userID);
+            pstmt.setString(2, name);
+            pstmt.setString(3, password);
+            pstmt.setString(4, email);
+            pstmt.setString(5, phoneNumber);
+            pstmt.executeUpdate();
+    
+            // 회원 등록 성공
+            out.println("회원정보가 수정 되었습니다");
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            // 사용한 리소스 해제
+            if (pstmt != null) {
+                try {
+                    pstmt.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
+            if (conn != null) {
+                try {
+                    conn.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
         }
-    } catch (Exception e) {
-        e.printStackTrace();
-    } finally {
-        if(pstmt != null) pstmt.close();
-        if(conn != null) conn.close();
-    }
-    out.println("<meta http-equiv='Refresh' content='1;URL=MyPage.html'>");
-%>
+        out.println("<meta http-equiv='Refresh' content='1;URL=MyPage.html'>");
+    %>
+    
+    <p><hr>
+    
+    </body>
+    </html>
