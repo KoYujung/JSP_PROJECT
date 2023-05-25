@@ -1,52 +1,76 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>로그인 처리 페이지</title>
+</head>
+<body>
+
 <%@ page import="java.sql.*" %>
 <%
-    // 데이터베이스 연결 정보 설정
-    String dbURL = "jdbc:mysql://localhost:3306/jsp12";
-    String dbUsername = "root";
-    String dbPassword = "kbc0924";
+    request.setCharacterEncoding("UTF-8"); // 요청 데이터의 인코딩 설정
 
-    // 폼으로부터 전달된 로그인 정보 수집
-    String UPASS = request.getParameter("ID");
-    String UPASS = request.getParameter("UPASS");
+    // 폼에서 전달된 사용자 아이디와 비밀번호 가져오기
+    String userID = request.getParameter("ID");
+    String password = request.getParameter("UPASS");
 
-    // 데이터베이스 연결
     Connection conn = null;
     PreparedStatement pstmt = null;
     ResultSet rs = null;
-    try {
-        Class.forName("com.mysql.jdbc.Driver");
-        conn = DriverManager.getConnection(dbURL, dbUsername, dbPassword);
 
-        // 입력된 아이디와 비밀번호로 회원 조회 쿼리 실행
-        String query = "SELECT * FROM Users WHERE ID = ? AND UPASS = ?";
+    String driverName = "org.gjt.mm.mysql.Driver";
+    String dbURL = "jdbc:mysql://localhost:3306/mysql12";
+
+    try {
+        // 데이터베이스 연결
+        Class.forName(driverName);
+        conn = DriverManager.getConnection(dbURL, "root", "kbc0924");
+
+        // 사용자 인증을 위한 쿼리 실행
+        String query = "SELECT * FROM USER WHERE ID=? AND UPASS=?";
         pstmt = conn.prepareStatement(query);
-        pstmt.setString(1, ID);
-        pstmt.setString(2, UPASS);
+        pstmt.setString(1, userID);
+        pstmt.setString(2, password);
         rs = pstmt.executeQuery();
 
-        // 회원 인증 성공 시 로그인 세션 생성
         if (rs.next()) {
-            String name = rs.getString("Username");
-            // 로그인 세션 생성
-            session.setAttribute("ID", ID);
-            session.setAttribute("UPASS", UPASS);
-            response.sendRedirect("Test.html"); // 로그인 성공 후 이동할 페이지
+            // 로그인 성공
+            out.println("로그인 성공!");
+            out.println("<meta http-equiv='Refresh' content='1;URL=Test.html'>");
         } else {
-            // 인증 실패 시 로그인 페이지로 이동 또는 오류 처리
-            response.sendRedirect("login.html"); // 로그인 실패 시 이동할 페이지
+            // 로그인 실패
+            out.println("로그인 실패!");
+            out.println("<meta http-equiv='Refresh' content='1;URL=login.html'>");
         }
     } catch (Exception e) {
         e.printStackTrace();
     } finally {
-        try {
-            if (rs != null) rs.close();
-            if (pstmt != null) pstmt.close();
-            if (conn != null) conn.close();
-        } catch (SQLException e) {
-            e.printStackTrace();
+        // 사용한 리소스 해제
+        if (rs != null) {
+            try {
+                rs.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+        if (pstmt != null) {
+            try {
+                pstmt.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+        if (conn != null) {
+            try {
+                conn.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
         }
     }
 %>
 
-create table User
+<p><hr>
+
+</body>
+</html>
