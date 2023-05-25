@@ -36,7 +36,8 @@ create table USER(
 	ID char(20) not null primary key,
 	UNAME char(20),
 	UPASS char(20),
-	TELL char(20)
+   UEMAIL char(20),
+	UTELL char(20)
 );
 create table BOOKMARK(
 	ID char(12),

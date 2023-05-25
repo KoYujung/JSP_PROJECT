@@ -77,29 +77,29 @@
                         <ul>
                             <li>
                                 <label for="tel">아이디:</label>
-                                <input type="text" class="inp" id="tel" name="tel">
+                                <input type="text" class="inp" id="tel" name="ID">
                             </li>
                             <li>
                                 <label for="code">이름:</label>
-                                <input type="text" class="inp" id="code" name="code">
+                                <input type="text" class="inp" id="code" name="UNAME">
                             </li>
                             <li class="password">
                                 <label for="psw">비밀번호:
                                     <img src="images/close.png" width="24px" alt="">
                                 </label>
-                                <input type="password" class="inp" id="psw" name="psw">
+                                <input type="password" class="inp" id="psw" name="UPASS">
                             </li>
                             <li class="repassword">
                                 <label for="repsw" ><span>이메일:</span>
                                     <img src="images/close.png" width="24px" alt="">
                                 </label>
-                                <input type="password" class="inp" id="repsw" name="repsw">
+                                <input type="password" class="inp" id="repsw" name="UEMAIL">
                             </li>
                             <li class="repassword">
                                 <label for="repsw" ><span>전화번호:</span>
                                     <img src="images/close.png" width="24px" alt="">
                                 </label>
-                                <input type="password" class="inp" id="repsw" name="repsw">
+                                <input type="password" class="inp" id="repsw" name="UTELL">
                             </li>
                             <li class="agree">
                                 <input type="checkbox">
