@@ -20,6 +20,8 @@
     String driverName = "org.gjt.mm.mysql.Driver";
     String dbURL = "jdbc:mysql://localhost:3306/mysql12";
     String sql = "select * from SELL_BOOK where SELL_ID = " + pno;
+    String sfile = "";
+    String letfile = "";
     int rowCount = 0;
 
     try {
@@ -67,10 +69,18 @@
       </div>
     </nav>
   </header>
+  <%
+    sfile = result.getString("IMG");
+    if (sfile == null || sfile == "") {
+      letfile = "noimg.jpg";
+    } else {
+      letfile = java.net.URLEncoder.encode(sfile, "euc-kr");
+    }
+  %>
   <main>
     <div class="container">
       <div class="item">
-        <img class="book_img" src="Book_Img.jpg">
+        <img class="book_img" src="./contents/<%= letfile %> ">
         <!-- <div class="slider">
           <input type="radio" name="slide" id="slide1" checked>
           <input type="radio" name="slide" id="slide2">
