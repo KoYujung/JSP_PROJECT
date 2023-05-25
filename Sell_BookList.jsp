@@ -72,6 +72,8 @@
     } else {
       sql = sql + " where TITLE like '%" + tsearch + "%'";
     }
+
+    sql = sql + " order by SELL_ID desc";
     
     String sfile = "";
     String letfile = "";
@@ -160,7 +162,7 @@
       <table id="tb_item">
         <tr>
           <td id="td_image" rowspan="3">
-            <%= result.getString("IMG") %><br>
+            <!-- <%= result.getString("IMG") %><br> -->
             <img src="./contents/<%= letfile %> "> <!--IMG-->
           </td>
           <td id="td_title" colspan="2">

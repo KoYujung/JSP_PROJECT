@@ -1,4 +1,10 @@
 ﻿<%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
+
+<%@ page import = "com.oreilly.servlet.MultipartRequest" %>
+<%@ page import = "com.oreilly.servlet.multipart.DefaultFileRenamePolicy" %>
+<%@ page import = "java.util.*" %>
+<%@ page import = "java.io.*" %>
+
 <html>
 <head>
 <meta charset="UTF-8">
@@ -8,8 +14,6 @@
 
 <%@ page import="java.sql.*" %>
 <% request.setCharacterEncoding("utf-8"); %>
-<%@ page import="com.oreilly.servlet.MultipartRequest" %>
-<%@ page import="com.oreilly.servlet.multipart.DefaultFileRenamePolicy" %>
 
 <%
     Connection con = null;
@@ -22,6 +26,15 @@
     String dbURL = "jdbc:mysql://localhost:3306/mysql12?useUnicode=true&characterEncoding=UTF-8";
 
     try {
+        String encoding    = "euc-kr";
+		int sizeLimit = 10 * 1024 * 1024; 
+		String relativeDirectory = "contents/";
+		ServletContext context = getServletContext();
+		String realDirectory = context.getRealPath(relativeDirectory);
+		MultipartRequest multi = new MultipartRequest(request, realDirectory, sizeLimit, encoding, new DefaultFileRenamePolicy());
+		// String name = multi.getParameter("fname");
+		String my_image = multi.getFilesystemName("IMG");
+
 		Class.forName(driverName);
         con = DriverManager.getConnection(dbURL, "root", "kbc0924");
  //       pstmt = con.prepareStatement(sql);
@@ -34,32 +47,21 @@
         // out.println(request.getParameter("TITLE"));
         // out.println(parameter);
         // out.println(encodedParameter);
-        pstmt.setString(1, request.getParameter("TITLE"));
-        pstmt.setString(2, request.getParameter("AUTH"));
-        pstmt.setString(3, request.getParameter("PUBL"));
-        int fixed = Integer.parseInt(request.getParameter("FIXED"));
+        pstmt.setString(1, multi.getParameter("TITLE"));
+        pstmt.setString(2, multi.getParameter("AUTH"));
+        pstmt.setString(3, multi.getParameter("PUBL"));
+        int fixed = Integer.parseInt(multi.getParameter("FIXED"));
 		pstmt.setInt(4, fixed);
-        int sell = Integer.parseInt(request.getParameter("SELL"));
+        int sell = Integer.parseInt(multi.getParameter("SELL"));
 		pstmt.setInt(5, sell);
-        pstmt.setString(6, request.getParameter("DET"));
-
-        String encoding "euc-kr";
-        int sizeLimit 10 * 1024 * 1024;
-        String relativeDirectory = "contents/book_imgs";
-        ServletContext context getServletContext();
-        String realDirectory = context.getRealPath(relativeDirectory);
-        MultipartRequest multi = new MultipartRequest(request,realDirectory, sizeLimit, encoding);
-
-        String img = multi.getOriginalFileName("IMG");
-        pstmt.setString(7,img)
-
-        <!-- pstmt.setString(7, request.getParameter("IMG")); -->
-        pstmt.setString(8, request.getParameter("COVER"));
-        pstmt.setString(9, request.getParameter("HIGHPEN"));
-        pstmt.setString(10, request.getParameter("PENCIL"));
-        pstmt.setString(11, request.getParameter("WNAME"));
-        pstmt.setString(12, request.getParameter("FPART"));
-        pstmt.setString(13, request.getParameter("CATE"));
+        pstmt.setString(6, multi.getParameter("DET"));
+        pstmt.setString(7, my_image);
+        pstmt.setString(8, multi.getParameter("COVER"));
+        pstmt.setString(9, multi.getParameter("HIGHPEN"));
+        pstmt.setString(10, multi.getParameter("PENCIL"));
+        pstmt.setString(11, multi.getParameter("WNAME"));
+        pstmt.setString(12, multi.getParameter("FPART"));
+        pstmt.setString(13, multi.getParameter("CATE"));
 
         int rowCount = pstmt.executeUpdate();        
         if (rowCount == 1) out.println("책 레코드 하나가 성공적으로 삽입 되었습니다.<hr>");
