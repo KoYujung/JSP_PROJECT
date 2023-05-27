@@ -36,7 +36,12 @@
         if (rs.next()) {
             // 로그인 성공
             out.println("로그인 성공!");
-            out.println("<meta http-equiv='Refresh' content='1;URL=Test.html'>");
+
+            // 세션에 아이디 저장
+            HttpSession sessionObj = request.getSession(); // 변수 이름 수정
+            sessionObj.setAttribute("userID", userID); // 변수 이름 수정
+
+            out.println("<meta http-equiv='Refresh' content='1;URL=MyPage.jsp'>");
         } else {
             // 로그인 실패
             out.println("로그인 실패!");
