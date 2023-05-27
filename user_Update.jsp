@@ -31,7 +31,7 @@
             conn = DriverManager.getConnection(dbURL, "root", "kbc0924");
     
             // 회원 등록을 위한 쿼리 실행
-            String query = "UPDATE USER SET UPASS=?, UEMAIL=?, UTELL=? where ID = ?, UNAME = ? ";
+            String query = "UPDATE USER SET UPASS=?, UEMAIL=?, UTELL=? WHERE ID=? AND UNAME=?";
             pstmt = conn.prepareStatement(query);
             pstmt.setString(1, password);
             pstmt.setString(2, email);
@@ -62,10 +62,8 @@
                 }
             }
         }
-        out.println("<meta http-equiv='Refresh' content='1;URL=MyPage.html'>");
     %>
-    
+
+    <meta http-equiv='Refresh' content='1;URL=MyPage.html'>
     <p><hr>
     
-    </body>
-    </html>
