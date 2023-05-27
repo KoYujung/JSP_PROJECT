@@ -74,7 +74,7 @@
             <a href="login.html">로그인</a>
             <a href="register.html">회원가입</a>
           <% } else { %>
-            <span><%= userID %></span>
+            <!-- <span><%= userID %></span> -->
             <a href="logout.jsp">로그아웃</a>
           <% } %>
         </div>
@@ -114,7 +114,7 @@
       <% if(userID == null) { %>
         <p>로그인이 필요합니다.</p>
       <% } else { %>
-        <p>안녕하세요, <%= uname %>님</p>
+        <h1>안녕하세요, <span style="color: #3A98B9;"><%= uname %></span>님</h1>
       <% } %>
     </div>
     <hr>
