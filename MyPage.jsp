@@ -119,7 +119,6 @@
     </div>
     <hr>
     <div id="myProBody">
-      <button><a href="#">쪽지함</a></button>
       <button><a href="#">내가 쓴 글보기</a></button>
       <button><a href="user_Update.html">개인정보 수정</a></button>
     </div>
