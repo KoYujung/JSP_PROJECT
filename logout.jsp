@@ -12,6 +12,6 @@
 <html>
     <p>로그아웃 되었습니다.</p>
 <%
-    out.println("<meta http-equiv='Refresh' content='1;URL=Buy.html'>");
+    out.println("<meta http-equiv='Refresh' content='1;URL=Buy.jsp'>");
 %>
 </html>

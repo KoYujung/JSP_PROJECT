@@ -86,9 +86,9 @@
             <li><a href="Test.html">홈</a></li>
             <li>
               <div class="dropdown">
-                <p class="dropbtn">책 판매</p>
+                <a class="dropbtn">책 판매</a>
                 <div class="dropdown-content">
-                  <a href="Sell.html">글 작성</a>
+                  <a href="Sell.jsp">글 작성</a>
                   <a href="#">책 목록</a>
                 </div>
               </div>
@@ -97,7 +97,7 @@
               <div class="dropdown">
                 <p class="dropbtn">책 요청</p>
                 <div class="dropdown-content">
-                  <a href="Buy.html">글 작성</a>
+                  <a href="Buy.jsp">글 작성</a>
                   <a href="#">책 목록</a>
                 </div>
               </div>
