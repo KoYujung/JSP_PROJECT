@@ -33,15 +33,16 @@
             // 회원 등록을 위한 쿼리 실행
             String query = "UPDATE USER SET UPASS=?, UEMAIL=?, UTELL=? where ID = ?, UNAME = ? ";
             pstmt = conn.prepareStatement(query);
-            pstmt.setString(1, userID);
-            pstmt.setString(2, name);
-            pstmt.setString(3, password);
-            pstmt.setString(4, email);
-            pstmt.setString(5, phoneNumber);
+            pstmt.setString(1, password);
+            pstmt.setString(2, email);
+            pstmt.setString(3, phoneNumber);
+            pstmt.setString(4, userID);
+            pstmt.setString(5, name);
             pstmt.executeUpdate();
     
             // 회원 등록 성공
             out.println("회원정보가 수정 되었습니다");
+            
         } catch (Exception e) {
             e.printStackTrace();
         } finally {
