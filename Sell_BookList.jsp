@@ -59,9 +59,9 @@
 <html>
   <head>
     <meta charset="euc-kr">
-    <title>µî·ÏµÈ (±¸¸Å)Ã¥ ¸ñ·Ï</title>
+    <title>ì±… íŒë§¤ ëª©ë¡</title>
     <link rel="stylesheet" href="Test.css">
-    <!-- style ½ÃÀÛ -->
+    <!-- style ï¿½ï¿½ï¿½ï¿½ -->
     <style type="text/css">
         #tb_base {
           width: 100%;
@@ -109,7 +109,7 @@
           cursor: pointer;
         }
     </style>
-    <!-- style Á¾·á -->
+    <!-- style ï¿½ï¿½ï¿½ï¿½ -->
   </head>
 <body>
 
@@ -148,11 +148,11 @@
   <a href="#" id="mark"><img src="mark.png" width="50"></a>
   <div id="login">
     <% if(userID == null) { %>
-      <a href="login.html">·Î±×ÀÎ</a>
-      <a href="register.html">È¸¿ø°¡ÀÔ</a>
+      <a href="login.html">ë¡œê·¸ì¸</a>
+      <a href="register.html">íšŒì›ê°€ìž…</a>
     <% } else { %>
       <!-- <span><%= userID %></span> -->
-      <a href="logout.jsp">·Î±×¾Æ¿ô</a>
+      <a href="logout.jsp">ë¡œê·¸ì•„ì›ƒ</a>
     <% } %>
   </div>
   <div id="logo">
@@ -164,7 +164,7 @@
             <a href="#"><img src="logo.png" width="180" style="text-align: center;"></a>
         </td>
         <td style="width: 30%;">
-            <input id="search_bar" type="text" name="search" placeholder="Ã¥ Á¦¸ñÀ¸·Î °Ë»öÇØÁÖ¼¼¿ä" style="position: relative; top: -7px;">
+            <input id="search_bar" type="text" name="search" placeholder="ì±… ì œëª©ìœ¼ë¡œ ê²€ìƒ‰í•´ì£¼ì„¸ìš”" style="position: relative; top: -7px;">
             <button id="search_button" type="submit" style="position: relative; top: 5px;">
             <img src="search_icon.png" width="30px">
             </button>
@@ -176,40 +176,40 @@
   </div>
   <div id="navbar">
     <ul>
-      <li><a href="Test.html">È¨</a></li>
+      <li><a href="Test.html">í™ˆ</a></li>
       <li>
         <div class="dropdown">
-          <a class="dropbtn">Ã¥ ÆÇ¸Å</a>
+          <p class="dropbtn">ì±… íŒë§¤</p>
           <div class="dropdown-content">
-            <a href="Sell.jsp">±Û ÀÛ¼º</a>
-            <a href="Sell_BookList.jsp">Ã¥ ¸ñ·Ï</a>
+            <a href="Sell.jsp">ê¸€ ìž‘ì„±</a>
+            <a href="Sell_BookList.jsp">ì±… ëª©ë¡</a>
           </div>
         </div>
       </li>
       <li>
         <div class="dropdown">
-          <p class="dropbtn">Ã¥ ¿äÃ»</p>
+          <p class="dropbtn">ì±… ìš”ì²­</p>
           <div class="dropdown-content">
-            <a href="Buy.jsp">±Û ÀÛ¼º</a>
-            <a href="Buy_BookList.jsp">Ã¥ ¸ñ·Ï</a>
+            <a href="Buy.jsp">ê¸€ ìž‘ì„±</a>
+            <a href="Buy_BookList.jsp">ì±… ëª©ë¡</a>
           </div>
         </div>
       </li>
-      <li><a href="MyPage.jsp">¸¶ÀÌÆäÀÌÁö</a></li>
+      <li><a href="MyPage.jsp">ë§ˆì´íŽ˜ì´ì§€</a></li>
     </ul>
   </div>
   </nav>
 </header>
 <div style="height: 600px; margin-left: 10%; margin-right: 10%; overflow: auto;"> 
   <table id="tb_base">
-  <!-- Á¶È¸ ¸ñ·Ï ¼³Á¤ ½ÃÀÛ -->
+  <!-- ï¿½ï¿½È¸ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ -->
   <!-- <tr>
       <td>
-      ¼³Á¤ Ã¢
+      ï¿½ï¿½ï¿½ï¿½ Ã¢
       </td>
   </tr> -->
-  <!-- Á¶È¸ ¸ñ·Ï ¼³Á¤ ³¡ -->
-  <!-- JSP For ¹® ¹­À½ ½ÃÀÛ -->
+  <!-- ï¿½ï¿½È¸ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ -->
+  <!-- JSP For ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ -->
   <%
     while (result.next()) {
       sfile = result.getString("IMG");
@@ -236,7 +236,7 @@
       </tr>
       <tr>
         <td>
-            ÀúÀÚ
+            ì €ìž
         </td>
         <td id="td_content">
             <%= result.getString(3) %> <!--AUTH-->
@@ -244,7 +244,7 @@
       </tr>
       <tr>
         <td>
-            ÃâÆÇ»ç
+            ì¶œíŒì‚¬
         </td>
         <td id="td_content">
             <%= result.getString(4) %> <!--PUBL-->
@@ -259,7 +259,7 @@
     result.close();        
     }
     catch(Exception e) {
-      out.println("MySql µ¥ÀÌÅÍº£ÀÌ½ºÀÇ BOOK Á¶È¸¿¡ ¹®Á¦°¡ ÀÖ½À´Ï´Ù. <hr>");
+      out.println("MySql ë°ì´í„°ë² ì´ìŠ¤ì˜ BOOK ì¡°íšŒì— ë¬¸ì œê°€ ìžˆìŠµë‹ˆë‹¤. <hr>");
         out.println(e.toString());
         e.printStackTrace();
     }
@@ -268,16 +268,16 @@
         if(con != null) con.close();
     }
 %>
-  <!-- JSP For ¹® ¹­À½ Á¾·á -->
+  <!-- JSP For ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ -->
   </table>
 </div><br>
 <footer style="margin-left: 10%;">
 <font color=black>
 <%
 if (rowCount == 0) 
-out.println("µî·ÏµÈ ÆÇ¸Åµµ¼­°¡ ¾ø½À´Ï´Ù.");
+out.println("ë“±ë¡ëœ íŒë§¤ë„ì„œê°€ ì—†ìŠµë‹ˆë‹¤.");
 else 
-out.println("µî·ÏµÈ ÆÇ¸Åµµ¼­´Â ÃÑ " + rowCount + "±Ç ÀÔ´Ï´Ù.");    
+out.println("ë“±ë¡ëœ íŒë§¤ë„ì„œëŠ” ì´ " + rowCount + "ê¶Œ ìž…ë‹ˆë‹¤.");    
 %>
 </font>   
 </footer>

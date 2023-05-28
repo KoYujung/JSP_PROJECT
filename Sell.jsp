@@ -86,7 +86,7 @@
           <li><a href="Test.html">홈</a></li>
           <li>
             <div class="dropdown">
-              <a class="dropbtn">책 판매</a>
+              <p class="dropbtn">책 판매</p>
               <div class="dropdown-content">
                 <a href="Sell.jsp">글 작성</a>
                 <a href="Sell_BookList.jsp">책 목록</a>

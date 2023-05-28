@@ -86,7 +86,7 @@
       <li><a href="Test.html">홈</a></li>
       <li>
         <div class="dropdown">
-          <a class="dropbtn">책 판매</a>
+          <p class="dropbtn">책 판매</p>
           <div class="dropdown-content">
             <a href="Sell.jsp">글 작성</a>
             <a href="Sell_BookList.jsp">책 목록</a>
@@ -145,7 +145,7 @@
             <input type="submit" value="등록" class="regButton">
         </form>
     <% } else { %>
-        <h1>로그인 후 이용 가능합니다.</h1>
+        <center><h1>로그인 후 이용 가능합니다.</h1></center>
     <% } %>
 </main>
 <footer>
