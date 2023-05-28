@@ -63,7 +63,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>요청글 작성</title>
-<link rel="stylesheet" href="MyPage.css">
+    <link rel="stylesheet" href="MyPage.css">
 </head>
 <body>
 <header>
@@ -108,41 +108,45 @@
 </nav>
 </header>
 <main>
-    <form action="Insert_BuyBook.jsp" method="get" enctype="multipart/form-data">
-        <table cellpadding="20px" cellspacing="10px">
-            <tr>
-                <td>카테고리</td>
-                <td>
-                    <select name="CATE">
-                      <option value="언어">언어</option>
-                      <option value="경제">경제</option>
-                      <option value="컴퓨터">컴퓨터</option>
-                      <option value="예술">예술</option>
-                      <option value="종교">종교</option>
-                  </select>
-                </td>
-            </tr>
-            <tr>
-                <td><label>도서 이름</label></td>
-                <td><input type="text" id="TITLE" name="TITLE" placeholder="책 이름"></td>
-            </tr>
-            <tr>
-                <td><label>저자</label></td>
-                <td><input type="text" id="AUTH" name="AUTH" placeholder="저자"></td>
-            </tr>
-            <tr>
-                <td><label>출판사</label></td>
-                <td><input type="text" id="PUBL" name="PUBL" placeholder="출판사"></td>
-            </tr>
-            <tr>
-                <td><label>희망가</label></td>
-                <td><input type="number" id="HOPE" name="HOPE" placeholder="희망가"></td>
-            </tr>
-        </table>
-        <hr width="70%">
-        <input type="reset" value="취소" class="regButton">&nbsp;&nbsp;&nbsp;
-        <input type="submit" value="등록" class="regButton">
-    </form>
+    <% if(userID != null) { %>
+        <form action="Insert_BuyBook.jsp" method="get" enctype="multipart/form-data">
+            <table cellpadding="20px" cellspacing="10px">
+                <tr>
+                    <td>카테고리</td>
+                    <td>
+                        <select name="CATE">
+                          <option value="언어">언어</option>
+                          <option value="경제">경제</option>
+                          <option value="컴퓨터">컴퓨터</option>
+                          <option value="예술">예술</option>
+                          <option value="종교">종교</option>
+                      </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label>도서 이름</label></td>
+                    <td><input type="text" id="TITLE" name="TITLE" placeholder="책 이름"></td>
+                </tr>
+                <tr>
+                    <td><label>저자</label></td>
+                    <td><input type="text" id="AUTH" name="AUTH" placeholder="저자"></td>
+                </tr>
+                <tr>
+                    <td><label>출판사</label></td>
+                    <td><input type="text" id="PUBL" name="PUBL" placeholder="출판사"></td>
+                </tr>
+                <tr>
+                    <td><label>희망가</label></td>
+                    <td><input type="number" id="HOPE" name="HOPE" placeholder="희망가"></td>
+                </tr>
+            </table>
+            <hr width="70%">
+            <input type="reset" value="취소" class="regButton">&nbsp;&nbsp;&nbsp;
+            <input type="submit" value="등록" class="regButton">
+        </form>
+    <% } else { %>
+        <h1>로그인 후 이용 가능합니다.</h1>
+    <% } %>
 </main>
 <footer>
 </footer>
