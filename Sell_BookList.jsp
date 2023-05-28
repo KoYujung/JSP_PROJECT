@@ -1,4 +1,61 @@
 <%@ page contentType="text/html; charset=euc-kr" pageEncoding="euc-kr" language="java" %>
+
+<%
+    HttpSession sessionObj = request.getSession();
+    
+    String userID = (String) sessionObj.getAttribute("userID");
+    String uname = (String) sessionObj.getAttribute("UNAME");
+
+
+    if (uname == null && userID != null) {
+        Connection conn = null;
+        PreparedStatement pstmt = null;
+        ResultSet rs = null;
+
+        String driverName = "org.gjt.mm.mysql.Driver";
+        String dbURL = "jdbc:mysql://localhost:3306/mysql12";
+
+        try {
+            Class.forName(driverName);
+            conn = DriverManager.getConnection(dbURL, "root", "kbc0924");
+
+            String query = "SELECT UNAME FROM USER WHERE ID=?";
+            pstmt = conn.prepareStatement(query);
+            pstmt.setString(1, userID);
+            rs = pstmt.executeQuery();
+
+            if (rs.next()) {
+                uname = rs.getString("UNAME");
+                sessionObj.setAttribute("UNAME", uname);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            if (rs != null) {
+                try {
+                    rs.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
+            if (pstmt != null) {
+                try {
+                    pstmt.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
+            if (conn != null) {
+                try {
+                    conn.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+    }
+%>
+
 <html>
   <head>
     <meta charset="euc-kr">
@@ -90,8 +147,13 @@
   <nav>
   <a href="#" id="mark"><img src="mark.png" width="50"></a>
   <div id="login">
+    <% if(userID == null) { %>
       <a href="login.html">로그인</a>
       <a href="register.html">회원가입</a>
+    <% } else { %>
+      <!-- <span><%= userID %></span> -->
+      <a href="logout.jsp">로그아웃</a>
+    <% } %>
   </div>
   <div id="logo">
     <form accept-charset="euc-kr" action="Sell_BookList.jsp" method="get" style="text-align: center;">
@@ -119,7 +181,7 @@
         <div class="dropdown">
           <a class="dropbtn">책 판매</a>
           <div class="dropdown-content">
-            <a href="Sell.html">글 작성</a>
+            <a href="Sell.jsp">글 작성</a>
             <a href="Sell_BookList.jsp">책 목록</a>
           </div>
         </div>
@@ -128,12 +190,12 @@
         <div class="dropdown">
           <p class="dropbtn">책 요청</p>
           <div class="dropdown-content">
-            <a href="Buy.html">글 작성</a>
+            <a href="Buy.jsp">글 작성</a>
             <a href="Buy_BookList.jsp">책 목록</a>
           </div>
         </div>
       </li>
-      <li><a href="MyPage.html">마이페이지</a></li>
+      <li><a href="MyPage.jsp">마이페이지</a></li>
     </ul>
   </div>
   </nav>

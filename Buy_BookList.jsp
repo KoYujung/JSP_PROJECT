@@ -3,9 +3,9 @@
 <html>
   <head>
 	<meta charset="euc-kr">
-    <title>Ã¥ ¿äÃ» ¸ñ·Ï</title>
+    <title>Ã¥ ï¿½ï¿½Ã» ï¿½ï¿½ï¿½</title>
     <link rel="stylesheet" href="Test.css">
-    <!-- style ½ÃÀÛ -->
+    <!-- style ï¿½ï¿½ï¿½ï¿½ -->
     <style type="text/css">
         #tb_base {
           width: 100%;
@@ -49,7 +49,7 @@
           cursor: pointer;
         }
     </style>
-    <!-- style Á¾·á -->
+    <!-- style ï¿½ï¿½ï¿½ï¿½ -->
   </head>
 <body>
 <%@ page import="java.sql.*" %>
@@ -84,8 +84,13 @@
   <nav>
   <a href="#" id="mark"><img src="mark.png" width="50"></a>
   <div id="login">
-      <a href="login.html">·Î±×ÀÎ</a>
-      <a href="register.html">È¸¿ø°¡ÀÔ</a>
+    <% if(userID == null) { %>
+      <a href="login.html">ë¡œê·¸ì¸</a>
+      <a href="register.html">íšŒì›ê°€ìž…</a>
+    <% } else { %>
+      <!-- <span><%= userID %></span> -->
+      <a href="logout.jsp">ë¡œê·¸ì•„ì›ƒ</a>
+    <% } %>
   </div>
   <div id="logo">
     <form accept-charset="euc-kr" action="Buy_BookList.jsp" method="get" style="text-align: center;">
@@ -96,7 +101,7 @@
             <a href="#"><img src="logo.png" width="180" style="text-align: center;"></a>
         </td>
         <td style="width: 30%;">
-            <input id="search_bar" type="text" name="search" placeholder="Ã¥ Á¦¸ñÀ¸·Î °Ë»öÇØÁÖ¼¼¿ä" style="position: relative; top: -7px;">
+            <input id="search_bar" type="text" name="search" placeholder="Ã¥ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ë»ï¿½ï¿½ï¿½ï¿½Ö¼ï¿½ï¿½ï¿½" style="position: relative; top: -7px;">
             <button id="search_button" type="submit" style="position: relative; top: 5px;">
               <img src="search_icon.png" width="30px">
             </button>
@@ -111,37 +116,37 @@
       <li><a href="Test.html">È¨</a></li>
       <li>
         <div class="dropdown">
-          <a class="dropbtn">Ã¥ ÆÇ¸Å</a>
+          <a class="dropbtn">Ã¥ ï¿½Ç¸ï¿½</a>
           <div class="dropdown-content">
-            <a href="Sell.html">±Û ÀÛ¼º</a>
-            <a href="Sell_BookList.jsp">Ã¥ ¸ñ·Ï</a>
+            <a href="Sell.jsp">ï¿½ï¿½ ï¿½Û¼ï¿½</a>
+            <a href="Sell_BookList.jsp">Ã¥ ï¿½ï¿½ï¿½</a>
           </div>
         </div>
       </li>
       <li>
         <div class="dropdown">
-          <p class="dropbtn">Ã¥ ¿äÃ»</p>
+          <p class="dropbtn">Ã¥ ï¿½ï¿½Ã»</p>
           <div class="dropdown-content">
-            <a href="Buy.html">±Û ÀÛ¼º</a>
-            <a href="Buy_BookList.jsp">Ã¥ ¸ñ·Ï</a>
+            <a href="Buy.jsp">ï¿½ï¿½ ï¿½Û¼ï¿½</a>
+            <a href="Buy_BookList.jsp">Ã¥ ï¿½ï¿½ï¿½</a>
           </div>
         </div>
       </li>
-      <li><a href="MyPage.html">¸¶ÀÌÆäÀÌÁö</a></li>
+      <li><a href="MyPage.html">ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</a></li>
     </ul>
   </div>
   </nav>
 </header>
 <div style="height: 600px; margin-left: 10%; margin-right: 10%; overflow: auto;"> 
   <table id="tb_base">
-  <!-- Á¶È¸ ¸ñ·Ï ¼³Á¤ ½ÃÀÛ -->
+  <!-- ï¿½ï¿½È¸ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ -->
   <!-- <tr>
       <td>
-      ¼³Á¤ Ã¢
+      ï¿½ï¿½ï¿½ï¿½ Ã¢
       </td>
   </tr> -->
-  <!-- Á¶È¸ ¸ñ·Ï ¼³Á¤ ³¡ -->
-  <!-- JSP For ¹® ¹­À½ ½ÃÀÛ -->
+  <!-- ï¿½ï¿½È¸ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ -->
+  <!-- JSP For ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ -->
   <%
     while (result.next()) {
   %>
@@ -158,7 +163,7 @@
       </tr>
       <tr>
         <td>
-            ÀúÀÚ
+            ï¿½ï¿½ï¿½ï¿½
         </td>
         <td id="td_content">
             <%= result.getString(3) %> <!--AUTH-->
@@ -166,7 +171,7 @@
       </tr>
       <tr>
         <td>
-            ÃâÆÇ»ç
+            ï¿½ï¿½ï¿½Ç»ï¿½
         </td>
         <td id="td_content">
             <%= result.getString(4) %> <!--PUBL-->
@@ -181,7 +186,7 @@
     result.close();        
     }
     catch(Exception e) {
-      out.println("MySql µ¥ÀÌÅÍº£ÀÌ½ºÀÇ BUY_BOOK Á¶È¸¿¡ ¹®Á¦°¡ ÀÖ½À´Ï´Ù. <hr>");
+      out.println("MySql ï¿½ï¿½ï¿½ï¿½ï¿½Íºï¿½ï¿½Ì½ï¿½ï¿½ï¿½ BUY_BOOK ï¿½ï¿½È¸ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ö½ï¿½ï¿½Ï´ï¿½. <hr>");
         out.println(e.toString());
         e.printStackTrace();
     }
@@ -190,16 +195,16 @@
         if(con != null) con.close();
     }
 %>
-  <!-- JSP For ¹® ¹­À½ Á¾·á -->
+  <!-- JSP For ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ -->
   </table>
 </div><br>
 <footer style="margin-left: 10%;">
 <font color=black>
 <%
 if (rowCount == 0) 
-out.println("µî·ÏµÈ ¿äÃ»µµ¼­°¡ ¾ø½À´Ï´Ù.");
+out.println("ï¿½ï¿½Ïµï¿½ ï¿½ï¿½Ã»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½.");
 else 
-out.println("µî·ÏµÈ ¿äÃ»µµ¼­´Â ÃÑ " + rowCount + "±Ç ÀÔ´Ï´Ù.");    
+out.println("ï¿½ï¿½Ïµï¿½ ï¿½ï¿½Ã»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ " + rowCount + "ï¿½ï¿½ ï¿½Ô´Ï´ï¿½.");    
 %>
 </font>   
 </footer>
