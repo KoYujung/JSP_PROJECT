@@ -58,7 +58,7 @@
 <html>
   <head>
 	<meta charset="euc-kr">
-    <title>책 요청 목록</title>
+    <title>å ��û ���</title>
     <link rel="stylesheet" href="Test.css">
     <!-- style ???? -->
     <style type="text/css">
@@ -140,11 +140,11 @@
   <a href="#" id="mark"><img src="mark.png" width="50"></a>
   <div id="login">
     <% if(userID == null) { %>
-      <a href="login.html">로그인</a>
-      <a href="register.html">회원가입</a>
+      <a href="login.html">�α���</a>
+      <a href="register.html">ȸ������</a>
     <% } else { %>
       <!-- <span><%= userID %></span> -->
-      <a href="logout.jsp">로그아웃</a>
+      <a href="logout.jsp">�α׾ƿ�</a>
     <% } %>
   </div>
   <div id="logo">
@@ -156,7 +156,7 @@
             <a href="#"><img src="logo.png" width="180" style="text-align: center;"></a>
         </td>
         <td style="width: 30%;">
-            <input id="search_bar" type="text" name="search" placeholder="책 제목으로 검색해주세요" style="position: relative; top: -7px;">
+            <input id="search_bar" type="text" name="search" placeholder="å �������� �˻����ּ���" style="position: relative; top: -7px;">
             <button id="search_button" type="submit" style="position: relative; top: 5px;">
               <img src="search_icon.png" width="30px">
             </button>
@@ -168,26 +168,26 @@
   </div>
   <div id="navbar">
     <ul>
-      <li><a href="Test.html">홈</a></li>
+      <li><a href="Test.html">Ȩ</a></li>
       <li>
         <div class="dropdown">
-          <p class="dropbtn">책 판매</p>
+          <p class="dropbtn">å �Ǹ�</p>
           <div class="dropdown-content">
-            <a href="Sell.jsp">글 작성</a>
-            <a href="Sell_BookList.jsp">책 목록</a>
+            <a href="Sell.jsp">�� �ۼ�</a>
+            <a href="Sell_BookList.jsp">å ���</a>
           </div>
         </div>
       </li>
       <li>
         <div class="dropdown">
-          <p class="dropbtn">책 요청</p>
+          <p class="dropbtn">å ��û</p>
           <div class="dropdown-content">
-            <a href="Buy.jsp">글 작성</a>
-            <a href="Buy_BookList.jsp">책 목록</a>
+            <a href="Buy.jsp">�� �ۼ�</a>
+            <a href="Buy_BookList.jsp">å ���</a>
           </div>
         </div>
       </li>
-      <li><a href="MyPage.jsp">마이페이지</a></li>
+      <li><a href="MyPage.jsp">����������</a></li>
     </ul>
   </div>
 </nav>
@@ -218,7 +218,7 @@
       </tr>
       <tr>
         <td>
-            저자
+            ����
         </td>
         <td id="td_content">
             <%= result.getString(3) %> <!--AUTH-->
@@ -226,7 +226,7 @@
       </tr>
       <tr>
         <td>
-            출판사
+            ���ǻ�
         </td>
         <td id="td_content">
             <%= result.getString(4) %> <!--PUBL-->
@@ -241,7 +241,7 @@
     result.close();        
     }
     catch(Exception e) {
-      out.println("MySql 데이터베이스의 BOOK 조회에 문제가 있습니다. <hr>");
+      out.println("MySql �����ͺ��̽��� BOOK ��ȸ�� ������ �ֽ��ϴ�. <hr>");
         out.println(e.toString());
         e.printStackTrace();
     }
@@ -257,9 +257,9 @@
 <font color=black>
 <%
 if (rowCount == 0) 
-out.println("등록된 판매도서가 없습니다.");
+out.println("��ϵ� �Ǹŵ����� �����ϴ�.");
 else 
-out.println("등록된 판매도서는 총 " + rowCount + "권 입니다.");    
+out.println("��ϵ� �Ǹŵ����� �� " + rowCount + "�� �Դϴ�.");    
 %>
 </font>   
 </footer>
