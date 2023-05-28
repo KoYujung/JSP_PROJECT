@@ -81,24 +81,6 @@
     <div class="container">
       <div class="item">
         <img class="book_img" src="./contents/<%= letfile %> ">
-        <!-- <div class="slider">
-          <input type="radio" name="slide" id="slide1" checked>
-          <input type="radio" name="slide" id="slide2">
-          <input type="radio" name="slide" id="slide3">
-          <input type="radio" name="slide" id="slide4">
-          <ul id="imgholder" class="imgs">
-              <li><img class="book_img" src=""></li>
-              <li><img class="book_img" src=""></li>
-              <li><img class="book_img" src=""></li>
-              <li><img class="book_img" src=""></li>
-          </ul>
-          <div class="bullets">
-              <label for="slide1">&nbsp;</label>
-              <label for="slide2">&nbsp;</label>
-              <label for="slide3">&nbsp;</label>
-              <label for="slide4">&nbsp;</label>
-          </div>
-        </div> -->
       </div>
       <div class="item">
         <div class="info">
@@ -128,7 +110,6 @@
               }
             %></p>
           <br>
-          <a href="chat.html" id="chat"><img src="chat.png", width="80%"></a>
           <p></p>   
           <div class="info_detail">
             <p style="text-align: center;">책 상세설명</p>

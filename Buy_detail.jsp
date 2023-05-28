@@ -81,9 +81,6 @@
           <p> 저자:&nbsp; <%= result.getString(3) %></p> 
           <p> 희망가:&nbsp; <%= result.getString(5) %></p>
           <p> 출판사:&nbsp; <%= result.getString(4) %></p> 
-          <hr>
-          <br>
-          <a href="chat.html" id="chat"><img src="chat.png", width="550"></a>
         </div>  
       </div>
     </div>
