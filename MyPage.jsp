@@ -7,7 +7,6 @@
     String userID = (String) sessionObj.getAttribute("userID");
     String uname = (String) sessionObj.getAttribute("UNAME");
 
-
     if (uname == null && userID != null) {
         Connection conn = null;
         PreparedStatement pstmt = null;
@@ -113,18 +112,22 @@
       <h3>내 정보</h3>
       <% if(userID == null) { %>
         <p>로그인이 필요합니다.</p>
+      <% } else if (uname == null) { %>
+        <p>회원 정보를 불러올 수 없습니다. 다시 로그인해주세요.</p>
       <% } else { %>
         <h1>안녕하세요, <span style="color: #3A98B9;"><%= uname %></span>님</h1>
       <% } %>
     </div>
-    <hr>
+
     <div id="myProBody">
-      <button><a href="#">내가 쓴 글보기</a></button>
-      <button><a href="user_Update.html">개인정보 수정</a></button>
+      
+      <% if(userID != null && uname != null) { %>
+        <hr>
+        <button><a href="#">내가 쓴 글보기</a></button>
+        <button><a href="user_Update.html">개인정보 수정</a></button>
+      <% } %>
     </div>
   </main>
-  <footer>
-    <!-- 생략 -->
-  </footer>
+
 </body>
 </html>
