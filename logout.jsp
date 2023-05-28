@@ -10,7 +10,7 @@
 
 <!DOCTYPE html>
 <html>
-    <p>로그아웃 되었습니다.</p>
+    <center><p>로그아웃 되었습니다.</p></center>
 <%
     out.println("<meta http-equiv='Refresh' content='1;URL=Buy.jsp'>");
 %>
