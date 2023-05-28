@@ -1,11 +1,66 @@
 <%@ page contentType="text/html; charset=euc-kr" pageEncoding="euc-kr" language="java" %>
-<%@ page import="java.net.URLEncoder" %>
+
+<%
+    HttpSession sessionObj = request.getSession();
+    
+    String userID = (String) sessionObj.getAttribute("userID");
+    String uname = (String) sessionObj.getAttribute("UNAME");
+
+
+    if (uname == null && userID != null) {
+        Connection conn = null;
+        PreparedStatement pstmt = null;
+        ResultSet rs = null;
+
+        String driverName = "org.gjt.mm.mysql.Driver";
+        String dbURL = "jdbc:mysql://localhost:3306/mysql12";
+
+        try {
+            Class.forName(driverName);
+            conn = DriverManager.getConnection(dbURL, "root", "kbc0924");
+
+            String query = "SELECT UNAME FROM USER WHERE ID=?";
+            pstmt = conn.prepareStatement(query);
+            pstmt.setString(1, userID);
+            rs = pstmt.executeQuery();
+
+            if (rs.next()) {
+                uname = rs.getString("UNAME");
+                sessionObj.setAttribute("UNAME", uname);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            if (rs != null) {
+                try {
+                    rs.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
+            if (pstmt != null) {
+                try {
+                    pstmt.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
+            if (conn != null) {
+                try {
+                    conn.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+    }
+%>
 <html>
   <head>
 	<meta charset="euc-kr">
-    <title>Ã¥ ï¿½ï¿½Ã» ï¿½ï¿½ï¿½</title>
+    <title>Ã¥ ¿äÃ» ¸ñ·Ï</title>
     <link rel="stylesheet" href="Test.css">
-    <!-- style ï¿½ï¿½ï¿½ï¿½ -->
+    <!-- style ???? -->
     <style type="text/css">
         #tb_base {
           width: 100%;
@@ -49,7 +104,7 @@
           cursor: pointer;
         }
     </style>
-    <!-- style ï¿½ï¿½ï¿½ï¿½ -->
+    <!-- style ???? -->
   </head>
 <body>
 <%@ page import="java.sql.*" %>
@@ -85,11 +140,11 @@
   <a href="#" id="mark"><img src="mark.png" width="50"></a>
   <div id="login">
     <% if(userID == null) { %>
-      <a href="login.html">ë¡œê·¸ì¸</a>
-      <a href="register.html">íšŒì›ê°€ìž…</a>
+      <a href="login.html">·Î±×ÀÎ</a>
+      <a href="register.html">È¸¿ø°¡ÀÔ</a>
     <% } else { %>
       <!-- <span><%= userID %></span> -->
-      <a href="logout.jsp">ë¡œê·¸ì•„ì›ƒ</a>
+      <a href="logout.jsp">·Î±×¾Æ¿ô</a>
     <% } %>
   </div>
   <div id="logo">
@@ -101,7 +156,7 @@
             <a href="#"><img src="logo.png" width="180" style="text-align: center;"></a>
         </td>
         <td style="width: 30%;">
-            <input id="search_bar" type="text" name="search" placeholder="Ã¥ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ë»ï¿½ï¿½ï¿½ï¿½Ö¼ï¿½ï¿½ï¿½" style="position: relative; top: -7px;">
+            <input id="search_bar" type="text" name="search" placeholder="Ã¥ Á¦¸ñÀ¸·Î °Ë»öÇØÁÖ¼¼¿ä" style="position: relative; top: -7px;">
             <button id="search_button" type="submit" style="position: relative; top: 5px;">
               <img src="search_icon.png" width="30px">
             </button>
@@ -116,37 +171,37 @@
       <li><a href="Test.html">È¨</a></li>
       <li>
         <div class="dropdown">
-          <a class="dropbtn">Ã¥ ï¿½Ç¸ï¿½</a>
+          <a class="dropbtn">Ã¥ ÆÇ¸Å</a>
           <div class="dropdown-content">
-            <a href="Sell.jsp">ï¿½ï¿½ ï¿½Û¼ï¿½</a>
-            <a href="Sell_BookList.jsp">Ã¥ ï¿½ï¿½ï¿½</a>
+            <a href="Sell.jsp">±Û ÀÛ¼º</a>
+            <a href="Sell_BookList.jsp">Ã¥ ¸ñ·Ï</a>
           </div>
         </div>
       </li>
       <li>
         <div class="dropdown">
-          <p class="dropbtn">Ã¥ ï¿½ï¿½Ã»</p>
+          <p class="dropbtn">Ã¥ ¿äÃ»</p>
           <div class="dropdown-content">
-            <a href="Buy.jsp">ï¿½ï¿½ ï¿½Û¼ï¿½</a>
-            <a href="Buy_BookList.jsp">Ã¥ ï¿½ï¿½ï¿½</a>
+            <a href="Buy.jsp">±Û ÀÛ¼º</a>
+            <a href="Buy_BookList.jsp">Ã¥ ¸ñ·Ï</a>
           </div>
         </div>
       </li>
-      <li><a href="MyPage.html">ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</a></li>
+      <li><a href="MyPage.jsp">¸¶ÀÌÆäÀÌÁö</a></li>
     </ul>
   </div>
-  </nav>
+</nav>
 </header>
 <div style="height: 600px; margin-left: 10%; margin-right: 10%; overflow: auto;"> 
   <table id="tb_base">
-  <!-- ï¿½ï¿½È¸ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ -->
+  <!-- ??? ??? ???? ???? -->
   <!-- <tr>
       <td>
-      ï¿½ï¿½ï¿½ï¿½ Ã¢
+      ???? ?
       </td>
   </tr> -->
-  <!-- ï¿½ï¿½È¸ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ -->
-  <!-- JSP For ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ -->
+  <!-- ??? ??? ???? ?? -->
+  <!-- JSP For ?? ???? ???? -->
   <%
     while (result.next()) {
   %>
@@ -163,7 +218,7 @@
       </tr>
       <tr>
         <td>
-            ï¿½ï¿½ï¿½ï¿½
+            ÀúÀÚ
         </td>
         <td id="td_content">
             <%= result.getString(3) %> <!--AUTH-->
@@ -171,7 +226,7 @@
       </tr>
       <tr>
         <td>
-            ï¿½ï¿½ï¿½Ç»ï¿½
+            ÃâÆÇ»ç
         </td>
         <td id="td_content">
             <%= result.getString(4) %> <!--PUBL-->
@@ -186,7 +241,7 @@
     result.close();        
     }
     catch(Exception e) {
-      out.println("MySql ï¿½ï¿½ï¿½ï¿½ï¿½Íºï¿½ï¿½Ì½ï¿½ï¿½ï¿½ BUY_BOOK ï¿½ï¿½È¸ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ö½ï¿½ï¿½Ï´ï¿½. <hr>");
+      out.println("MySql µ¥ÀÌÅÍº£ÀÌ½ºÀÇ BOOK Á¶È¸¿¡ ¹®Á¦°¡ ÀÖ½À´Ï´Ù. <hr>");
         out.println(e.toString());
         e.printStackTrace();
     }
@@ -195,16 +250,16 @@
         if(con != null) con.close();
     }
 %>
-  <!-- JSP For ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ -->
+  <!-- JSP For ?? ???? ???? -->
   </table>
 </div><br>
 <footer style="margin-left: 10%;">
 <font color=black>
 <%
 if (rowCount == 0) 
-out.println("ï¿½ï¿½Ïµï¿½ ï¿½ï¿½Ã»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½.");
+out.println("µî·ÏµÈ ÆÇ¸Åµµ¼­°¡ ¾ø½À´Ï´Ù.");
 else 
-out.println("ï¿½ï¿½Ïµï¿½ ï¿½ï¿½Ã»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ " + rowCount + "ï¿½ï¿½ ï¿½Ô´Ï´ï¿½.");    
+out.println("µî·ÏµÈ ÆÇ¸Åµµ¼­´Â ÃÑ " + rowCount + "±Ç ÀÔ´Ï´Ù.");    
 %>
 </font>   
 </footer>

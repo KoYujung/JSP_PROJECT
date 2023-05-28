@@ -275,7 +275,7 @@
 <font color=black>
 <%
 if (rowCount == 0) 
-out.println("등록된 판매도서가  없습니다.");
+out.println("등록된 판매도서가 없습니다.");
 else 
 out.println("등록된 판매도서는 총 " + rowCount + "권 입니다.");    
 %>
