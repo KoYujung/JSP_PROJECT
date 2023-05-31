@@ -3,7 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <title>회원가입</title>
-    <link rel="stylesheet" href="register.css" />
+    <link rel="stylesheet" href="register.css"/>
+    <link rel="stylesheet" href="MyPage.css"/>
+    <style>
+        #regB {
+            margin: auto;
+            width: 250px;
+            height: 50px;
+            border: 1;
+            background-color: white;
+            font-size: 120%;
+            border-radius: 20px;
+            margin-top: 1%;
+            cursor: pointer;
+        }
+    </style>
 
 </head>
 <body>
@@ -13,7 +27,7 @@
         </header>
         <div class="registerarea">
             <div class="regist-header">
-                <a href="Test.html" id="logo1"><img src="logo1.png" alt=""></a>
+                <a href="Sell_BookList.jsp" id="logo1"><img src="logo1.png" alt=""></a>
             </div>
             <div class="reg_form">
                 <form action="registerProcess.jsp" method="post">
@@ -51,7 +65,7 @@
                             <a href="#">《중고문고 등록약정과 프라이버시 정책》</a>
                         </li>
                         <div class="buttons">
-                            <input type="submit" value="회원가입">
+                            <input type="submit" value="회원가입" id="regB">
                         </div>
                     </ul>
                 </form>

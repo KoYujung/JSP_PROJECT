@@ -1,13 +1,21 @@
+@font-face {
+    font-family: 'TheJamsil5Bold';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2302_01@1.0/TheJamsil5Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+}
+
 * {
+    font-family: TheJamsil5Bold;
 	box-sizing: border-box;
 	margin: 0;
 	padding: 0;
 }
 
+/* 
 body {
-	font-family: Arial, sans-serif;
 	background-color: white;
-}
+} */
 
 .container {
 	display: flex;
@@ -122,11 +130,5 @@ form {
 }
 
 .buttons a:hover {
-	color: #fbbf24;
-}
-.buttons > a:hover {
-	color: rgb(243, 156, 18) ;
-	transform: scale(2);
-	transition-duration: 0.5s;
-	font-size: 110%;
+	color: white;
 }
