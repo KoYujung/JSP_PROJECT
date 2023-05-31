@@ -115,7 +115,7 @@
       <% } else if (uname == null) { %>
         <p>회원 정보를 불러올 수 없습니다. 다시 로그인해주세요.</p>
       <% } else { %>
-        <h1>안녕하세요, <span style="color: #3A98B9;"><%= uname %></span>님</h1>
+        <h1><span style="color: #3A98B9;"><%= uname %></span>님, 안녕하세요 !</h1>
       <% } %>
     </div>
 
@@ -124,7 +124,8 @@
       <% if(userID != null && uname != null) { %>
         <hr>
         <button><a href="#">내가 쓴 글보기</a></button>
-        <button><a href="user_Update.html">개인정보 수정</a></button>
+        <button><a href="#">북마크</a></button>
+        <button><a href="user_Update.jsp">개인정보 수정</a></button>
       <% } %>
     </div>
   </main>
