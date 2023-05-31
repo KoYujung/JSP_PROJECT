@@ -145,7 +145,7 @@
             <input type="submit" value="등록" class="regButton">
         </form>
     <% } else { %>
-        <center><h1>로그인 후 이용 가능합니다.</h1></center>
+        <br><br><br><br><br><h1>로그인 후 이용 가능합니다.</h1>
     <% } %>
 </main>
 <footer>

@@ -1,4 +1,61 @@
-<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" language="java" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ page import="java.sql.*" %> <!-- JDBC 관련 클래스 import -->
+
+<%
+    HttpSession sessionObj = request.getSession();
+    
+    String userID = (String) sessionObj.getAttribute("userID");
+    String uname = (String) sessionObj.getAttribute("UNAME");
+
+
+    if (uname == null && userID != null) {
+        Connection conn = null;
+        PreparedStatement pstmt = null;
+        ResultSet rs = null;
+
+        String driverName = "org.gjt.mm.mysql.Driver";
+        String dbURL = "jdbc:mysql://localhost:3306/mysql12";
+
+        try {
+            Class.forName(driverName);
+            conn = DriverManager.getConnection(dbURL, "root", "kbc0924");
+
+            String query = "SELECT UNAME FROM USER WHERE ID=?";
+            pstmt = conn.prepareStatement(query);
+            pstmt.setString(1, userID);
+            rs = pstmt.executeQuery();
+
+            if (rs.next()) {
+                uname = rs.getString("UNAME");
+                sessionObj.setAttribute("UNAME", uname);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            if (rs != null) {
+                try {
+                    rs.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
+            if (pstmt != null) {
+                try {
+                    pstmt.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
+            if (conn != null) {
+                try {
+                    conn.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+    }
+%>
 <html>
     <head>
         <meta charset="UTF-8">
@@ -48,7 +105,7 @@
       </div>
       <div id="navbar">
         <ul>
-          <li><a href="Test.html">홈</a></li>
+          <li><a href="Sell_BookList.jsp">홈</a></li>
           <li>
             <div class="dropdown">
               <a class="dropbtn">책 판매</a>
@@ -67,7 +124,7 @@
               </div>
             </div>
           </li>
-          <li><a href="MyPage.html">마이페이지</a></li>
+          <li><a href="MyPage.jsp">마이페이지</a></li>
         </ul>
       </div>
     </nav>
