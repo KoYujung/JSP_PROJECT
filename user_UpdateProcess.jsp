@@ -22,8 +22,8 @@
         conn = DriverManager.getConnection(dbURL, "root", "kbc0924");
 
         // 회원 정보 수정을 위한 쿼리 실행
-        String query = "UPDATE USER SET UPASS=?, UEMAIL=?, UTELL=? WHERE ID=?";
-        pstmt = conn.prepareStatement(query);
+        String updateQuery = "UPDATE USER SET UPASS=?, UEMAIL=?, UTELL=? WHERE ID=?";
+        pstmt = conn.prepareStatement(updateQuery);
         pstmt.setString(1, password);
         pstmt.setString(2, email);
         pstmt.setString(3, phoneNumber);
@@ -32,9 +32,10 @@
 
         // 세션 정보 업데이트
         HttpSession sessionObj = request.getSession();
-        sessionObj.setAttribute("SESSION_UPASS", password);
-        sessionObj.setAttribute("SESSION_UEMAIL", email);
-        sessionObj.setAttribute("SESSION_UTELL", phoneNumber);
+        sessionObj.setAttribute("userID", userID);
+        sessionObj.setAttribute("UPASS", password);
+        sessionObj.setAttribute("UEMAIL", email);
+        sessionObj.setAttribute("UTELL", phoneNumber);
 
         // 회원 정보 수정 성공
         out.println("회원정보가 수정되었습니다.");
@@ -58,4 +59,5 @@
             }
         }
     }
+    out.println("<meta http-equiv='Refresh' content='1;URL=MyPage.jsp'>");
 %>
