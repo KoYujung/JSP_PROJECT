@@ -1,9 +1,11 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" language="java" %>
 <%@ page import="java.sql.*" %> <!-- JDBC 관련 클래스 import -->
 
 <%
+    request.setCharacterEncoding("UTF-8"); // 요청 데이터의 인코딩 설정
+
     HttpSession sessionObj = request.getSession();
-    
+
     String userID = (String) sessionObj.getAttribute("userID");
     String uname = (String) sessionObj.getAttribute("UNAME");
 
@@ -14,7 +16,7 @@
         ResultSet rs = null;
 
         String driverName = "org.gjt.mm.mysql.Driver";
-        String dbURL = "jdbc:mysql://localhost:3306/mysql12";
+        String dbURL = "jdbc:mysql://localhost:3306/mysql12?useUnicode=true&characterEncoding=UTF-8";
 
         try {
             Class.forName(driverName);
@@ -68,14 +70,14 @@
 <body>
 
 <%@ page import="java.sql.*" %>
-<% request.setCharacterEncoding("euc-kr"); %>
+<% request.setCharacterEncoding("UTF-8"); %>
 
 <%
     String pno = request.getParameter("pno");
     Connection con = null;
     PreparedStatement pstmt = null;
     String driverName = "org.gjt.mm.mysql.Driver";
-    String dbURL = "jdbc:mysql://localhost:3306/mysql12";
+    String dbURL = "jdbc:mysql://localhost:3306/mysql12?useUnicode=true&characterEncoding=UTF-8";
     String sql = "select * from BUY_BOOK where BUY_ID = " + pno;
     int rowCount = 0;
 
@@ -142,6 +144,69 @@
       </div>
     </div>
   </main>
+<footer>
+  <div id="comment-section">
+      <h2>댓글 달기</h2>
+      <form action="AddComment.jsp" method="POST">
+          <textarea name="content" rows="4" cols="50" placeholder="댓글을 입력하세요"></textarea><br>
+          <input type="hidden" name="post_id" value="<%= pno %>">
+          <input type="hidden" name="user_id" value="<%= userID %>">
+          <input type="submit" value="댓글 작성">
+      </form>
+      <div id="comment-list">
+        <h2>댓글 목록</h2>
+        <%-- 댓글 목록 조회 --%>
+        <%
+            Connection commentConn = null;
+            PreparedStatement commentStmt = null;
+            ResultSet commentResult = null;
+
+            try {
+                String commentQuery = "SELECT * FROM COMMENTS WHERE POST_ID=?";
+                commentConn = DriverManager.getConnection(dbURL, "root", "kbc0924");
+                commentStmt = commentConn.prepareStatement(commentQuery);
+                commentStmt.setInt(1, Integer.parseInt(pno));
+                commentResult = commentStmt.executeQuery();
+
+                while (commentResult.next()) {
+                    String commentContent = commentResult.getString("CONTENT");
+                    String commentUser = commentResult.getString("USER_ID");
+                    String commentCreatedAt = commentResult.getString("CREATED_AT");
+        %>
+                    <p>작성자: <%= commentUser %></p>
+                    <p>내용: <%= commentContent %></p>
+                    <p>작성일: <%= commentCreatedAt %></p>
+                    <hr>
+        <%
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+            } finally {
+                if (commentResult != null) {
+                    try {
+                        commentResult.close();
+                    } catch (SQLException e) {
+                        e.printStackTrace();
+                    }
+                }
+                if (commentStmt != null) {
+                    try {
+                        commentStmt.close();
+                    } catch (SQLException e) {
+                        e.printStackTrace();
+                    }
+                }
+                if (commentConn != null) {
+                    try {
+                        commentConn.close();
+                    } catch (SQLException e) {
+                        e.printStackTrace();
+                    }
+                }
+            }
+        %>
+    </div>
+</footer>
 
 <%
    rowCount++;
