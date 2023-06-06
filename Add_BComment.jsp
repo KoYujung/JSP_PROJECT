@@ -18,7 +18,7 @@
         Class.forName(driverName);
         conn = DriverManager.getConnection(dbURL, "root", "kbc0924");
 
-        String query = "INSERT INTO COMMENTS (POST_ID, USER_ID, CONTENT) VALUES (?, ?, ?)";
+        String query = "INSERT INTO BCOMMENTS (POST_ID, USER_ID, CONTENT) VALUES (?, ?, ?)";
         pstmt = conn.prepareStatement(query);
         pstmt.setInt(1, Integer.parseInt(postID));
         pstmt.setString(2, userID);

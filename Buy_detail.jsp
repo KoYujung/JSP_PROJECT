@@ -147,7 +147,7 @@
 <footer>
   <div id="comment-section">
       <h2>댓글 달기</h2>
-      <form action="AddComment.jsp" method="POST">
+      <form action="Add_BComment.jsp" method="POST">
           <textarea name="content" rows="4" cols="50" placeholder="댓글을 입력하세요"></textarea><br>
           <input type="hidden" name="post_id" value="<%= pno %>">
           <input type="hidden" name="user_id" value="<%= userID %>">
@@ -162,7 +162,7 @@
             ResultSet commentResult = null;
 
             try {
-                String commentQuery = "SELECT * FROM COMMENTS WHERE POST_ID=?";
+                String commentQuery = "SELECT * FROM BCOMMENTS WHERE POST_ID=?";
                 commentConn = DriverManager.getConnection(dbURL, "root", "kbc0924");
                 commentStmt = commentConn.prepareStatement(commentQuery);
                 commentStmt.setInt(1, Integer.parseInt(pno));
