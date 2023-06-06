@@ -179,7 +179,7 @@
         </div>
     </main>
     <footer>
-        <div id="comment-section">
+        <div id="comment-section" style="margin-left: 10%;">
             <h2>댓글 달기</h2>
             <form action="Add_SComment.jsp" method="POST">
                 <textarea name="content" rows="4" cols="50" placeholder="댓글을 입력하세요"></textarea><br>
