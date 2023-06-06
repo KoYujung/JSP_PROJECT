@@ -5,123 +5,123 @@
     font-style: normal;
     } 
     
-    * {
-        font-family: TheJamsil5Bold;
-    }
+* {
+    font-family: TheJamsil5Bold;
+}
+
+a {
+    text-decoration-line: none;
+}
+
+main {
+    background-color: #EEEEEE;
+    height: 600px;
+    border-radius: 10px;
+    margin-left: 10%;
+    margin-right: 10%;
+    text-align: center;
+}
+
+#mark {
+    z-index: 2;
+    text-align: left;
+    position: fixed;
+    margin-left: 10%
+}
+
+#login {
+    text-align: end;
+    z-index: 1;
+    height: 30px;
+    margin: 1%;
+}
+
+#logo {
+    text-align: center;
+    margin: 1%;
+}
+#login > a {
+    margin: 1%;
+    color: rgb(115, 115, 115);
+}
+
+#navbar > ul {
+    padding: 0;
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #3A98B9;
+    height: 50px;
+    border-radius: 10px;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+/* #navbar > ul > li {
+    border-left: 3px solid white;
+    padding: 0% 10% 0% 10%;
+} */
+
+#navbar > ul > li:first-child {
+    border-left: none; 
+}
+
+#navbar > ul > li > a {
+    color: white;
+    font-size: 120%;
+}
+
+#login > a:hover {
+    color: rgb(243, 156, 18) ;
+    transform: scale(2);
+    transition-duration: 0.5s;
+    font-size: 110%;
+}
+
+#navbar > ul > li > a:hover{
+    color: black;
+    /* transform: scale(2);
+    transition-duration: 0.5s;
+    font-size: 140%; */
+}
+
+/* #navbar > ul > li > a.current {
+    color: black;
+} */
+
+.dropbtn {
+    color: white;
+    font-size: 120%;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
     
-    a {
-        text-decoration-line: none;
-    }
-
-    main {
-        background-color: #EEEEEE;
-        height: 600px;
-        border-radius: 10px;
-        margin-left: 10%;
-        margin-right: 10%;
-        text-align: center;
-    }
-
-    #mark {
-        z-index: 2;
-        text-align: left;
-        position: fixed;
-        margin-left: 10%
-    }
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
     
-    #login {
-        text-align: end;
-        z-index: 1;
-        height: 30px;
-        margin: 1%;
-    }
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
 
-    #logo {
-        text-align: center;
-        margin: 1%;
-    }
-    #login > a {
-        margin: 1%;
-        color: rgb(115, 115, 115);
-    }
+.dropdown > .dropbtn:hover {
+    color: black;
+    /* transition-duration: 0.5s;
+    font-size: 140%; */
+}
     
-    #navbar > ul {
-        padding: 0;
-        list-style: none;
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-        background-color: #3A98B9;
-        height: 50px;
-        border-radius: 10px;
-        margin-left: 10%;
-        margin-right: 10%;
-    }
+.dropdown-content a:hover {background-color: #ddd;}
     
-    /* #navbar > ul > li {
-        border-left: 3px solid white;
-        padding: 0% 10% 0% 10%;
-    } */
-    
-    #navbar > ul > li:first-child {
-        border-left: none; 
-    }
-    
-    #navbar > ul > li > a {
-        color: white;
-        font-size: 120%;
-    }
-
-    #login > a:hover {
-        color: rgb(243, 156, 18) ;
-        transform: scale(2);
-        transition-duration: 0.5s;
-        font-size: 110%;
-    }
-    
-    #navbar > ul > li > a:hover{
-        color: black;
-        /* transform: scale(2);
-        transition-duration: 0.5s;
-        font-size: 140%; */
-    }
-
-    /* #navbar > ul > li > a.current {
-        color: black;
-    } */
-
-    .dropbtn {
-        color: white;
-        font-size: 120%;
-    }
-
-    .dropdown {
-        position: relative;
-        display: inline-block;
-    }
-      
-    .dropdown-content {
-        display: none;
-        position: absolute;
-        background-color: #f1f1f1;
-        min-width: 160px;
-        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-        z-index: 1;
-    }
-      
-    .dropdown-content a {
-        color: black;
-        padding: 12px 16px;
-        text-decoration: none;
-        display: block;
-    }
-
-    .dropdown > .dropbtn:hover {
-        color: black;
-        /* transition-duration: 0.5s;
-        font-size: 140%; */
-    }
-      
-    .dropdown-content a:hover {background-color: #ddd;}
-      
-    .dropdown:hover .dropdown-content {display: block;}
+.dropdown:hover .dropdown-content {display: block;}

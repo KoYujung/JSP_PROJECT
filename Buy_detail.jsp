@@ -145,13 +145,13 @@
     </div>
   </main>
 <footer>
-  <div id="comment-section">
+  <div id="comment-section" style="margin-left: 10%;">
       <h2>댓글 달기</h2>
       <form action="Add_BComment.jsp" method="POST">
           <textarea name="content" rows="4" cols="50" placeholder="댓글을 입력하세요"></textarea><br>
           <input type="hidden" name="post_id" value="<%= pno %>">
           <input type="hidden" name="user_id" value="<%= userID %>">
-          <input type="submit" value="댓글 작성">
+          <input type="submit" value="댓글 작성" id="comment_button">
       </form>
       <div id="comment-list">
         <h2>댓글 목록</h2>
@@ -173,10 +173,10 @@
                     String commentUser = commentResult.getString("USER_ID");
                     String commentCreatedAt = commentResult.getString("CREATED_AT");
         %>
-                    <p>작성자: <%= commentUser %></p>
-                    <p>내용: <%= commentContent %></p>
-                    <p>작성일: <%= commentCreatedAt %></p>
-                    <hr>
+        <p>작성자: <%= commentUser %></p>
+        <p>내용: <%= commentContent %></p>
+        <p>작성일: <%= commentCreatedAt %></p>
+        <hr>
         <%
                 }
             } catch (Exception e) {
