@@ -94,7 +94,7 @@
     </header>
     <main>
         <div>
-            <div> <h1 style="padding: 20px;">회원정보 수정</h1>
+            <div> <h1 style="padding: 20px;">회원정보 수정</h1><br>
                 <form action="user_UpdateProcess.jsp" method="post">
                     <ul>
                         <li>
@@ -103,25 +103,22 @@
                         </li>
                         <li class="password">
                             <label for="psw">비밀번호:
-                                <img src="images/close.png" width="24px" alt="">
                             </label>
                             <input type="Password" class="inp" id="UPASS" name="UPASS" required>
                         </li>
                         </li>
                         <li class="repassword">
                             <label for="repsw" ><span>이메일:</span>
-                                <img src="images/close.png" width="24px" alt="">
                             </label>
                             <input type="text" class="inp" id="UEMAIL" name="UEMAIL" required>
                         </li>
                         <li class="repassword">
                             <label for="repsw" ><span>전화번호:</span>
-                                <img src="images/close.png" width="24px" alt="">
                             </label>
                             <input type="text" class="inp" id="UTELL" name="UTELL" required>
                         </li>
                         <div style="padding: 15px;">
-                            <input type="submit" class="buttons" value="수정완료" style="font-size: 15px; cursor: pointer;">
+                            <input type="submit" class="buttons" value="수정 완료" style="font-size: 15px; cursor: pointer; color: white;">
                         </div>
                     </ul>
                 </form>
