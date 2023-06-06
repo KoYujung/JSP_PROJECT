@@ -59,14 +59,26 @@
     }
 %>
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title></title>
-        <link rel="stylesheet" href="Test.css">
-        <link rel="stylesheet" href="book.css">
-      </head>
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="Test.css">
+    <link rel="stylesheet" href="book.css">
+    <style>
+      #comment_button {
+        margin-left: 10px;
+        border: none; 
+        border-radius: 5px; 
+        background-color: #3A98B9; 
+        color: white; 
+        width: 70px; 
+        height: 65px;
+        text-align: center;
+      }
+    </style>
+  </head>
 <body>
 
 <%@ page import="java.sql.*" %>
@@ -146,66 +158,68 @@
   </main>
 <footer>
   <div id="comment-section" style="margin-left: 10%;">
-      <h2>댓글 달기</h2>
-      <form action="Add_BComment.jsp" method="POST">
-          <textarea name="content" rows="4" cols="50" placeholder="댓글을 입력하세요"></textarea><br>
-          <input type="hidden" name="post_id" value="<%= pno %>">
-          <input type="hidden" name="user_id" value="<%= userID %>">
-          <input type="submit" value="댓글 작성" id="comment_button">
-      </form>
-      <div id="comment-list">
-        <h2>댓글 목록</h2>
-        <%-- 댓글 목록 조회 --%>
-        <%
-            Connection commentConn = null;
-            PreparedStatement commentStmt = null;
-            ResultSet commentResult = null;
+    <h2>댓글 달기</h2>
+    <form action="Add_BComment.jsp" method="POST">
+      <div style="display: flex;">
+        <textarea name="content" rows="4" cols="50" placeholder="댓글을 입력하세요" style="border: solid #aaaaaa 1px; border-radius: 5px;"></textarea>
+        <input type="hidden" name="post_id" value="<%= pno %>">
+        <input type="hidden" name="user_id" value="<%= userID %>">
+        <input type="submit" value="댓글 작성" id="comment_button" <% if(userID == null) { %>disabled<% } %>>
+      </div>
+    </form>
+    <div id="comment-list">
+      <h2>댓글 목록</h2>
+      <%-- 댓글 목록 조회 --%>
+      <%
+          Connection commentConn = null;
+          PreparedStatement commentStmt = null;
+          ResultSet commentResult = null;
 
-            try {
-                String commentQuery = "SELECT * FROM BCOMMENTS WHERE POST_ID=?";
-                commentConn = DriverManager.getConnection(dbURL, "root", "kbc0924");
-                commentStmt = commentConn.prepareStatement(commentQuery);
-                commentStmt.setInt(1, Integer.parseInt(pno));
-                commentResult = commentStmt.executeQuery();
+          try {
+              String commentQuery = "SELECT * FROM BCOMMENTS WHERE POST_ID=?";
+              commentConn = DriverManager.getConnection(dbURL, "root", "kbc0924");
+              commentStmt = commentConn.prepareStatement(commentQuery);
+              commentStmt.setInt(1, Integer.parseInt(pno));
+              commentResult = commentStmt.executeQuery();
 
-                while (commentResult.next()) {
-                    String commentContent = commentResult.getString("CONTENT");
-                    String commentUser = commentResult.getString("USER_ID");
-                    String commentCreatedAt = commentResult.getString("CREATED_AT");
-        %>
-        <p>작성자: <%= commentUser %></p>
-        <p>내용: <%= commentContent %></p>
-        <p>작성일: <%= commentCreatedAt %></p>
-        <hr>
-        <%
-                }
-            } catch (Exception e) {
-                e.printStackTrace();
-            } finally {
-                if (commentResult != null) {
-                    try {
-                        commentResult.close();
-                    } catch (SQLException e) {
-                        e.printStackTrace();
-                    }
-                }
-                if (commentStmt != null) {
-                    try {
-                        commentStmt.close();
-                    } catch (SQLException e) {
-                        e.printStackTrace();
-                    }
-                }
-                if (commentConn != null) {
-                    try {
-                        commentConn.close();
-                    } catch (SQLException e) {
-                        e.printStackTrace();
-                    }
-                }
-            }
-        %>
-    </div>
+              while (commentResult.next()) {
+                  String commentContent = commentResult.getString("CONTENT");
+                  String commentUser = commentResult.getString("USER_ID");
+                  String commentCreatedAt = commentResult.getString("CREATED_AT");
+      %>
+      <p style="font-size: 12px; color: #6b6b6b;">작성자: <%= commentUser %> &nbsp; &nbsp;
+      <span>작성일: <%= commentCreatedAt %></span> </p>
+      <p style="color:#3f3f3f"> <%= commentContent %></p> 
+      <hr>
+      <%
+              }
+          } catch (Exception e) {
+              e.printStackTrace();
+          } finally {
+              if (commentResult != null) {
+                  try {
+                      commentResult.close();
+                  } catch (SQLException e) {
+                      e.printStackTrace();
+                  }
+              }
+              if (commentStmt != null) {
+                  try {
+                      commentStmt.close();
+                  } catch (SQLException e) {
+                      e.printStackTrace();
+                  }
+              }
+              if (commentConn != null) {
+                  try {
+                      commentConn.close();
+                  } catch (SQLException e) {
+                      e.printStackTrace();
+                  }
+              }
+          }
+      %>
+  </div>
 </footer>
 
 <%
