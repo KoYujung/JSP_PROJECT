@@ -84,7 +84,6 @@
         </div>
         <div id="navbar">
           <ul>
-            <li><a href="Sell_BookList.jsp">홈</a></li>
             <li><a href="Sell.jsp">책 판매</a></li>
             <li><a href="Buy.jsp">책 요청</a></li>
             <li><a href="MyPage.jsp">마이페이지</a></li>
