@@ -116,7 +116,6 @@
         </div>
         <div id="navbar">
             <ul>
-                <li><a href="Sell_BookList.jsp">홈</a></li>
                 <li>
                     <div class="dropdown">
                         <a class="dropbtn">책 판매</a>

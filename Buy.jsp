@@ -83,7 +83,6 @@
   </div>
   <div id="navbar">
     <ul>
-      <li><a href="Test.html">홈</a></li>
       <li>
         <div class="dropdown">
           <p class="dropbtn">책 판매</p>

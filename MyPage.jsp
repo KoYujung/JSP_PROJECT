@@ -67,44 +67,43 @@
 <body>
   <header>
     <nav>
-        <a href="#" id="mark"><img src="mark.png" width="50"></a>
-        <div id="login">
-          <% if(userID == null) { %>
-            <a href="login.html">로그인</a>
-            <a href="register.html">회원가입</a>
-          <% } else { %>
-            <!-- <span><%= userID %></span> -->
-            <a href="logout.jsp">로그아웃</a>
-          <% } %>
-        </div>
-        <div id="logo">
-          <a href="#"><img src="logo.png" width="180"></a>
-        </div>
-        <div id="navbar">
-          <ul>
-            <li><a href="Test.html">홈</a></li>
-            <li>
-              <div class="dropdown">
-                <p class="dropbtn">책 판매</p>
-                <div class="dropdown-content">
-                  <a href="Sell.jsp">글 작성</a>
-                  <a href="Sell_BookList.jsp">책 목록</a>
-                </div>
+      <a href="#" id="mark"><img src="mark.png" width="50"></a>
+      <div id="login">
+        <% if(userID == null) { %>
+          <a href="login.html">로그인</a>
+          <a href="register.html">회원가입</a>
+        <% } else { %>
+          <!-- <span><%= userID %></span> -->
+          <a href="logout.jsp">로그아웃</a>
+        <% } %>
+      </div>
+      <div id="logo">
+        <a href="#"><img src="logo.png" width="180"></a>
+      </div>
+      <div id="navbar">
+        <ul>
+          <li>
+            <div class="dropdown">
+              <p class="dropbtn">책 판매</p>
+              <div class="dropdown-content">
+                <a href="Sell.jsp">글 작성</a>
+                <a href="Sell_BookList.jsp">책 목록</a>
               </div>
-            </li>
-            <li>
-              <div class="dropdown">
-                <p class="dropbtn">책 요청</p>
-                <div class="dropdown-content">
-                  <a href="Buy.jsp">글 작성</a>
-                  <a href="Buy_BookList.jsp">책 목록</a>
-                </div>
+            </div>
+          </li>
+          <li>
+            <div class="dropdown">
+              <p class="dropbtn">책 요청</p>
+              <div class="dropdown-content">
+                <a href="Buy.jsp">글 작성</a>
+                <a href="Buy_BookList.jsp">책 목록</a>
               </div>
-            </li>
-            <li><a href="MyPage.jsp">마이페이지</a></li>
-          </ul>
-        </div>
-      </nav>
+            </div>
+          </li>
+          <li><a href="MyPage.jsp">마이페이지</a></li>
+        </ul>
+      </div>
+    </nav>
   </header>
   <main>
     <br>
