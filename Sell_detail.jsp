@@ -71,7 +71,7 @@
             border-radius: 5px; 
             background-color: #3A98B9; 
             color: white; 
-            width: 70px; 
+            width: 80px; 
             height: 65px;
             text-align: center;
         }
@@ -182,7 +182,6 @@
                 <br>
                 <p></p>
                 <div class="info_detail">
-                    <!-- <p style="text-align: center;">책 상세설명</p> -->
                     <p style="text-align: center; margin: 15px 15px 15px 15px;"><%= result.getString(7) %></p>
                 </div>
             </div>
@@ -190,6 +189,7 @@
     </div>
 </main>
 <footer>    
+    <br>
     <div id="comment-section" style="margin-left: 10%;">
         <h2>댓글 달기</h2>
         <form action="Add_BComment.jsp" method="POST">
@@ -200,6 +200,7 @@
             <input type="submit" value="댓글 작성" id="comment_button" <% if(userID == null) { %>disabled<% } %>>
             </div>
         </form>
+        <br>
         <div id="comment-list">
             <h2>댓글 목록</h2>
             <%-- 댓글 목록 조회 --%>
