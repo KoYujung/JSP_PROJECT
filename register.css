@@ -6,7 +6,6 @@ a {
   }
 .registerarea {
     height: 520px;
-    /* border: 1px solid #ccc; */
     margin-top: 20px;
 }
 .registerarea .regist-header{
@@ -35,10 +34,11 @@ a {
     text-align: right;
 }
 .reg_form  .inp {
-    width: 238px;
-    height: 34px;
+    width: 250px;
+    height: 40px;
     border: 1px solid #ccc;
-    margin-left: 10px;
+    border-radius: 10px;
+    margin-left: 25px;
 }
 .buttons {
 	display: flex;
