@@ -222,9 +222,9 @@
                         String commentCreatedAt = commentResult.getString("CREATED_AT");
             %>
             <p style="font-size: 12px; color: #6b6b6b;">작성자: <%= commentUser %> &nbsp; &nbsp;
-                <span>작성일: <%= commentCreatedAt %></span> </p>
-                <p style="color:#3f3f3f"> <%= commentContent %></p>
-                        <hr>
+            <span>작성일: <%= commentCreatedAt %></span> </p>
+            <p style="color:#3f3f3f"> <%= commentContent %></p>
+            <hr width="60%" style="margin-left: 0;">
             <%
                     }
                 } catch (Exception e) {
