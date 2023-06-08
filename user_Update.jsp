@@ -75,7 +75,6 @@
               <a href="login.html">로그인</a>
               <a href="register.html">회원가입</a>
             <% } else { %>
-              <!-- <span><%= userID %></span> -->
               <a href="logout.jsp">로그아웃</a>
             <% } %>
           </div>
@@ -93,7 +92,7 @@
     </header>
     <main>
         <div>
-            <div> <h1 style="padding: 20px;">회원정보 수정</h1><br>
+            <div><br><h1 style="padding: 20px;">회원정보 수정</h1>
                 <form action="user_UpdateProcess.jsp" method="post">
                     <ul>
                         <li>
