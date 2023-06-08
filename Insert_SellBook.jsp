@@ -1,4 +1,4 @@
-﻿<%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
+﻿<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 
 <%@ page import = "com.oreilly.servlet.MultipartRequest" %>
 <%@ page import = "com.oreilly.servlet.multipart.DefaultFileRenamePolicy" %>
@@ -17,6 +17,8 @@
 
 <%
     Connection con = null;
+    request.setCharacterEncoding("UTF-8");
+
     PreparedStatement pstmt = null;
 	Statement stmt = null;
     StringBuffer SQL = new StringBuffer("insert into SELL_BOOK(TITLE, AUTH, PUBL, FIXED, SELL, DET, IMG, COVER, HIGHPEN, PENCIL, WNAME, FPART, CATE) "); 
