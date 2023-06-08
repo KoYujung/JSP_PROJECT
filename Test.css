@@ -25,7 +25,7 @@ main {
 #mark {
     z-index: 2;
     text-align: left;
-    position: fixed;
+    position: absolute;
     margin-left: 10%
 }
 
