@@ -208,13 +208,10 @@
       <table id="tb_item">
         <tr>
           <td id="td_image" rowspan="3">
-            <img src="./contents/<%= letfile %> ">
+            <img src="./contents/<%= letfile %> " width="100px" height="150px" style="margin-right: 20px;">
           </td>
           <td id="td_title" colspan="2">
             <a href=Sell_detail.jsp?pno=<%= result.getString("SELL_ID") %>><%= result.getString(2) %>
-          </td>
-          <td id="td_bookmark" rowspan="3">
-              <img src="./bookmark_empty.jpg">
           </td>
       </tr>
       <tr>
