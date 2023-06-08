@@ -4,12 +4,14 @@
     font-weight: 700;
     font-style: normal;
 }
-
 * {
     font-family: TheJamsil5Bold;
 	box-sizing: border-box;
 	margin: 0;
 	padding: 0;
+}
+a {
+	color: rgb(243, 156, 18);
 }
 .container {
 	display: flex;
@@ -25,7 +27,6 @@ header img {
 	width: 350px;
 	margin: auto;
 }
-
 form {
 	padding: 30px;
 	border-radius: 10px;
@@ -85,4 +86,8 @@ form {
 }
 .buttons #registerB :hover {
 	color: #5fa8d3;
+}
+p {
+	margin-left: 60px;
+	font-size: 20px;
 }
