@@ -108,7 +108,7 @@
 </header>
 <main>
     <% if(userID != null) { %>
-        <form action="Insert_BuyBook.jsp" method="get" enctype="multipart/form-data">
+        <form accept-charset="euc-kr" action="Insert_BuyBook.jsp" method="get" enctype="multipart/form-data">
             <table cellpadding="20px" cellspacing="10px">
                 <tr>
                     <td>카테고리</td>
