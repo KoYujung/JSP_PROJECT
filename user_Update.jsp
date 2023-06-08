@@ -3,7 +3,7 @@
 
 <%
     HttpSession sessionObj = request.getSession();
-    
+
     String userID = (String) sessionObj.getAttribute("userID");
     String uname = (String) sessionObj.getAttribute("UNAME");
 
@@ -98,7 +98,7 @@
                     <ul>
                         <li>
                             <label for="tel">아이디:</label>
-                            <input type="text" class="inp" id="ID" name="ID" placeholder="<%= userID %>" disabled>
+                            <input type="text" class="inp" id="ID" name="ID" value="<%= userID %>" readonly>
                         </li>
                         <li class="password">
                             <label for="psw">비밀번호:

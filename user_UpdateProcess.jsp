@@ -30,12 +30,7 @@
         pstmt.setString(4, userID);
         pstmt.executeUpdate();
 
-        // 세션 정보 업데이트
-        HttpSession sessionObj = request.getSession();
-        sessionObj.setAttribute("userID", userID);
-        sessionObj.setAttribute("UPASS", password);
-        sessionObj.setAttribute("UEMAIL", email);
-        sessionObj.setAttribute("UTELL", phoneNumber);
+        conn.commit();
 
         // 회원 정보 수정 성공
         out.println("회원정보가 수정되었습니다.");

@@ -41,10 +41,11 @@ create table USER(
 );
 create table BOOKMARK(
 	ID char(12),
-	BK_CD char(12),
+	SELL_ID char(12),
 	foreign key(ID) references USER(ID),
-	foreign key(BK_CD) references BOOK(BK_CD)
+	foreign key(SELL_ID) references SELL_BOOK(SELL_ID)
 );
+
 
 CREATE TABLE BCOMMENTS (
    COMMENT_ID INT NOT NULL AUTO_INCREMENT,
