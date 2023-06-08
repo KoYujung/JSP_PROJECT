@@ -11,12 +11,6 @@
 	margin: 0;
 	padding: 0;
 }
-
-/* 
-body {
-	background-color: white;
-} */
-
 .container {
 	display: flex;
 	flex-direction: column;
@@ -24,22 +18,18 @@ body {
 	justify-content: center;
 	height: 100vh;
 }
-
 header {
 	margin-bottom: 30px;
 }
-
 header img {
-	width: 300px;
-	height: auto;
+	width: 350px;
+	margin: auto;
 }
 
 form {
 	padding: 30px;
-	border-radius: 5px;
-	/* box-shadow: 0 0 10px rgba(0,0,0,0.2); */
+	border-radius: 10px;
 }
-
 .form-control {
 	width: 120%;
 	height: 65px;
@@ -48,13 +38,14 @@ form {
 	border: 1px solid #ccc;
 	display: flex;
 	align-items: center;
+	border-radius: 10px;
 }
-.form-control .login-icon {
+/* .form-control .login-icon {
 	width: 60px;
 	height: 65px;
 	display: inline-block;
 	background: #ccc;
-}
+} */
 
 .form-control input {
 	padding: 10px;
@@ -79,34 +70,6 @@ form {
 	pointer-events: none;
 	transition: all 0.3s ease-out;
 }
-
-/* .form-control input:focus ~ label,
-.form-control input:valid ~ label {
-	top: -20px;
-	left: 0;
-	color: #5fa8d3;
-	font-size: 14px;
-}
-
-.form-control .placeholder {
-	position: absolute;
-	top: 0;
-	left: 0;
-	color: #999;
-	padding: 10px;
-	font-size: 16px;
-	pointer-events: none;
-	transition: all 0.3s ease-out;
-}
-
-.form-control input:focus ~ .placeholder,
-.form-control input:valid ~ .placeholder {
-	top: -20px;
-	left: 0;
-	color: #fbbf24;
-	font-size: 14px;
-} */
-
 .form-control
 .buttons {
 	display: flex;
@@ -127,10 +90,4 @@ form {
 .buttons a {
 	color: #FFF;
 	font-size: 20px;
-	text-decoration: none;
-	transition: color 0.3s ease-out;
 }
-
-/* .buttons a:hover {
-	color: white;
-} */
