@@ -59,7 +59,7 @@
 <html>
   <head>
     <meta charset="euc-kr">
-    <title>Ã¥ ï¿½Ç¸ï¿½ ï¿½ï¿½ï¿½</title>
+    <title>Ã¥ ¿äÃ» ¸ñ·Ï</title>
     <link rel="stylesheet" href="Test.css">
     <style type="text/css">
         #tb_base {
@@ -142,10 +142,10 @@
   <a href="#" id="mark"><img src="mark.png" width="50"></a>
   <div id="login">
     <% if(userID == null) { %>
-      <a href="login.html">ï¿½Î±ï¿½ï¿½ï¿½</a>
-      <a href="register.html">È¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</a>
+      <a href="login.html">·Î±×ÀÎ</a>
+      <a href="register.html">È¸¿ø°¡ÀÔ</a>
     <% } else { %>
-      <a href="logout.jsp">ï¿½Î±×¾Æ¿ï¿½</a>
+      <a href="logout.jsp">·Î±×¾Æ¿ô</a>
     <% } %>
   </div>
   <div id="logo">
@@ -157,7 +157,7 @@
             <a href="#"><img src="logo.png" width="180" style="text-align: center;"></a>
         </td>
         <td style="width: 30%;">
-            <input id="search_bar" type="text" name="search" placeholder="Ã¥ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ë»ï¿½ï¿½ï¿½ï¿½Ö¼ï¿½ï¿½ï¿½" style="position: relative; top: -7px;">
+            <input id="search_bar" type="text" name="search" placeholder="Ã¥ Á¦¸ñÀ¸·Î °Ë»öÇØÁÖ¼¼¿ä" style="position: relative; top: -7px;">
             <button id="search_button" type="submit" style="position: relative; top: 5px;">
             <img src="search_icon.png" width="30px">
             </button>
@@ -171,23 +171,23 @@
     <ul>
       <li>
         <div class="dropdown">
-          <p class="dropbtn">Ã¥ ï¿½Ç¸ï¿½</p>
+          <p class="dropbtn">Ã¥ ÆÇ¸Å</p>
           <div class="dropdown-content">
-            <a href="Sell.jsp">ï¿½ï¿½ ï¿½Û¼ï¿½</a>
-            <a href="Sell_BookList.jsp">Ã¥ ï¿½ï¿½ï¿½</a>
+            <a href="Sell.jsp">±Û ÀÛ¼º</a>
+            <a href="Sell_BookList.jsp">Ã¥ ¸ñ·Ï</a>
           </div>
         </div>
       </li>
       <li>
         <div class="dropdown">
-          <p class="dropbtn">Ã¥ ï¿½ï¿½Ã»</p>
+          <p class="dropbtn">Ã¥ ¿äÃ»</p>
           <div class="dropdown-content">
-            <a href="Buy.jsp">ï¿½ï¿½ ï¿½Û¼ï¿½</a>
-            <a href="Buy_BookList.jsp">Ã¥ ï¿½ï¿½ï¿½</a>
+            <a href="Buy.jsp">±Û ÀÛ¼º</a>
+            <a href="Buy_BookList.jsp">Ã¥ ¸ñ·Ï</a>
           </div>
         </div>
       </li>
-      <li><a href="MyPage.jsp">ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</a></li>
+      <li><a href="MyPage.jsp">¸¶ÀÌÆäÀÌÁö</a></li>
     </ul>
   </div>
   </nav>
@@ -219,7 +219,7 @@
       </tr>
       <tr>
         <td>
-            ï¿½ï¿½ï¿½ï¿½
+          ÀúÀÚ
         </td>
         <td id="td_content">
             <%= result.getString(3) %>
@@ -227,7 +227,7 @@
       </tr>
       <tr>
         <td>
-            ï¿½ï¿½ï¿½Ç»ï¿½
+            ÃâÆÇ»ç
         </td>
         <td id="td_content">
             <%= result.getString(4) %>
@@ -242,7 +242,7 @@
     result.close();        
     }
     catch(Exception e) {
-      out.println("MySql ï¿½ï¿½ï¿½ï¿½ï¿½Íºï¿½ï¿½Ì½ï¿½ï¿½ï¿½ BOOK ï¿½ï¿½È¸ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ö½ï¿½ï¿½Ï´ï¿½. <hr>");
+      out.println("MySql µ¥ÀÌÅÍº£ÀÌ½ºÀÇ BOOK Á¶È¸¿¡ ¹®Á¦°¡ ÀÖ½À´Ï´Ù. <hr>");
         out.println(e.toString());
         e.printStackTrace();
     }
@@ -257,9 +257,9 @@
 <font color=black>
 <%
 if (rowCount == 0) 
-out.println("ï¿½ï¿½Ïµï¿½ ï¿½Ç¸Åµï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½.");
+out.println("µî·ÏµÈ ÆÇ¸Åµµ¼­°¡ ¾ø½À´Ï´Ù.");
 else 
-out.println("ï¿½ï¿½Ïµï¿½ ï¿½Ç¸Åµï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ " + rowCount + "ï¿½ï¿½ ï¿½Ô´Ï´ï¿½.");    
+out.println("µî·ÏµÈ ÆÇ¸Åµµ¼­´Â ÃÑ " + rowCount + "±Ç ÀÔ´Ï´Ù.");    
 %>
 </font>   
 </footer>
