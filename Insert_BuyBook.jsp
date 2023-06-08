@@ -1,23 +1,26 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" language="java" %>
+
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
+<meta charset="UTF-8">
 <title>책 정보 연동 페이지(구매)</title>
 </head>
 <body>
 
 <%@ page import="java.sql.*" %>
-<% request.setCharacterEncoding("euc-kr"); %>
+<% request.setCharacterEncoding("utf-8"); %>
 
 <%
     Connection con = null;
+    request.setCharacterEncoding("UTF-8");
+
     PreparedStatement pstmt = null;
 	Statement stmt = null;
     StringBuffer SQL = new StringBuffer("insert into BUY_BOOK(TITLE, AUTH, PUBL, HOPE, CATE) "); 
     SQL.append("values (?, ?, ?, ?, ?)");
 
 	String driverName = "org.gjt.mm.mysql.Driver";
-    String dbURL = "jdbc:mysql://localhost:3306/mysql12";
+    String dbURL = "jdbc:mysql://localhost:3306/mysql12?useUnicode=true&characterEncoding=UTF-8";
 
     try {
 		Class.forName(driverName);
