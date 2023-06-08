@@ -153,7 +153,7 @@
             <img class="book_img" src="./contents/<%= letfile %> ">
         </div>
         <div class="item">
-            <div class="info">
+            <div class="sell_info">
                 <p style="color: #ffd700; font-size: 24px;">팝니다 &nbsp;&nbsp;<span style="color: #ff6200; font-size: 24px;">카테고리 : &nbsp;<%= result.getString(14) %></span></p></p>
                 <h1 style="font-size: 36px;">책 제목: &nbsp;<%= result.getString(2) %></h1>
                 <p> 저자:&nbsp; <%= result.getString(3) %>&nbsp;

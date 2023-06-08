@@ -146,11 +146,11 @@
     <div class="container">
       <div class="item">
         <div class="info">
-          <p style="color: #ffd700; font-size: 24px;">삽니다 &nbsp;&nbsp;<span style="color: #ff6200; font-size: 24px;">카테고리 : &nbsp;<%= result.getString(6) %></span></p></p>
-          <h1 style="font-size: 36px;">책 제목: &nbsp;<%= result.getString(2) %></h1> 
-          <p> 저자:&nbsp; <%= result.getString(3) %></p> 
-          <p> 희망가:&nbsp; <%= result.getString(5) %></p>
-          <p> 출판사:&nbsp; <%= result.getString(4) %></p> 
+          <p style="color: #ffd700; font-size: 27px;">삽니다 &nbsp;&nbsp;<span style="color: #ff6200; font-size: 27px;">카테고리 : &nbsp;<%= result.getString(6) %></span></p></p>
+          <h1 style="font-size: 40px;">책 제목: &nbsp;<%= result.getString(2) %></h1> 
+          <p style="font-size: 17px;"> 저자:&nbsp; <%= result.getString(3) %></p> 
+          <p style="font-size: 17px;"> 희망가:&nbsp; <%= result.getString(5) %></p>
+          <p style="font-size: 17px;"> 출판사:&nbsp; <%= result.getString(4) %></p> 
         </div>  
       </div>
     </div>

@@ -34,9 +34,11 @@ ul imgs li{
 }
 .info{
     text-align: left;
+    padding-top: 10%;
+    padding-left: 10%;
 }
 .sell_info{
-    white-space: nowrap;
+    text-align: left;
 }
 .info_detail{
     background-color: white;
