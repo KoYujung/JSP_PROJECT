@@ -66,14 +66,14 @@
         pstmt.setString(13, multi.getParameter("CATE"));
 
         int rowCount = pstmt.executeUpdate();        
-        if (rowCount == 1) out.println("책 레코드 하나가 성공적으로 삽입 되었습니다.<hr>");
+        if (rowCount == 1) out.println("책 레코드 하나가 성공적으로 삽입 되었습니다.");
         else out.println("책 레코드 삽입에 문제가 있습니다.");
 
         stmt = con.createStatement();
 
     }
     catch(Exception e) {
-    	out.println("MySql 데이터베이스의 BOOK 조회에 문제가 있습니다. <hr>");
+    	out.println("MySql 데이터베이스의 BOOK 조회에 문제가 있습니다.");
         out.println(e.toString());
         e.printStackTrace();
     }
@@ -83,8 +83,6 @@
     }
     out.println("<meta http-equiv='Refresh' content='1;URL=Sell_BookList.jsp'>");
 %>
-
-<p><hr>
 
 </body>
 </html>

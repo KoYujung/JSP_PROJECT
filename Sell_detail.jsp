@@ -192,7 +192,7 @@
     <br>
     <div id="comment-section" style="margin-left: 10%;">
         <h2>댓글 달기</h2>
-        <form action="Add_BComment.jsp" method="POST">
+        <form action="Add_SComment.jsp" method="POST">
             <div style="display: flex;">
             <textarea name="content" rows="4" cols="50" placeholder="댓글을 입력하세요" style="border: solid #aaaaaa 1px; border-radius: 5px;"></textarea>
             <input type="hidden" name="post_id" value="<%= pno %>">
